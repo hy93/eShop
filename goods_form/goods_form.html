@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>创建商品</title>
+
+	<meta charset="utf-8"/>
+
+	<!-- 引入bootstrap -->
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/type_choose_style.css">
+	<link rel="stylesheet" type="text/css" href="css/trans_style.css">
+	<link rel="stylesheet" type="text/css" href="css/attr_style.css">
+	<link rel="stylesheet" type="text/css" href="css/basic_info_style.css">
+	<link rel="stylesheet" type="text/css" href="css/pic_style.css">
+	<link rel="stylesheet" type="text/css" href="css/tags_style.css">
+	<link rel="stylesheet" type="text/css" href="css/dcp_style.css">
+
+	<script type="text/javascript" src="js/pic_select.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+	<script type="text/javascript" src="js/city_select.js"></script>
+	<script type="text/javascript" src="js/tag_attach.js">	</script>
+	<script type="text/javascript" src="js/trans_show.js">	</script>
+	<script type="text/javascript" src="js/img_show.js"></script>
+	<script type="text/javascript" src="js/attr_attach.js"></script>
+	<script type="text/javascript" src="js/basic_info.js"></script>
+
+
+	<!--kind editor配置-->
+		<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+		<script charset="utf-8" src="kindeditor/kindeditor-min.js"></script>
+		<script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+		<script>
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="content"]', {
+					allowFileManager : true
+				});
+				K('input[name=getHtml]').click(function(e) {
+					alert(editor.html());
+				});
+				K('input[name=isEmpty]').click(function(e) {
+					alert(editor.isEmpty());
+				});
+				K('input[name=getText]').click(function(e) {
+					alert(editor.text());
+				});
+				K('input[name=selectedHtml]').click(function(e) {
+					alert(editor.selectedHtml());
+				});
+				K('input[name=setHtml]').click(function(e) {
+					editor.html('<h3>Hello KindEditor</h3>');
+				});
+				K('input[name=setText]').click(function(e) {
+					editor.text('<h3>Hello KindEditor</h3>');
+				});
+				K('input[name=insertHtml]').click(function(e) {
+					editor.insertHtml('<strong>插入HTML</strong>');
+				});
+				K('input[name=appendHtml]').click(function(e) {
+					editor.appendHtml('<strong>添加HTML</strong>');
+				});
+				K('input[name=clear]').click(function(e) {
+					editor.html('');
+				});
+			});
+		</script>
+
+
+
+</head>
+<body>
+<div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Project name</a>
+		</div>
+		<div class="collapse navbar-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#"><span class="glyphicon glyphicon-home">店铺主页</span></a></li>
+				<li><a href="#shop"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+				<li><a href="#support"><span class="glyphicon glyphicon-headphones">Support</span></a></li>
+			</ul>
+		</div><!-- /.nav-collapse -->
+	</div><!-- /.container -->
+</div>
+
+<div id="type_choose">
+	<div id="menu_title">请选择您的商品类型：</div>
+	<ul>		
+		<li> <a href="#">服装配饰</a> 
+		<div class="submenu">
+			<dl>
+				<dt><a href="#">女装</a></dt>
+				<dd>
+					<input onclick="choose(this)" type="button" value="外套"> <input onclick="choose(this)" type="button" value="毛衣T恤"> <input onclick="choose(this)" type="button" value="套装"> <input onclick="choose(this)" type="button" value="裤子"> <input onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+			<dl>
+				<dt><a href="#">男装</a></dt>
+				<dd>
+					<input onclick="choose(this)" type="button" value="外套"> <input onclick="choose(this)" type="button" value="毛衣T恤">  <input onclick="choose(this)" type="button" value="西服正装">  <input onclick="choose(this)" type="button" value="裤子">	<input onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+			<dl>
+				<dt><a href="#">内衣</a></dt>
+				<dd>
+					<input onclick="choose(this)" type="button" value="睡衣套装/家居服">	<input onclick="choose(this)" type="button" value="保暖内衣"> <input onclick="choose(this)" type="button" value="文胸"> <input onclick="choose(this)" type="button" value="内裤"> <input onclick="choose(this)" type="button" value="秋衣裤"> <input onclick="choose(this)" type="button" value="袜子"> <input onclick="choose(this)" type="button" value="打底裤"> <input onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+			<dl>
+				<dt><a href="#">配件配饰</a></dt>
+				<dd>
+					<input onclick="choose(this)" type="button" value="帽子"> <input onclick="choose(this)" type="button" value="围巾"> <input onclick="choose(this)" type="button" value="手套"> <input onclick="choose(this)" type="button" value="皮带"> <input onclick="choose(this)" type="button" value="领带"> <input onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+		</div>
+		</li>
+		<li> <a href="#">鞋靴箱包</a>
+		<div class="submenu">
+			<dl>
+				<dt><a href="#">男鞋</a></dt>
+				<dd>
+					<input onclick="choose(this)" type="button" value="商务鞋"> <input onclick="choose(this)" type="button" value="休闲鞋"> <input onclick="choose(this)" type="button" value="帆布鞋"> <input onclick="choose(this)" type="button" value="拖鞋"> <input onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+			<dl>
+				<dt><a href="#">女鞋</a></dt>
+				<dd>
+					<input onclick="choose(this)" type="button" value="休闲鞋"> <input onclick="choose(this)" type="button" value="高跟鞋"> <input onclick="choose(this)" type="button" value="靴子"> <input onclick="choose(this)" type="button" value="帆布鞋"> <input onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+			<dl>
+				<dt><a href="#">行李箱"></dt>
+				<dd>
+					<input onclick="choose(this)" onclick="choose(this)" type="button" value="软质行李箱"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="硬质行李箱"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="拉杆行李包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+			<dl>
+				<dt><a href="#">女包</a></dt>
+				<dd>
+					<input onclick="choose(this)" onclick="choose(this)" type="button" value="双肩包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="单肩包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="斜挎包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="手拿包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="钱包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="卡包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="电脑包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+			<dl>
+				<dt><a href="#">男包</a></dt>
+				<dd>
+					<input onclick="choose(this)" onclick="choose(this)" type="button" value="双肩包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="单肩包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="公文包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="电脑包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="钱包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="卡包"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+		</div>
+		</li>
+		<li> <a href="#">配件首饰</a> 
+ 		<div class="submenu">
+ 			<dl>
+				<dt><a href="#">珠宝</a></dt>
+				<dd>
+					<input onclick="choose(this)" onclick="choose(this)" type="button" value="翡翠玉石"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="琥珀玛瑙"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="钻石"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="金器"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="银器"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="珍珠"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+			<dl>
+				<dt><a href="#">首饰</a></dt>
+				<dd>
+					<input onclick="choose(this)" onclick="choose(this)" type="button" value="头饰"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="项链"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="戒指"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="耳饰"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="手镯手链"> <input onclick="choose(this)" onclick="choose(this)" type="button" value="其他">
+				</dd>
+			</dl>
+ 		</div>
+		</li>
+		<li> <a href="#">美妆洗护</a> </li>
+		<li> <a href="#">家具家纺</a> </li>
+		<li> <a href="#">鲜花宠物</a> </li>
+		<li> <a href="#">美食生鲜</a> </li>
+		<li> <a href="#">图书办公</a> </li>
+		<li> <a href="#">家电数码</a> </li>
+		<li> <a href="#">运动户外</a> </li>
+		<li> <a href="#">影视动漫周边</a> </li>
+	</ul>
+</div>
+	<form id="basic_info">
+	<h3>STEP1:填写商品基本信息</h3>
+	<table>
+		<tr>
+			<td>商品类别：</td>
+			<td><input type="text" class="form-control" class="form-control" class="form-control" name="type" id="choosed_type" disabled="disabled"><div class="hint">请从左侧选择</div></td>
+		</tr>
+		<tr>
+			<td>品牌：</td>
+			<td><input type="text" class="form-control" name="branch"></td>
+		</tr>
+		<tr>
+			<td>商品标题：</td>
+			<td><input type="text" class="form-control" name="good_name"></td>
+		</tr>
+		<tr>
+			<td>商品描述：</td>
+			<td><input type="text" class="form-control" name="describe"></td>
+		</tr>
+		<tr>
+			<td>原价：</td>
+			<td><input type="number" name="price"></td>
+		</tr>
+		<tr>
+			<td>货号：</td>
+			<td><input type="text" class="form-control" name="good_id"></td>
+		</tr>
+		<tr>
+			<td>库存：</td>
+			<td><input type="number" class="form-control" name="stock"></td>
+		</tr>
+		<tr>
+			<td><div><input type="radio" name="time" value="1">立刻开卖</div></td>
+			<td><div><input type="radio" name="time" value="2">稍后开卖</div></td>
+		</tr>
+		<tr>
+			<td colspan="2" id="save_cell"><input type="button" value="保存" class="save_bt btn"></td>
+		</tr>
+	</table>	
+	
+	</form>
+	<form id="pic">
+		<h3>STEP2:上传商品图片，最多五张：</h3>
+		<div><img id="preview_1" src="img/default.png" /> <br />
+    	<input type="file" name="file" onchange="imgPreview(this,1)" /> <br /></div>
+		<div><img id="preview_2" src="img/default.png" /> <br />
+    	<input type="file" name="file" onchange="imgPreview(this,2)" /> <br /></div>
+		<div><img id="preview_3" src="img/default.png" /> <br />
+    	<a href="#"> </a><input type="file" name="file" onchange="imgPreview(this,3)" /> <br /></div>
+		<div><img id="preview_4" src="img/default.png" /> <br />
+    	<input type="file" name="file" onchange="imgPreview(this,4)" /> <br /></div>
+		<div><img id="preview_5" src="img/default.png" /> <br />
+    	<input type="file" name="file" onchange="imgPreview(this,5)" /> <br /></div>
+	</form>
+	<form id="tags">
+		<h3>STEP3:为商品添加标签</h3>
+		<ul id="tag_list">
+		</ul>
+		<input id="tag_input" type="text" class="form-control" name="tag_string">
+		<input type="button" value="添加标签" onclick="attach_tag();">
+	</form>
+	<form id="transport">
+		<h3>STEP4:填写物流信息</h3>
+		发货地：啊
+		<div id="city_5" class="dropdown">
+			<select class="prov form-control"></select>
+			<select class="city form-control" disabled="disabled"></select>
+			<select class="dist form-control" disabled="disabled"></select>
+		</div>
+		运费：<br/> 
+		<label><input type="radio" name="trans" value="1" onclick="hide_trans_div()">卖家承担运费</label><br/>
+		<label><input type="radio" name="trans" value="2" onclick="show_trans_div()">买家承担运费</label><br/>
+		<div id="trans_cost_div">
+			运费：<input type="number" class="form-control" name="trans_cost">
+			<input type="button" value="设置运费">
+		</div>
+	</form>
+	<form id="attributes">
+		<h3>STEP5:为商品添加可选属性</h3>
+		<div id="attr_sample">
+			<p>示例：</p>
+			<dl>
+				<dt>尺码：</dt>
+				<dd>XS S M L XL XXL</dd>
+				<dt>颜色：</dt>
+				<dd>红色 白色 黑色 绿色 蓝色</dd>
+			</dl>
+		</div>
+		<div id="pre_attr_div">
+			<p>已经添加的属性：</p>
+			<ul id="pre_attrs">
+				
+			</ul>
+		</div>
+		属性名：<input type="text" class="form-control" id="attr_name"><input type="button" value="添加属性" onclick="attach_attr();">
+		<div id="opt_dfn_frame">
+			选项描述：<input type="text" class="form-control" id="opt_name"><br/>
+			<div><input id="opt_img_check"  type="checkbox" onclick="show_opt_img()" >使用图片</div> 
+			<div id="opt_img">
+				<img id="preview_opt" src=
+				"img/default.png"><br/>
+    			<input type="file" name="file" onchange="imgPreview(this,'opt')" />
+			</div>
+			<button type="button" class="save_bt btn">保存选项</button>
+		</div>
+	</form>
+	<div id="description">
+		<h3>STEP6:编辑商品详情</h3>
+		<textarea name="content" style="width:800px;height:400px;visibility:hidden;">KindEditor</textarea>
+	</div>
+</body>
+</html>

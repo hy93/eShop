@@ -1,0 +1,18 @@
+#attributes{
+	float: left;
+	background-color: green;
+}
+#opt_img{
+	display: none;
+}
+#opt_dfn_frame{
+	display: none;
+	position: fixed;
+	z-index: 20;
+	left: 50px;
+	top: 100px;
+	width: 600px;
+	height: 450px;
+	border: 2px solid black;
+	background-color: white;
+}

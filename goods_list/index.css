@@ -1,0 +1,112 @@
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#top{
+    height: 400px;
+    background-color:#eeeeee;
+}
+#colee1 img{
+    width: 1100px;
+    height: 400px;
+}
+body{
+    width: 1100px;
+    margin: auto;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height: auto;
+    width:200px;
+    float:left;
+    padding:5px; 
+}
+#section {
+    background-color: blue;
+    float: left;
+    height: auto;
+    width: 870px;  
+    padding:10px; 
+}
+.lamp {
+    width:100%;
+   /* border:1px solid #d4d4d4;*/
+}
+.lamp td {
+    padding:10px;
+    width: 250px;
+    height: 300px;
+/*    max-width: 100%;
+    max-height: 100%;*/
+    word-break:break-all;
+}
+.lamp img{
+    width: 230px;
+    height: 250px;
+   /* width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;*/
+}
+
+footer {
+    background-color:#eeeeee;
+    color:black;
+    clear: both;
+    text-align:center;
+    padding:5px; 
+    margin-top: 30px;
+    width: 100%;
+}
+.gouwuche {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 960px;
+    background: black;
+}
+
+#purchaseCar {
+    text-align: center;
+}
+
+#purchaseCar font {
+    color: white;
+}
+
+#purchaseCar:hover {
+    background-color: red;
+}
+
+.gouwuche-left {
+    width: 30px;
+    display: inline-table;
+    padding-top: 60px;
+}
+
+.gouwuche-right {
+    width: 280px;
+    background-color: gainsboro;
+    display: none;
+    height: 960px;
+}
+
+.gouwuche-right>ol {
+    line-height: 7;
+    line
+}
+
+.gouwuche-right>ol>li {
+    border-bottom: 1px solid
+}
+
+.gouwuche-right input {
+    margin-left: 100px;
+    margin-top: 150px;
+    size: 9;
+    width: 100px;
+    height: 30px;
+}

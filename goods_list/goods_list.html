@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+   <link href="index.css" rel="stylesheet" type="text/css"/>
+   <script type="text/javascript" src="jquery-1.8.3.js"></script>
+  <!--  购物车 -->
+   <script type="text/javascript">
+			$(function() {
+				//添加单击事件
+				//给右侧div添加toggle方法，使他能在隐藏和显示两者之间切换
+				$("#purchaseCar").toggle(
+					function() {
+						$(".gouwuche-right").css("display", "inline-table");
+					},
+					function() {
+						$(".gouwuche-right").css("display", "none");
+					});
+				//添加移入事件
+				$("#purchaseCar").mouseover(function() {
+						$(this).css("cursor", "pointer");
+					})
+					//添加移出事件
+				$("#purchaseCar").mouseleave(function() {
+					$(this).css("cursor", "default");
+				})
+			})
+		</script>
+   <div id="header">
+      <h1>店铺名称</h1>
+   </div>
+ <!--   滚动显示图片 -->
+   <div id="top">
+	<div id="colee" style="overflow:hidden;height:400px;width:1100px;">
+ 
+      <div id="colee1">
+ 
+         <p ><img src="images/b.png" alt=""></p>
+ 
+         <p><img src="images/c.png"></p>
+ 
+         <p><img src="images/d.png"></p>
+ 
+         <p><img src="images/e.png"></p>
+ 
+         <p><img src="images/f.png"></p>
+ 
+      </div>
+ 
+   <div id="colee2"></div>
+ 
+</div>
+ 
+<script>
+ 
+var speed=30;
+ 
+var colee2=document.getElementById("colee2");
+ 
+var colee1=document.getElementById("colee1");
+ 
+var colee=document.getElementById("colee");
+ 
+colee2.innerHTML=colee1.innerHTML; //克隆colee1为colee2
+ 
+function Marquee1(){
+ 
+//当滚动至colee1与colee2交界时
+ 
+if(colee2.offsetTop-colee.scrollTop<=0){
+ 
+ colee.scrollTop-=colee1.offsetHeight; //colee跳到最顶端
+ 
+ }else{
+ 
+ colee.scrollTop++
+ 
+}
+ 
+}
+ 
+var MyMar1=setInterval(Marquee1,speed)//设置定时器
+ 
+//鼠标移上时清除定时器达到滚动停止的目的
+ 
+colee.onmouseover=function() {clearInterval(MyMar1)}
+ 
+//鼠标移开时重设定时器
+ 
+colee.onmouseout=function(){MyMar1=setInterval(Marquee1,speed)}
+ 
+</script>  
+</div>
+</head>
+
+
+<body>
+
+<div id="nav">
+<nav>
+<ul>
+	<li><a href="#">产品类型1</a></li>
+	<li>产品类型2</li>
+    <li>产品类型3</li>
+	<li>产品类型4</li>
+	<li>产品类型5</li>
+</ul>
+</nav>
+</div>
+
+<div id="section">
+<table class="lamp">
+<tr>
+  <td>
+    <img src="images/a.png" >
+    <p>帽子、上衣、牛仔裤，清新甜美风格，秋季衣物</p>
+    <p>200</p>
+  </td>
+  
+ 
+  <td>
+    <img src="images/a.png" >
+  </td>
+  <td>
+    <img src="images/a.png" >
+  </td>
+</tr>
+<tr>
+  <td>
+    <img src="images/a.png" >
+  </td>
+ <td>
+    <img src="images/a.png" >
+  </td>
+  <td>
+    <img src="images/a.png" >
+  </td>
+</tr>
+</table>
+</div>
+<div class="gouwuche">
+			<div class="gouwuche-left">
+				<div id="purchaseCar">
+					<font>购物车</font>
+				</div>
+			</div>
+			<div class="gouwuche-right">
+				<ol>
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+				</ol>
+				<input type="button" value="去结算" />
+			</div>
+		</div>
+<footer>
+	<div id="footer">
+    联系我们
+    </div>
+</footer>
+</body>
+</html>

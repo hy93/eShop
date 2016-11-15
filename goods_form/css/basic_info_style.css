@@ -1,0 +1,24 @@
+#basic_info{
+	display: block;
+	border: none;
+	padding: 20px;
+	float:left;
+	width: 500px;
+	height: 399px;
+	margin-left: 40px;
+	background-color: #EEE685;
+}
+
+#basic_info table{
+	margin: auto;
+	margin-top: 10px;
+
+}
+
+#basic_info table tr{
+	height: 35px;
+}
+
+#basic_info table #save_cell{
+	text-align: center;
+}
