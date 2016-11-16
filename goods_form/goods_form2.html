@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>创建新商品</title>
+
+
+	<meta charset="utf-8"/>
+
+	<!-- 引入bootstrap -->
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+	<link rel="stylesheet" type="text/css" href="css/type_choose_style.css">
+	<link rel="stylesheet" type="text/css" href="css/trans_style.css">
+	<link rel="stylesheet" type="text/css" href="css/attr_style.css">
+	<link rel="stylesheet" type="text/css" href="css/basic_info_style.css">
+	<link rel="stylesheet" type="text/css" href="css/pic_style.css">
+	<link rel="stylesheet" type="text/css" href="css/tags_style.css">
+	<link rel="stylesheet" type="text/css" href="css/dcp_style.css">
+
+	<script type="text/javascript" src="js/pic_select.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cityselect.js"></script>
+	<script type="text/javascript" src="js/city_select.js"></script>
+	<script type="text/javascript" src="js/tag_attach.js">	</script>
+	<script type="text/javascript" src="js/trans_show.js">	</script>
+	<script type="text/javascript" src="js/img_show.js"></script>
+	<script type="text/javascript" src="js/attr_attach.js"></script>
+	<script type="text/javascript" src="js/basic_info.js"></script>
+
+</head>
+<body>
+
+<section id="step1">
+	<h3 class="page-header">STEP1:填写商品基本信息</h3>
+	<div id="type_choose">
+		<div id="menu_title">请选择您的商品类型：</div>
+		<ul>		
+			<li> <a href="#">服装配饰</a> 
+			<div class="submenu">
+				<dl>
+					<dt><a href="#">女装</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">外套</a>
+						<a class="btn btn-link" onclick="choose(this)">毛衣T恤</a>
+						<a class="btn btn-link" onclick="choose(this)">套装</a>
+						<a class="btn btn-link" onclick="choose(this)">连衣裙</a>
+						<a class="btn btn-link" onclick="choose(this)">裤子</a>
+						<a class="btn btn-link" onclick="choose(this)">半身裙</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a href="#">男装</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">外套</a>
+						<a class="btn btn-link" onclick="choose(this)">毛衣T恤</a>
+						<a class="btn btn-link" onclick="choose(this)">西服正装</a>
+						<a class="btn btn-link" onclick="choose(this)">裤子</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a href="#">内衣</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">睡衣套装/家居服</a>
+						<a class="btn btn-link" onclick="choose(this)">保暖内衣</a>
+						<a class="btn btn-link" onclick="choose(this)">文胸</a>
+						<a class="btn btn-link" onclick="choose(this)">内裤</a>
+						<a class="btn btn-link" onclick="choose(this)">秋衣裤</a>
+						<a class="btn btn-link" onclick="choose(this)">袜子</a>
+						<a class="btn btn-link" onclick="choose(this)">打底裤</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>					
+					</dd>
+				</dl>
+				<dl>
+					<dt><a href="#">配件配饰</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">帽子</a>
+						<a class="btn btn-link" onclick="choose(this)">围巾</a>
+						<a class="btn btn-link" onclick="choose(this)">手套</a>
+						<a class="btn btn-link" onclick="choose(this)">皮带</a>
+						<a class="btn btn-link" onclick="choose(this)">领带</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+			</div>
+			</li>
+			<li> <a href="#">鞋靴箱包</a>
+			<div class="submenu">
+				<dl>
+					<dt><a href="#">男鞋</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">商务鞋</a>
+						<a class="btn btn-link" onclick="choose(this)">休闲鞋</a>
+						<a class="btn btn-link" onclick="choose(this)">帆布鞋</a>
+						<a class="btn btn-link" onclick="choose(this)">拖鞋</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a href="#">女鞋</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">休闲鞋</a>
+						<a class="btn btn-link" onclick="choose(this)">高跟鞋</a>
+						<a class="btn btn-link" onclick="choose(this)">靴子</a>
+						<a class="btn btn-link" onclick="choose(this)">帆布鞋</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a href="#">行李箱"></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">软质行李箱</a>
+						<a class="btn btn-link" onclick="choose(this)">硬质行李箱</a>
+						<a class="btn btn-link" onclick="choose(this)">拉杆行李包</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a href="#">女包</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">双肩包</a>
+						<a class="btn btn-link" onclick="choose(this)">单肩包</a>
+						<a class="btn btn-link" onclick="choose(this)">斜挎包</a>
+						<a class="btn btn-link" onclick="choose(this)">手拿包</a>
+						<a class="btn btn-link" onclick="choose(this)">钱包</a>
+						<a class="btn btn-link" onclick="choose(this)">卡包</a>
+						<a class="btn btn-link" onclick="choose(this)">电脑包</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a href="#">男包</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">双肩包</a>
+						<a class="btn btn-link" onclick="choose(this)">单肩包</a>
+						<a class="btn btn-link" onclick="choose(this)">公文包</a>
+						<a class="btn btn-link" onclick="choose(this)">电脑报</a>
+						<a class="btn btn-link" onclick="choose(this)">钱包</a>
+						<a class="btn btn-link" onclick="choose(this)">卡包</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+			</div>
+			</li>
+			<li> <a href="#">配件首饰</a> 
+	 		<div class="submenu">
+	 			<dl>
+					<dt><a href="#">珠宝</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">翡翠玉石</a>
+						<a class="btn btn-link" onclick="choose(this)">琥珀玛瑙</a>
+						<a class="btn btn-link" onclick="choose(this)">钻石</a>
+						<a class="btn btn-link" onclick="choose(this)">金器</a>
+						<a class="btn btn-link" onclick="choose(this)">银器</a>
+						<a class="btn btn-link" onclick="choose(this)">珍珠</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt><a href="#">首饰</a></dt>
+					<dd>
+						<a class="btn btn-link" onclick="choose(this)">头饰</a>
+						<a class="btn btn-link" onclick="choose(this)">项链</a>
+						<a class="btn btn-link" onclick="choose(this)">戒指</a>
+						<a class="btn btn-link" onclick="choose(this)">耳饰</a>
+						<a class="btn btn-link" onclick="choose(this)">手镯手链</a>
+						<a class="btn btn-link" onclick="choose(this)">其他</a>
+					</dd>
+				</dl>
+	 		</div>
+			</li>
+			<li> <a href="#">美妆洗护</a> </li>
+			<li> <a href="#">家具家纺</a> </li>
+			<li> <a href="#">鲜花宠物</a> </li>
+			<li> <a href="#">美食生鲜</a> </li>
+			<li> <a href="#">图书办公</a> </li>
+			<li> <a href="#">家电数码</a> </li>
+			<li> <a href="#">运动户外</a> </li>
+			<li> <a href="#">影视动漫周边</a> </li>
+		</ul>
+	</div>
+	<form id="basic_info" role="">
+		<table>
+				<tr>
+					<td>商品类别：</td>
+					<td><input type="text" placeholder="请从左侧列表中选择" name="type" class="form-control" id="choosed_type" disabled="disabled"></td>
+				</tr>
+				<tr>
+					<td>品牌：</td>
+					<td><input type="text" class="form-control" name="branch"></td>
+				</tr>
+				<tr>
+					<td>商品标题：</td>
+					<td><input type="text" class="form-control" name="good_name"></td>
+				</tr>
+				<tr>
+					<td>商品描述：</td>
+					<td><input type="text" class="form-control" name="describe"></td>
+				</tr>
+				<tr>
+					<td>原价：</td>
+					<td><input type="number" class="form-control" name="price"></td>
+				</tr>
+				<tr>
+					<td>货号：</td>
+					<td><input type="text" class="form-control" name="good_id"></td>
+				</tr>
+				<tr>
+					<td>库存：</td>
+					<td><input type="number" class="form-control" name="stock"></td>
+				</tr>
+				<tr>
+					<td><div><input type="radio" name="time" value="1" checked onclick="stime_show(this)" />立刻开卖</div></td>
+					<td><div><input type="radio" name="time" value="2" onclick="stime_show(this)" />稍后开卖</div></td>
+				</tr>
+		</table>	
+
+		<div id="stimediv" class="well" >
+			请选择起售时间：
+			<input class="form-control" type="date" name="stime"/>
+		</div>
+	</form>
+	<div class="btnf"><button class="btn btn-primary">保存并下一步</button></div>
+</section>
+
+<section id="step2">
+	<h3 class="page-header">STEP2:上传商品图片：</h3>
+	<div class="alert alert-info">请尽量上传正方形的图片；最多可以上传五张图片。</div>
+	<form id="pic">
+		<div><img id="preview_1" src="img/default.png" class="img-thumbnail" /> <br/>
+    	<input type="file" name="file" onchange="imgPreview(this,1)" /> <br /></div>
+		<div><img id="preview_2" src="img/default.png" class="img-thumbnail" /> <br />
+    	<input type="file" name="file" onchange="imgPreview(this,2)" /> <br /></div>
+		<div><img id="preview_3" src="img/default.png" class="img-thumbnail" /> <br/>
+    	<input type="file" name="file" onchange="imgPreview(this,3)" /> <br /></div>
+		<div><img id="preview_4" src="img/default.png" class="img-thumbnail" /> <br/>
+    	<input type="file" name="file" onchange="imgPreview(this,4)" /> <br /></div>
+		<div><img id="preview_5" src="img/default.png" class="img-thumbnail" /> <br/>
+    	<input type="file" name="file" onchange="imgPreview(this,5)" /> <br /></div>
+	</form>
+	<div class="btnf"><button class="btn btn-primary">保存并下一步</button></div>
+</section>
+
+<section id="step3">
+	<h3 class="page-header">STEP3:为商品添加标签</h3>
+	<ul id="tag_list" class="well">
+	</ul>
+	<div id="tags">
+		<div class="alert alert-info">请注意：您最多可以添加20个标签，每个标签不能超过10个字符~</div>
+		<input id="tag_input" type="text" placeholder="请输入标签内容" class="form-control" name="tag_string" maxlength="10" />
+		<button id="tag_btn" class="btn btn-inverse" onclick="attach_tag()">添加标签！</button>
+	</div>
+	<div class="btnf"><button class="btn btn-primary">保存并下一步</button></div>
+</section>
+
+</body>
+</html>
