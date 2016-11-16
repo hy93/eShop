@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>创建一个商店！</title>
+	<meta charset="utf-8">
+
+	<!-- 引入bootstrap -->
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/all.css">
+
+  <script type="text/javascript" src="js/switch.js"></script>
+
+</head>
+<body>
+
+<section id="start">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">欢迎来到eShop，你可以创建自己的商店</h3>
+        </div>
+        <div class="panel-body">
+          <button class="btn btn-large btn-info" onclick="start();">马上创建商店</button>
+        </div>
+    </div>
+</section>
+
+
+<section id="step1">
+
+  <form >
+    <fieldset>
+      <div id="legend" class="">
+        <legend class="">店主信息</legend>
+      </div>
+    
+    <div class="control-group">
+
+          <label class="control-label" for="input01">真实姓名</label>
+          <!-- Text input-->
+          <div class="controls">
+            <input type="text" placeholder="" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+    </div>
+
+    <div class="control-group">
+
+          <label class="control-label" for="input01">身份证号</label>
+          <!-- Text input-->
+          <div class="controls">
+            <input type="text" placeholder="" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+        </div>
+    <div class="control-group">
+
+          <label class="control-label" for="input01">手机号码</label>
+          <!-- Text input-->
+          <div class="controls">
+            <input type="text" placeholder="" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+        </div>
+ 
+    <div class="control-group">
+
+          <label class="control-label" for="input01">联系地址</label>
+          <!-- Text input-->
+          <div class="controls">
+            <input type="text" placeholder="" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+
+    </fieldset>
+  </form>
+    <button class="btn btn-large btn-primary" onclick="step2();">下一步</button>
+
+</section>
+
+<section id="step2">
+		  <form class="form-horizontal">
+		    <fieldset>
+		      <div id="legend" class="">
+		        <legend class="">店铺基本信息</legend>
+		      </div>  
+
+		    <div class="control-group">
+
+              <label class="control-label" for="input01">店铺名称</label>
+		          <!-- Text input-->
+		          <div class="controls">
+		            <input type="text" placeholder="" class="input-xlarge">
+		            <p class="help-block"></p>
+		          </div>
+		        </div>
+
+		    <div class="control-group">
+
+		          <!-- Text input-->
+              <label class="control-label" for="input01">所在地</label>
+		          <div class="controls">
+		            <input type="text" placeholder="" class="input-xlarge">
+		            <p class="help-block"></p>
+		          </div>
+		        </div>
+		    <div class="control-group">
+
+		          <!-- Text input-->
+              <label class="control-label" for="input01">主营类别</label>
+		          <div class="controls">
+		            <input type="text" placeholder="" class="input-xlarge">
+		            <p class="help-block"></p>
+		          </div>
+		        </div>
+
+		    <div class="control-group">
+
+		          <!-- File Upload -->
+              <label class="control-label">店铺LOGO</label>
+		          <div class="controls">
+		            <input class="input-file" id="fileInput" type="file">
+		          </div>
+		        </div>
+		    </fieldset>
+		  </form>
+      <button class="btn btn-primary" onclick="step3();">下一步</button>
+</section>
+<section id="step3">
+	  <form class="form-horizontal">
+    <fieldset>
+      <div id="legend" class="">
+        <legend class="">店铺详细信息</legend>
+      </div>
+    
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">店铺简介</label>
+          <div class="controls">
+            <input type="text" placeholder="" class="input-xlarge">
+            <p class="help-block">不要超过50个字</p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">身份证号</label>
+          <div class="controls">
+            <input type="text" placeholder="" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">手机号码</label>
+          <div class="controls">
+            <input type="text" placeholder="" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+        <div class="control-group">
+                  <label class="control-label">经营类型</label>
+                  <div class="controls">
+              <!-- Inline Radios -->
+              <label class="radio inline">
+                <input type="radio" value="个人全职" name="business_type" checked="checked">
+                个人全职
+              </label>
+              <label class="radio inline">
+                <input type="radio" value="个人兼职" name="business_type">
+                个人兼职
+              </label>
+              <label class="radio inline">
+                <input type="radio" value="公司店铺" name="business_type">
+                公司店铺
+              </label>
+          </div>
+        </div>
+
+        <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">经营执照</label>
+          <div class="controls">
+            <input type="text" placeholder="" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+        </div>
+
+    </fieldset>
+  </form>
+  <button class="btn btn-primary" onclick="over()">保存结果</button>
+</section>
+
+<section id="over" class="panel panel-default">
+    <div class="well well-lg">恭喜你，已经成功创建属于你的店铺，你可以进行以下操作：</div>
+    <button class="center btn btn-large btn-success" onclick="window.open('../goods_list/goods_list.html');">查看我的店铺</button>
+    <button class="center btn btn-default" onclick="window.open('../goods_form/goods_form.html')">为店铺添加商品</button>
+</section>
+</body>
+</html>
