@@ -4,7 +4,7 @@
 }
 #tag_list{
 	width: 50%;
-	height: 200px;
+	height: 230px;
 	margin: 0px 50px;
 	float: left;
 	overflow-y: scroll;
@@ -21,4 +21,7 @@
 	float: left;
 	font-size: 10pt;
 	line-height: 22px;
+}
+#tags .alert{
+	font-size: 14px;
 }

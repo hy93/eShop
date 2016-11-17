@@ -13,13 +13,13 @@ function attach_tag(){
 		var num = ul.childNodes.length;
 		li.innerHTML = string + "<a class=\"close\" onclick=\"delete_tag("+num+")\">&times;</a>";
 		li.setAttribute('class','label label-success');
-		li.setAttribute('id','label'+num)
+		li.setAttribute('id','label'+num);
 		n=1;
 		for(var i=0;i<num;i++){
 			if(n==-1) ul.appendChild(li);
 			else if(i==n-1) ul.insertBefore(li,ul.childNodes[i]);
 		}
-
+		document.getElementById("tag_input").value = "";
 	}
 
 }

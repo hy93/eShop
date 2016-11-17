@@ -30,6 +30,47 @@
 	<script type="text/javascript" src="js/img_show.js"></script>
 	<script type="text/javascript" src="js/attr_attach.js"></script>
 	<script type="text/javascript" src="js/basic_info.js"></script>
+	<script type="text/javascript" src="js/switch.js"></script>
+
+	<!--kind editor配置-->
+		<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
+		<script charset="utf-8" src="kindeditor/kindeditor-min.js"></script>
+		<script charset="utf-8" src="kindeditor/lang/zh_CN.js"></script>
+		<script>
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="content"]', {
+					allowFileManager : true
+				});
+				K('input[name=getHtml]').click(function(e) {
+					alert(editor.html());
+				});
+				K('input[name=isEmpty]').click(function(e) {
+					alert(editor.isEmpty());
+				});
+				K('input[name=getText]').click(function(e) {
+					alert(editor.text());
+				});
+				K('input[name=selectedHtml]').click(function(e) {
+					alert(editor.selectedHtml());
+				});
+				K('input[name=setHtml]').click(function(e) {
+					editor.html('<h3>Hello KindEditor</h3>');
+				});
+				K('input[name=setText]').click(function(e) {
+					editor.text('<h3>Hello KindEditor</h3>');
+				});
+				K('input[name=insertHtml]').click(function(e) {
+					editor.insertHtml('<strong>插入HTML</strong>');
+				});
+				K('input[name=appendHtml]').click(function(e) {
+					editor.appendHtml('<strong>添加HTML</strong>');
+				});
+				K('input[name=clear]').click(function(e) {
+					editor.html('');
+				});
+			});
+		</script>
 
 </head>
 <body>
@@ -184,7 +225,7 @@
 			<li> <a href="#">影视动漫周边</a> </li>
 		</ul>
 	</div>
-	<form id="basic_info" role="">
+	<form id="basic_info">
 		<table>
 				<tr>
 					<td>商品类别：</td>
@@ -225,7 +266,7 @@
 			<input class="form-control" type="date" name="stime"/>
 		</div>
 	</form>
-	<div class="btnf"><button class="btn btn-primary">保存并下一步</button></div>
+	<div class="btnf"><button class="btn btn-primary" onclick="step2()">保存并下一步</button></div>
 </section>
 
 <section id="step2">
@@ -243,7 +284,7 @@
 		<div><img id="preview_5" src="img/default.png" class="img-thumbnail" /> <br/>
     	<input type="file" name="file" onchange="imgPreview(this,5)" /> <br /></div>
 	</form>
-	<div class="btnf"><button class="btn btn-primary">保存并下一步</button></div>
+	<div class="btnf"><button class="btn btn-primary" onclick="step3()">保存并下一步</button></div>
 </section>
 
 <section id="step3">
@@ -251,11 +292,111 @@
 	<ul id="tag_list" class="well">
 	</ul>
 	<div id="tags">
-		<div class="alert alert-info">请注意：您最多可以添加20个标签，每个标签不能超过10个字符~</div>
+		<div class="alert alert-info">标签是搜索商品时的关键字，合适的标签可以帮助顾客快速找到您的商品~请注意：您最多可以添加20个标签，每个标签不能超过10个字符~</div>
 		<input id="tag_input" type="text" placeholder="请输入标签内容" class="form-control" name="tag_string" maxlength="10" />
-		<button id="tag_btn" class="btn btn-inverse" onclick="attach_tag()">添加标签！</button>
+		<button id="tag_btn" class="btn btn-success" onclick="attach_tag()">添加标签！</button>
 	</div>
-	<div class="btnf"><button class="btn btn-primary">保存并下一步</button></div>
+	<div class="btnf"><button class="btn btn-primary" onclick="step4()">保存并下一步</button></div>
+</section>
+
+<section id="step4">
+	<h3 class="page-header">STEP4:填写物流信息</h3>
+	<div id="transdiv">
+		发货地：
+		<div id="city_5" class="dropdown ">
+			<select class="prov form-control"></select>
+			<select class="city form-control" disabled="disabled"></select>
+			<select class="dist form-control" disabled="disabled"></select>
+		</div>
+	</div>
+	<div id="costdiv">
+		<div id="choosecost">运费：<br/> 
+		<label><input type="radio" name="trans" value="1" checked onclick="hide_trans_div()">卖家承担运费</label><br/>
+		<label><input type="radio" name="trans" value="2" onclick="show_trans_div()">买家承担运费</label><br/></div>
+		<div id="trans_cost_div" class="well">
+			运费：<input type="number" placeholder="请输入运费" class="form-control" name="trans_cost">
+		</div>
+	</div>
+	<div class="btnf"><button class="btn btn-primary" onclick="step5()">保存并下一步</button></div>
+</section>
+
+<section id="step5">
+	<h3 class="page-header">STEP5:为商品添加可选属性</h3>
+	<div id="pre_attr_div">
+		<p>已经添加的属性：</p>
+		<ul id="pre_attrs" class="well">
+			
+		</ul>
+	</div>
+
+	<div id="attr_right">
+		<div id="attr_sample">
+			<p>示例：</p>
+			<dl class="alert alert-info">
+				<dt>尺码：</dt>
+				<dd>
+					<div>XS</div> 
+					<div>S</div>
+					<div>M</div>
+					<div>L</div>
+					<div>XL</div>
+				</dd>
+				<div style="clear:both;"></div>
+				<dt>颜色：</dt>
+				<dd>
+					<img src="img/red.jpg" class="img_opt_exm img-thumbnail" data-toggle="tooltip" title="大红色">
+					<img src="img/scarlet.jpg" class="img_opt_exm img-thumbnail" data-toggle="tooltip" title="酒红色">
+					<img src="img/blue.jpg" class="img_opt_exm img-thumbnail" data-toggle="tooltip" title="宝蓝色">
+					<img src="img/green.jpg" class="img_opt_exm img-thumbnail" data-toggle="tooltip" title="军绿色">
+				</dd>
+			</dl>
+		</div>
+		<input type="text" placeholder="请输入属性名称" class="form-control" id="attr_name">
+		<button id="atcattr" class="btn btn-success" onclick="attach_attr()">添加属性</button>
+	</div>
+	
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel">编辑选项</h4>
+	            </div>
+	            <div class="modal-body">
+	            	选项描述：
+	            	<input type="text" class="form-control" id="opt_name"><br/>
+					<div><input id="opt_img_check"  type="checkbox" onclick="show_opt_img()" >使用图片</div> 
+					<div id="opt_img">
+						<img id="preview_opt" src="img/default.png"><br/>
+    					<input type="file" name="file" onchange="imgPreview(this,'opt')" />
+					</div>
+	            </div>
+	            <div class="modal-footer">
+	                <button id="closemodal" type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	                <button type="button" class="btn btn-primary" onclick="add_opt();">添加选项</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="btnf"><button class="btn btn-primary" onclick="step6()">保存并下一步</button></div>
+</section>
+
+<section id="step6">
+	<h3 class="page-header">STEP6:编辑商品详情</h3>
+	<div id="editor">
+		<textarea name="content" style="width:800px;height:400px;">KindEditor</textarea>
+	</div>
+	<div class="btnf"><button class="btn btn-primary" onclick="over();">保存内容</button></div>
+</section>
+
+<section id="over">
+	<div id="overdiv" class="panel panel-default">
+	    <div class="well well-lg">恭喜你，已经成功创建属于你的店铺，你可以进行以下操作：</div>
+	    <button class="center btn btn-large btn-success" onclick="window.open('../goods_display/goods_display.html');">查看我添加的商品</button>
+	    <button class="center btn btn-default" onclick="window.open('../goods_list/goods_list.html')">查看商品列表</button>
+    </div>
 </section>
 
 </body>
