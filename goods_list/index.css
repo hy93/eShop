@@ -1,9 +1,13 @@
 #header {
-    background-color:black;
-    color:white;
-    text-align:center;
-    padding:5px;
-    height: 100px;
+    text-align: center;
+    height: 200px;
+    font-family: 微软雅黑;
+    background-color: black;
+    color: white;
+}
+#header img{
+    margin-top: 40px;
+    height: 120px;
 }
 #top{
     height: 400px;
@@ -15,41 +19,82 @@ body{
     width: 100%;
     margin: auto;
 }
-
-#nav {
-    line-height:30px;
-    background-color:#eeeeee;
-    height: auto;
-    width:250px;
-    float:left;
-    padding:5px; 
+#cont{
+    width: 1100px;
+    margin: auto;
 }
+
+#myCarousel .carousel-inner,#myCarousel .item,#myCarousel img{
+    width: 100%;
+}
+
+.list-group {
+    line-height:30px;
+    height: auto;
+    width:180px;
+    float:left;
+    margin-right: 20px;
+}
+
+#down{
+    margin-top: 30px;
+}
+
 #section {
   /*  background-color: blue;*/
     float: left;
     height: auto;
-    width: 900px;  
+    width: 800px;  
     padding:10px; 
 }
-.lamp {
-    width:100%;
-   /* border:1px solid #d4d4d4;*/
-}
+
 .lamp td {
-    padding:2px;
     width: 300px;
-    height: 400px;
-    word-break:break-all;
-    border: 1px solid black;
+    padding: 10px;
+}
+
+.lamp td div{
+    width: 280px;
+    height: 390px;
+    padding: 5px;
+    margin: auto;
+    border: 1px solid #aaaaaa;
 }
 .lamp img{
-    width: 300px;
+    width: 270px;
+    height: 270px;
     height: auto;
+    margin: auto;
    /* width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;*/
 }
+.name{
+    overflow:hidden;
+    text-overflow:ellipsis; 
+    -o-text-overflow:ellipsis;
+    white-space:nowrap;width:100%;
+    color: black;
+}
+
+.price {
+    font-size: 18px;
+    width: 100%
+    text-align: right;
+    color: black;
+}
+.price a{
+    font-size: 18pt;
+    width: 100%
+    text-align: right;
+    color: red;
+    float: right;
+    margin-right: 30px;
+}
+
+
+
 
 footer {
     background-color:#eeeeee;
@@ -59,7 +104,14 @@ footer {
     padding:5px; 
     margin-top: 10px;
     width: 100%;
+    height: 200px;
 
+}
+footer p{
+    width: 100%;
+    text-align: right;
+    padding-right: 100px;
+    padding-top: 100px;
 }
 .gouwuche {
     position: fixed;
