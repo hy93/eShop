@@ -6,9 +6,9 @@
 	<meta charset="utf-8"/>
 
 	<!-- 引入bootstrap -->
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 
 
 	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.css">
@@ -283,12 +283,10 @@
 			</ul>
 		</div>
 		属性名：<input type="text" class="form-control" id="attr_name"><input type="button" value="添加属性" onclick="attach_attr();">
-		<div id="opt_dfn_frame">
-			选项描述：<input type="text" class="form-control" id="opt_name"><br/>
+		<div id="opt_dfn_frame">选项描述：<input type="text" class="form-control" id="opt_name"><br/>
 			<div><input id="opt_img_check"  type="checkbox" onclick="show_opt_img()" >使用图片</div> 
 			<div id="opt_img">
-				<img id="preview_opt" src=
-				"img/default.png"><br/>
+				<img id="preview_opt" src="img/default.png"><br/>
     			<input type="file" name="file" onchange="imgPreview(this,'opt')" />
 			</div>
 			<button type="button" class="save_bt btn">保存选项</button>

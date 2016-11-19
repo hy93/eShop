@@ -2,12 +2,13 @@ body{
 	margin: auto;
 	padding: 30px;
 	width: 1000px;
-	margin-top: 50px; 
+	margin-top: 0px; 
 }
 
 *{
 	font-family: 微软雅黑;
-	z-index: 1;
+	font-size: 12pt;
+	z-index: 2;
 }
 textarea{
 	display: block;
@@ -21,24 +22,53 @@ textarea{
 	line-height: 30px;
 }
 
+a{
+	font-size: 12pt;
+}
+
 h3{
 	text-align: center;
 	padding: 10px;
 }
 
-.save_bt{
-	font-size: 12pt;
-	width: 70px;
-	height: 30px;
-	margin-top: 10px;
-	border: none;
-	background-color: #e4393c;
-	color: white;
-}
-
-input[type="text"],input[type="number"]{
-	border: none;
+input[type="text"],input[type="number"],input[type="date"]{
 	height: 25px;
 	font-size: 14px;
 	width: 200px;
+	height: 35px;
+}
+
+section{
+	z-index: 100;
+	float: left;
+	width: 100%;
+	display: none;
+	margin-bottom: 150px;
+}
+
+#step1{
+	display: block;
+}
+
+.btnf{
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+
+#editor{
+	width: 800px;
+	margin: auto;
+}
+#overdiv{
+	width: 600px;
+	padding: 70px 30px;
+	margin: auto;
+}
+
+.center{
+	margin-left: 90px;
+	text-align: center;
+	align-content: center;
 }

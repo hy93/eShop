@@ -1,24 +1,25 @@
 #basic_info{
 	display: block;
 	border: none;
-	padding: 20px;
 	float:left;
-	width: 500px;
+	width: 400px;
 	height: 399px;
 	margin-left: 40px;
-	background-color: #EEE685;
 }
 
 #basic_info table{
 	margin: auto;
-	margin-top: 10px;
-
+	width: 400px;
+	margin-left: 100px;
 }
 
 #basic_info table tr{
-	height: 35px;
+	height: 45px;
 }
 
-#basic_info table #save_cell{
-	text-align: center;
+#stimediv{
+	display: none;
+	margin-left: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }

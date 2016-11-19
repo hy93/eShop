@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<!-- 引入bootstrap -->
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<button class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="opendialog();">letmein</button>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title" id="myModalLabel">编辑选项</h4>
+	            </div>
+	            <div class="modal-body">
+	            	选项描述：
+	            	<input type="text" class="form-control" id="opt_name"><br/>
+					<div><input id="opt_img_check"  type="checkbox" onclick="show_opt_img()" >使用图片</div> 
+					<div id="opt_img">
+						<img id="preview_opt" src="img/default.png"><br/>
+    					<input type="file" name="file" onchange="imgPreview(this,'opt')" />
+					</div>
+	            </div>
+	            <div class="modal-footer">
+	                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+	                <button type="button" class="btn btn-primary" onclick="add_opt();">添加选项</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+<script type="text/javascript">
+	function opendialog(){
+		console.log("test");
+		document.getElementById("myModal").setAttribute('my',1);
+	}
+</script>
+</body>
+</html>

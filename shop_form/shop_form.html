@@ -15,6 +15,12 @@
 
 </head>
 <body>
+<ul class="nav nav-tabs nav-justified" id="nav">
+  <li id="nav0" class="active" onclick="turnback()"><a href="#">回到开始</a></li>
+  <li id="nav1" class="active"><a href="#" onclick="step1()">店主信息</a></li>
+  <li id="nav2" ><a href="#" onclick="step2()">店铺基本信息</a></li>
+  <li id="nav3" ><a href="#" onclick="step3()">店铺详细信息</a></li>
+</ul>
 
 <section id="start">
     <div class="panel panel-primary">
@@ -22,7 +28,7 @@
           <h3 class="panel-title">欢迎来到eShop，你可以创建自己的商店</h3>
         </div>
         <div class="panel-body">
-          <button class="btn btn-large btn-info" onclick="start();">马上创建商店</button>
+          <button class="btn btn-large btn-info" onclick="step1();">马上创建商店</button>
         </div>
     </div>
 </section>
@@ -31,11 +37,7 @@
 <section id="step1">
 
   <form >
-    <fieldset>
-      <div id="legend" class="">
-        <legend class="">店主信息</legend>
-      </div>
-    
+    <fieldset>    
     <div class="control-group">
 
           <label class="control-label" for="input01">真实姓名</label>
@@ -83,10 +85,6 @@
 <section id="step2">
 		  <form class="form-horizontal">
 		    <fieldset>
-		      <div id="legend" class="">
-		        <legend class="">店铺基本信息</legend>
-		      </div>  
-
 		    <div class="control-group">
 
               <label class="control-label" for="input01">店铺名称</label>
@@ -128,14 +126,10 @@
 		  </form>
       <button class="btn btn-primary" onclick="step3();">下一步</button>
 </section>
+
 <section id="step3">
 	  <form class="form-horizontal">
     <fieldset>
-      <div id="legend" class="">
-        <legend class="">店铺详细信息</legend>
-      </div>
-    
-
     <div class="control-group">
 
           <!-- Text input-->
@@ -167,24 +161,23 @@
         </div>
 
         <div class="control-group">
-                  <label class="control-label">经营类型</label>
-                  <div class="controls">
-              <!-- Inline Radios -->
-              <label class="radio inline">
-                <input type="radio" value="个人全职" name="business_type" checked="checked">
-                个人全职
-              </label>
-              <label class="radio inline">
-                <input type="radio" value="个人兼职" name="business_type">
-                个人兼职
-              </label>
-              <label class="radio inline">
-                <input type="radio" value="公司店铺" name="business_type">
-                公司店铺
-              </label>
-          </div>
+            <label class="control-label">经营类型</label>
+                <div class="controls">
+                      <!-- Inline Radios -->
+                      <label class="radio inline">
+                        <input type="radio" value="个人全职" name="business_type" checked="checked">
+                        个人全职
+                      </label>
+                      <label class="radio inline">
+                        <input type="radio" value="个人兼职" name="business_type">
+                        个人兼职
+                      </label>
+                      <label class="radio inline">
+                        <input type="radio" value="公司店铺" name="business_type">
+                        公司店铺
+                      </label>
+                </div>
         </div>
-
         <div class="control-group">
 
           <!-- Text input-->

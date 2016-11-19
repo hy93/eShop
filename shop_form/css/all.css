@@ -12,18 +12,17 @@ section{
 	display: none;
 	width: 400px;
 	margin: auto;
-	margin-top: 100px;
+	margin-top: 50px;
 }
 
 #start{
 	display: block;
 	width: 400px;
 	margin: auto;
-	margin-top: 200px;
+	margin-top: 150px;
 }
 
 #over{
-	display: block;
 	width: 600px;
 	padding: 70px 30px;
 }
@@ -32,4 +31,8 @@ section{
 	margin-left: 90px;
 	text-align: center;
 	align-content: center;
+}
+#nav{
+	display: none;
+	margin-top: 50px;
 }
