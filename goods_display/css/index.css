@@ -1,5 +1,5 @@
 div {
-	/*border: 1px solid red;*/
+	border: 1px solid red;
 }
 
 .topDiv {
@@ -23,7 +23,48 @@ div {
 
 .left {
 	display: inline-block;
+	
+	width=100%;
+	height=400px;
+	position=relativa;
 }
+.left .main{
+	width=100%;
+	height=400px;
+	position=relativa;
+	overflow: hidden;
+}
+.left .main .main-i{
+	width=100%;
+	height=400px;
+	position=relativa;
+}
+.left .main .main-i .img{
+	width: 100%;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.left .controller{
+	/*width: 430px;*/
+	/*height: 13px;*/
+	/*line-height: 40px;*/
+	text-align: center;
+	/*position: absolute;*/
+	left: 10px;
+	bottom:35px;
+} 
+.left .controller .controller-i{
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+/*	box-shadow: 0 1px 1px rgba(0,0,0,3);*/
+}
+.left .controller .controller-i img{
+	width: 100%;
+}
+
+
 
 .right {
 	display: inline-block;
@@ -102,6 +143,13 @@ div {
 
 .yansefenlei {
 	margin-top: 15px;
+}
+.yansefenlei a{
+	    display: inline-block;
+}
+
+.yansefenlei img:hover{
+	border: 1px solid blue
 }
 
 .yansefenlei span {
@@ -210,6 +258,7 @@ div {
 	height: 38px;
 	font-size: 18px;
 	color: red;
+	margin-left:80px;
 }
 
 .dianji2 {
@@ -296,7 +345,7 @@ pinpai img {
 
 .gouwuche-left {
 	width: 30px;
-	display: inline-table;
+	display: inline-block;
 	padding-top: 60px;
 }
 
@@ -308,15 +357,14 @@ pinpai img {
 }
 
 .gouwuche-right>ol {
-	line-height: 7;
-	line
+	line-height: 4;
 }
 
 .gouwuche-right>ol>li {
 	border-bottom: 1px solid
 }
 
-.gouwuche-right input {
+.gouwuche-right input[type="button"] {
 	margin-left: 100px;
 	margin-top: 150px;
 	size: 9;

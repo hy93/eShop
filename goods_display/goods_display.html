@@ -7,13 +7,16 @@
 		<link rel="stylesheet" href="css/index.css" />
 		<!--引入jquery-->
 		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/city.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/city_select.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.cityselect.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {
 				//添加单击事件
 				//给右侧div添加toggle方法，使他能在隐藏和显示两者之间切换
 				$("#purchaseCar").toggle(
 					function() {
-						$(".gouwuche-right").css("display", "inline-table");
+						$(".gouwuche-right").css("display", "inline-block");
 					},
 					function() {
 						$(".gouwuche-right").css("display", "none");
@@ -22,9 +25,39 @@
 				$("#purchaseCar").mouseover(function() {
 						$(this).css("cursor", "pointer");
 					})
-					//添加移出事件
+				//添加移出事件
 				$("#purchaseCar").mouseleave(function() {
 					$(this).css("cursor", "default");
+				})
+				
+				$(".controller-i").mousemove(function(){
+					var index = $(this).attr("name");
+					$("#leftImg").attr("src","img/erji"+index+"1.jpg");
+					$(this).css("border","1px solid black");
+				})
+				
+				$(".controller-i").mouseleave(function(){
+					$(this).css("border","");
+				})
+				
+				$(".yansefenlei a").click(function(){
+					var index = $(this).attr("name");
+					$("#leftImg").attr("src","img/"+index+".jpg");
+					$(this).find("img").css("border","1px solid blue");
+					$(this).siblings().find("img").css("border","");
+				})
+				
+					//添加移入事件
+				$(".yansefenlei a").mouseover(function() {
+						$(this).css("cursor", "pointer");
+					})
+					//添加移出事件
+				$(".yansefenlei a").mouseleave(function() {
+					$(this).css("cursor", "default");
+				})
+				
+				$(".dianji2").click(function(){
+					$(".gouwuche-right ol").append("<li><input type='checkbox'><img src='img/erji0.jpg' /> 6个</li>")
 				})
 			})
 		</script>
@@ -43,7 +76,11 @@
 			</ul>
 		</div>
 		<div>
-			<div class="left">
+			<!--
+            	作者：offline
+            	时间：2016-11-17
+            	描述：
+            <div class="left">
 				<div><img src="img/erji11.jpg" alt="这是个商品" /></div>
 				<div class="erjishow">
 					<img src="img/erji0.jpg" />
@@ -53,6 +90,23 @@
 					<img src="img/erji4.jpg" />
 				</div>
 			</div>
+            -->
+            <div class="left">
+            	<div class="main">
+            		<div class="main-i">
+            			<img id="leftImg" src="img/erji11.jpg" >
+            		</div>
+            		
+            	</div>
+            	<div class="controller">
+            		<div class="controller-i" name="1"><img src="img/erji.jpg"/></div>
+            		<div class="controller-i" name="0"><img src="img/erji0.jpg"/></div>
+            		<div class="controller-i" name="2"><img src="img/erji2.jpg"/></div>
+            		<div class="controller-i" name="3"><img src="img/erji3.jpg"/></div>
+            		<div class="controller-i" name="4"><img src="img/erji4.jpg"/></div>
+            		<!--<a class="controller-i" href="javascript:;"><img src="img/erji4.jpg"/></a>-->
+            	</div>
+            </div>
 			<div class="right">
 				<div>
 					<h3>【新品发售】 Beats Beats Solo3 Wireless 头戴式无线蓝牙耳机</h3>
@@ -71,14 +125,43 @@
 						<span><font>¥ 2288.00</font></span>
 					</div>
 				</div>
-				<div class="yunfei">
-					<font>运费</font>
+				
+					<!--
+                    	作者：offline
+                    	时间：2016-11-16
+                    	描述：
+                    	<div class="yunfei">
+                    <font>运费</font>
 					<span>广东东莞 至</span>
 					<span>北京<i>^</i></span>
 					<span>海淀区<i>^</i></span>
 					<span>北下关街道<i>^</i></span>
 					<span>快递: 0.00</span>
+							</div>
+                    -->
+                    <!--
+                    	作者：offline
+                    	时间：2016-11-16
+                    	描述：
+                    	<div id="city_5" class="yunfei">
+            		<font>运费</font>
+            		<span>广东东莞 至</span>
+					<select class="prov"><slect>
+					<select class="city" disabled="disabled"><slect>
+					<select class="dist" disabled="disabled"><slect>
+					<span>快递: 0.00</span>
 				</div>
+                    -->
+                <div id="city_5" class="yunfei">
+            		<font>运费</font>
+            		<span>广东东莞 至</span>
+					<select class="prov"></select>
+					<select class="city" disabled="disabled"></select>
+					<select class="dist" disabled="disabled"></select>
+					<span>快递: 0.00</span>
+				</div>
+            	
+		
 				<div class="yuexiaoliang">
 					<table>
 						<tr>
@@ -99,10 +182,10 @@
 				</div>
 				<div class="yansefenlei">
 					<span>颜色分类</span>
-					<a><img src="img/heise.jpg"></a>
-					<a><img src="img/meiguijin.jpg"></a>
-					<a><img src="img/yinse.jpg"></a>
-					<a><img src="img/jinse.jpg"></a>
+					<a name="erji11"><img src="img/heise.jpg"></a>
+					<a name="玫瑰金1"><img src="img/meiguijin.jpg"></a>
+					<a name="银色1"><img src="img/yinse.jpg"></a>
+					<a name="金色1"><img src="img/jinse.jpg"></a>
 				</div>
 				<div class="taocan">
 					<font>套餐类型</font>
@@ -110,7 +193,7 @@
 				</div>
 				<div class="shuliang">
 					<font>数量</font>
-					<input size="2" type="number"/>
+					<input size="2" placeholder="1" min="1" style="width: 60px;margin-left: 25px;" type="number"/>
 					<font>件 库存7件</font>
 				</div>
 				<div>
@@ -229,7 +312,7 @@
 						<li>产品名称：Beats Beats Solo3 Wirele&nbsp;&nbsp;</li>
 						<li>兼容平台: iOS&nbsp;&nbsp;</li>
 						<li>套餐类型: 官方标配</li><br>
-						<li>颜色分类: 黑色 &nbsp;金色 &nbsp; 玫瑰金色 &nbsp;银色 &nbsp;亮黑色</li>
+						<li>颜色分类: 黑色 &nbsp;金色 &nbsp; 玫瑰金 &nbsp;银色 </li>
 						<li>佩戴方式: 头戴护耳式</li>
 						<li>耳机类型: 无线</li><br>
 						<li>有无麦克风: 带麦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
@@ -265,18 +348,14 @@
 				<div id="purchaseCar">
 					<font>购物车</font>
 				</div>
+				<div></div>
 			</div>
-			<div class="gouwuche-right">
+		<div class="gouwuche-right">
 				<ol>
-					<li>1</li>
-					<li>2</li>
-					<li>3</li>
-					<li>4</li>
+					
 				</ol>
 				<input type="button" value="去结算" />
 			</div>
 		</div>
-
 	</body>
-
 </html>
