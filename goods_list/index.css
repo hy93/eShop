@@ -6,16 +6,15 @@
 }
 #top{
     height: 400px;
+    width: 1100px;
     background-color:#eeeeee;
 }
-#colee1 img{
-    width: 1100px;
-    height: 400px;
-}
+
 body{
     width: 1100px;
     margin: auto;
 }
+
 #nav {
     line-height:30px;
     background-color:#eeeeee;
@@ -25,7 +24,7 @@ body{
     padding:5px; 
 }
 #section {
-    background-color: blue;
+  /*  background-color: blue;*/
     float: left;
     height: auto;
     width: 870px;  
@@ -39,9 +38,8 @@ body{
     padding:10px;
     width: 250px;
     height: 300px;
-/*    max-width: 100%;
-    max-height: 100%;*/
     word-break:break-all;
+    border: 10px solid red;
 }
 .lamp img{
     width: 230px;
@@ -109,4 +107,12 @@ footer {
     size: 9;
     width: 100px;
     height: 30px;
+}
+.carousel-inner img{
+    width: 1100px;
+    height: 400px;
+}
+.item {
+    width: 1100px;
+    height: 400px;
 }
