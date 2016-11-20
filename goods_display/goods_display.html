@@ -12,42 +12,60 @@
 		<script src="js/jquery.cityselect.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {
+				//先动态设置购物车的宽度...
+				$(".gouwuche").css("width","30px");
 				//添加单击事件
 				//给右侧div添加toggle方法，使他能在隐藏和显示两者之间切换
 				$("#purchaseCar").toggle(
 					function() {
-						$(".gouwuche-right").css("display", "inline-block");
+						
+						$(".gouwuche-right").css("display", "block");
+						//给width属性设置为空！！！！！！！！！！！
+						$(".gouwuche").css("width","");
+						
 					},
 					function() {
+						
 						$(".gouwuche-right").css("display", "none");
+						//给width属性重新设置为30px，。。。。。。。。
+						$(".gouwuche").css("width","30px");
+						
 					});
+					//添加移入事件
+				$(".controller").mouseover(function() {
+						$(this).css("cursor", "pointer");
+					})
+					//添加移出事件
+				$(".controller").mouseleave(function() {
+					$(this).css("cursor", "default");
+				})
 				//添加移入事件
 				$("#purchaseCar").mouseover(function() {
 						$(this).css("cursor", "pointer");
 					})
-				//添加移出事件
+					//添加移出事件
 				$("#purchaseCar").mouseleave(function() {
 					$(this).css("cursor", "default");
 				})
-				
-				$(".controller-i").mousemove(function(){
+				$(".controller-i").mousemove(function() {
 					var index = $(this).attr("name");
-					$("#leftImg").attr("src","img/erji"+index+"1.jpg");
-					$(this).css("border","1px solid black");
+					$("#leftImg").attr("src", "img/erji" + index + "1.jpg");
+					$(this).css("border", "1px solid black");
 				})
-				
-				$(".controller-i").mouseleave(function(){
-					$(this).css("border","");
+				$(".controller-i").mouseleave(function() {
+					$(this).css("border", "");
 				})
-				
-				$(".yansefenlei a").click(function(){
+				$(".yansefenlei a").click(function() {
 					var index = $(this).attr("name");
-					$("#leftImg").attr("src","img/"+index+".jpg");
-					$(this).find("img").css("border","1px solid blue");
-					$(this).siblings().find("img").css("border","");
+					$("#leftImg").attr("src", "img/" + index + ".jpg");
+					$(this).find("img").css("border", "1px solid blue");
+					//点击时2加一个 bePurchase类，方便找到
+					$(this).find("img").addClass("bePurchased");
+					$(this).siblings().find("img").css("border", "");
+					//其他 img 要移除bePurchased类
+					$(this).siblings().find("img").removeClass("bePurchased");
 				})
-				
-					//添加移入事件
+				//添加移入事件
 				$(".yansefenlei a").mouseover(function() {
 						$(this).css("cursor", "pointer");
 					})
@@ -55,9 +73,32 @@
 				$(".yansefenlei a").mouseleave(function() {
 					$(this).css("cursor", "default");
 				})
-				
-				$(".dianji2").click(function(){
-					$(".gouwuche-right ol").append("<li><input type='checkbox'><img src='img/erji0.jpg' /> 6个</li>")
+				$(".dianji2").click(function() {
+					//获得被选中的图片的src
+					var photoSrc = $(".bePurchased").attr("src");
+					//获得数量
+					var photoNumber = $(".shuliang input[type='number']").val();
+					//判断如果购物车里有这种商品，直接数量相加，如果没有则append
+					//					if($.contains($(".gouwuche-right ol")[0],$("img[src='"+photoSrc+"']")[0])){
+//										if($.contains($(".gouwuche-right ol")[0],$("li")[0])){
+//											alert(123);
+//										}
+					var flag = false;
+					$(".gouwuche-right ol li").each(function() {
+						if (photoSrc == $(this).find("img").attr("src")) {
+							
+							flag = true;
+						}
+					})
+					if (flag) {
+						//更改数量
+						var numberObj = $(".gouwuche-right ol li").find("img[src='"+photoSrc+"']").next("span");
+						var oldNumber = parseInt(numberObj.text());
+						numberObj.text(parseInt(photoNumber)+oldNumber);
+						
+					} else {
+						$(".gouwuche-right ol").append("<li><input type='checkbox'>耳机  <img src='" + photoSrc + "'>&nbsp;<span>"+photoNumber+"</span>&nbsp;个</li>");
+					}
 				})
 			})
 		</script>
@@ -91,22 +132,22 @@
 				</div>
 			</div>
             -->
-            <div class="left">
-            	<div class="main">
-            		<div class="main-i">
-            			<img id="leftImg" src="img/erji11.jpg" >
-            		</div>
-            		
-            	</div>
-            	<div class="controller">
-            		<div class="controller-i" name="1"><img src="img/erji.jpg"/></div>
-            		<div class="controller-i" name="0"><img src="img/erji0.jpg"/></div>
-            		<div class="controller-i" name="2"><img src="img/erji2.jpg"/></div>
-            		<div class="controller-i" name="3"><img src="img/erji3.jpg"/></div>
-            		<div class="controller-i" name="4"><img src="img/erji4.jpg"/></div>
-            		<!--<a class="controller-i" href="javascript:;"><img src="img/erji4.jpg"/></a>-->
-            	</div>
-            </div>
+			<div class="left">
+				<div class="main">
+					<div class="main-i">
+						<img id="leftImg" src="img/erji11.jpg">
+					</div>
+
+				</div>
+				<div class="controller">
+					<div class="controller-i" name="1"><img src="img/erji.jpg" /></div>
+					<div class="controller-i" name="0"><img src="img/erji0.jpg" /></div>
+					<div class="controller-i" name="2"><img src="img/erji2.jpg" /></div>
+					<div class="controller-i" name="3"><img src="img/erji3.jpg" /></div>
+					<div class="controller-i" name="4"><img src="img/erji4.jpg" /></div>
+					<!--<a class="controller-i" href="javascript:;"><img src="img/erji4.jpg"/></a>-->
+				</div>
+			</div>
 			<div class="right">
 				<div>
 					<h3>【新品发售】 Beats Beats Solo3 Wireless 头戴式无线蓝牙耳机</h3>
@@ -125,8 +166,8 @@
 						<span><font>¥ 2288.00</font></span>
 					</div>
 				</div>
-				
-					<!--
+
+				<!--
                     	作者：offline
                     	时间：2016-11-16
                     	描述：
@@ -139,7 +180,7 @@
 					<span>快递: 0.00</span>
 							</div>
                     -->
-                    <!--
+				<!--
                     	作者：offline
                     	时间：2016-11-16
                     	描述：
@@ -152,16 +193,15 @@
 					<span>快递: 0.00</span>
 				</div>
                     -->
-                <div id="city_5" class="yunfei">
-            		<font>运费</font>
-            		<span>广东东莞 至</span>
+				<div id="city_5" class="yunfei">
+					<font>运费</font>
+					<span>广东东莞 至</span>
 					<select class="prov"></select>
 					<select class="city" disabled="disabled"></select>
 					<select class="dist" disabled="disabled"></select>
 					<span>快递: 0.00</span>
 				</div>
-            	
-		
+
 				<div class="yuexiaoliang">
 					<table>
 						<tr>
@@ -193,7 +233,7 @@
 				</div>
 				<div class="shuliang">
 					<font>数量</font>
-					<input size="2" placeholder="1" min="1" style="width: 60px;margin-left: 25px;" type="number"/>
+					<input size="2" value="1" placeholder="1" min="1" style="width: 60px;margin-left: 25px;" type="number" />
 					<font>件 库存7件</font>
 				</div>
 				<div>
@@ -350,9 +390,9 @@
 				</div>
 				<div></div>
 			</div>
-		<div class="gouwuche-right">
+			<div class="gouwuche-right">
 				<ol>
-					
+
 				</ol>
 				<input type="button" value="去结算" />
 			</div>

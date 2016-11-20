@@ -23,48 +23,51 @@ div {
 
 .left {
 	display: inline-block;
-	
 	width=100%;
 	height=400px;
 	position=relativa;
 }
-.left .main{
+
+.left .main {
 	width=100%;
 	height=400px;
 	position=relativa;
 	overflow: hidden;
 }
-.left .main .main-i{
+
+.left .main .main-i {
 	width=100%;
 	height=400px;
 	position=relativa;
 }
-.left .main .main-i .img{
+
+.left .main .main-i .img {
 	width: 100%;
-	position:absolute;
-	left:0;
-	top:0;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
-.left .controller{
+
+.left .controller {
 	/*width: 430px;*/
 	/*height: 13px;*/
 	/*line-height: 40px;*/
 	text-align: center;
 	/*position: absolute;*/
 	left: 10px;
-	bottom:35px;
-} 
-.left .controller .controller-i{
+	bottom: 35px;
+}
+
+.left .controller .controller-i {
 	display: inline-block;
 	width: 60px;
 	height: 60px;
-/*	box-shadow: 0 1px 1px rgba(0,0,0,3);*/
+	/*	box-shadow: 0 1px 1px rgba(0,0,0,3);*/
 }
-.left .controller .controller-i img{
+
+.left .controller .controller-i img {
 	width: 100%;
 }
-
-
 
 .right {
 	display: inline-block;
@@ -144,11 +147,12 @@ div {
 .yansefenlei {
 	margin-top: 15px;
 }
-.yansefenlei a{
-	    display: inline-block;
+
+.yansefenlei a {
+	display: inline-block;
 }
 
-.yansefenlei img:hover{
+.yansefenlei img:hover {
 	border: 1px solid blue
 }
 
@@ -251,25 +255,25 @@ div {
 	position: absolute;
 }
 
-
 .dianji1 {
 	background-color: #FFEDED;
 	width: 181px;
 	height: 38px;
 	font-size: 18px;
 	color: red;
-	margin-left:80px;
+	margin-left: 80px;
 }
 
 .dianji2 {
 	width: 181px;
 	height: 38px;
 	position: relative;
-    top: 10px;
-    left: 10px;
+	top: 10px;
+	left: 10px;
 	background: url(../img/gouwuche.PNG);
 }
-.middle{
+
+.middle {
 	margin-top: 10px;
 }
 
@@ -301,7 +305,7 @@ div {
 	margin-right: 10px;
 }
 
-pinpai img {
+.pinpai img {
 	padding-left: 20px;
 }
 
@@ -344,8 +348,9 @@ pinpai img {
 }
 
 .gouwuche-left {
-	width: 30px;
-	display: inline-block;
+	position: fixed;
+    top: 10px;
+    width: 30px;
 	padding-top: 60px;
 }
 
@@ -354,6 +359,7 @@ pinpai img {
 	background-color: gainsboro;
 	display: none;
 	height: 960px;
+	margin-left: 30px;
 }
 
 .gouwuche-right>ol {
@@ -365,9 +371,9 @@ pinpai img {
 }
 
 .gouwuche-right input[type="button"] {
-	margin-left: 100px;
-	margin-top: 150px;
-	size: 9;
 	width: 100px;
 	height: 30px;
+	position: absolute;
+	top: 600px;
+	left: 130px;
 }
