@@ -8,6 +8,30 @@ form{
 	margin: auto;
 }
 
+.control-label{
+	float: left;
+}
+.controls{
+	float: right;
+}
+.control-group{
+	width: 320px;
+	float: left;
+	margin: auto;
+	margin-top: 20px;
+}
+.btn-large{
+	margin: auto;
+}
+.btnf{
+	float: left;
+	width: 100%;
+	text-align: center;
+	margin-top: 30px;
+}
+.radio{
+	margin-right: 100px;
+}
 section{
 	display: none;
 	width: 400px;
@@ -35,4 +59,10 @@ section{
 #nav{
 	display: none;
 	margin-top: 50px;
+}
+#preview_1{
+	width: 200px;
+	height: 60px;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }

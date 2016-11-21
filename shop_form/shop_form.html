@@ -11,7 +11,9 @@
 
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 
-  <script type="text/javascript" src="js/switch.js"></script>
+  	<script type="text/javascript" src="js/switch.js"></script>
+	<script type="text/javascript" src="js/img_show.js"></script>
+	<script type="text/javascript" src="js/pic_select.js"></script>
 
 </head>
 <body>
@@ -78,7 +80,7 @@
 
     </fieldset>
   </form>
-    <button class="btn btn-large btn-primary" onclick="step2();">下一步</button>
+    <div class="btnf"><button class="btn btn-primary" onclick="step2()">保存并下一步</button></div>
 
 </section>
 
@@ -117,14 +119,16 @@
 		    <div class="control-group">
 
 		          <!-- File Upload -->
-              <label class="control-label">店铺LOGO</label>
+              <label class="control-label">店铺Banner</label>
 		          <div class="controls">
-		            <input class="input-file" id="fileInput" type="file">
+		            <img id="preview_1" src="img/banner.gif" class="img-thumbnail" /> <br/>
+    				<input type="file" name="file" onchange="imgPreview(this,1)" /> <br />
 		          </div>
 		        </div>
 		    </fieldset>
 		  </form>
-      <button class="btn btn-primary" onclick="step3();">下一步</button>
+      
+    <div class="btnf"><button class="btn btn-primary" onclick="step3()">保存并下一步</button></div>
 </section>
 
 <section id="step3">
@@ -140,26 +144,8 @@
           </div>
         </div>
 
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">身份证号</label>
-          <div class="controls">
-            <input type="text" placeholder="" class="input-xlarge">
-            <p class="help-block"></p>
-          </div>
-        </div>
-
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">手机号码</label>
-          <div class="controls">
-            <input type="text" placeholder="" class="input-xlarge">
-            <p class="help-block"></p>
-          </div>
-        </div>
-
+   
+    
         <div class="control-group">
             <label class="control-label">经营类型</label>
                 <div class="controls">
@@ -190,7 +176,8 @@
 
     </fieldset>
   </form>
-  <button class="btn btn-primary" onclick="over()">保存结果</button>
+  
+    <div class="btnf"><button class="btn btn-primary" onclick="over()">保存</button></div>
 </section>
 
 <section id="over" class="panel panel-default">
