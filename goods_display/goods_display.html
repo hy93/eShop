@@ -31,14 +31,6 @@
 						$(".gouwuche").css("width","30px");
 						
 					});
-					//添加移入事件
-				$(".controller").mouseover(function() {
-						$(this).css("cursor", "pointer");
-					})
-					//添加移出事件
-				$(".controller").mouseleave(function() {
-					$(this).css("cursor", "default");
-				})
 				//添加移入事件
 				$("#purchaseCar").mouseover(function() {
 						$(this).css("cursor", "pointer");
@@ -91,13 +83,13 @@
 						}
 					})
 					if (flag) {
-						//更改数量
-						var numberObj = $(".gouwuche-right ol li").find("img[src='"+photoSrc+"']").next("span");
-						var oldNumber = parseInt(numberObj.text());
-						numberObj.text(parseInt(photoNumber)+oldNumber);
+						//更改数量,
+						var numberObj = $(".gouwuche-right ol li").find("img[src='"+photoSrc+"']").next("input");
+						var oldNumber = parseInt(numberObj.val());
+						numberObj.val(parseInt(photoNumber)+oldNumber);
 						
 					} else {
-						$(".gouwuche-right ol").append("<li><input type='checkbox'>耳机  <img src='" + photoSrc + "'>&nbsp;<span>"+photoNumber+"</span>&nbsp;个</li>");
+						$(".gouwuche-right ol").append("<li><input type='checkbox'>耳机  <img src='" + photoSrc + "'>&nbsp;<input style='width: 60px;' value='"+photoNumber+"' type='number'>&nbsp;个</li>");
 					}
 				})
 			})
@@ -233,7 +225,7 @@
 				</div>
 				<div class="shuliang">
 					<font>数量</font>
-					<input size="2" value="1" placeholder="1" min="1" style="width: 60px;margin-left: 25px;" type="number" />
+					<input value="1" placeholder="1" min="1" style="width: 60px;margin-left: 25px;" type="number" />
 					<font>件 库存7件</font>
 				</div>
 				<div>
@@ -398,4 +390,5 @@
 			</div>
 		</div>
 	</body>
+
 </html>
