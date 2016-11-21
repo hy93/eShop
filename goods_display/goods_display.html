@@ -39,6 +39,14 @@
 				$("#purchaseCar").mouseleave(function() {
 					$(this).css("cursor", "default");
 				})
+				//添加移入事件
+				$(".controller").mouseover(function() {
+						$(this).css("cursor", "pointer");
+					})
+					//添加移出事件
+				$(".controller").mouseleave(function() {
+					$(this).css("cursor", "default");
+				})
 				$(".controller-i").mousemove(function() {
 					var index = $(this).attr("name");
 					$("#leftImg").attr("src", "img/erji" + index + "1.jpg");
@@ -69,28 +77,33 @@
 					//获得被选中的图片的src
 					var photoSrc = $(".bePurchased").attr("src");
 					//获得数量
-					var photoNumber = $(".shuliang input[type='number']").val();
-					//判断如果购物车里有这种商品，直接数量相加，如果没有则append
-					//					if($.contains($(".gouwuche-right ol")[0],$("img[src='"+photoSrc+"']")[0])){
-//										if($.contains($(".gouwuche-right ol")[0],$("li")[0])){
-//											alert(123);
-//										}
-					var flag = false;
-					$(".gouwuche-right ol li").each(function() {
-						if (photoSrc == $(this).find("img").attr("src")) {
+					if(photoSrc!=undefined){
+							var photoNumber = $(".shuliang input[type='number']").val();
+						//判断如果购物车里有这种商品，直接数量相加，如果没有则append
+						//					if($.contains($(".gouwuche-right ol")[0],$("img[src='"+photoSrc+"']")[0])){
+	//										if($.contains($(".gouwuche-right ol")[0],$("li")[0])){
+	//											alert(123);
+	//										}
+						var flag = false;
+						$(".gouwuche-right ol li").each(function() {
+							if (photoSrc == $(this).find("img").attr("src")) {
+								flag = true;
+							}
+						})
+						if (flag) {
+							//更改数量
+							var numberObj = $(".gouwuche-right ol li").find("img[src='"+photoSrc+"']").next("input");
+							var oldNumber = parseInt(numberObj.val());
+							numberObj.val(parseInt(photoNumber)+oldNumber);
 							
-							flag = true;
+						} else {
+							$(".gouwuche-right ol").append("<li><input type='checkbox'>耳机  <img src='" + photoSrc + "'>&nbsp;<input style='width: 60px;' value='"+photoNumber+"' type='number'>&nbsp;个</li>");
 						}
-					})
-					if (flag) {
-						//更改数量,
-						var numberObj = $(".gouwuche-right ol li").find("img[src='"+photoSrc+"']").next("input");
-						var oldNumber = parseInt(numberObj.val());
-						numberObj.val(parseInt(photoNumber)+oldNumber);
-						
-					} else {
-						$(".gouwuche-right ol").append("<li><input type='checkbox'>耳机  <img src='" + photoSrc + "'>&nbsp;<input style='width: 60px;' value='"+photoNumber+"' type='number'>&nbsp;个</li>");
 					}
+					else{
+						alert("请选择颜色");
+					}
+					
 				})
 			})
 		</script>
