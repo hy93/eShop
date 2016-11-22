@@ -28,18 +28,6 @@ body{
     width: 100%;
 }
 
-.list-group {
-    line-height:30px;
-    height: auto;
-    width:180px;
-    float:left;
-    margin-right: 20px;
-}
-
-#down{
-    margin-top: 30px;
-}
-
 #section {
     float: left;
     height: auto;
@@ -57,12 +45,12 @@ body{
     height: 390px;
     padding: 5px;
     margin: auto;
-    border: 1px solid #aaaaaa;
+    box-shadow: 0px 2px 10px #bbbbbb;
+   /* border: 1px solid #aaaaaa;*/
 }
 .lamp img{
     width: 270px;
     height: 270px;
-    height: auto;
     margin: auto;
    /* width: auto;
     height: auto;
@@ -90,57 +78,6 @@ body{
     color: red;
     float: right;
     margin-right: 30px;
-}
-
-
-.gouwuche {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 960px;
-    background: black;
-}
-
-#purchaseCar {
-    text-align: center;
-}
-
-#purchaseCar font {
-    color: white;
-}
-
-#purchaseCar:hover {
-    background-color: red;
-}
-
-.gouwuche-left {
-    width: 30px;
-    display: inline-table;
-    padding-top: 60px;
-}
-
-.gouwuche-right {
-    width: 280px;
-    background-color: gainsboro;
-    display: none;
-    height: 960px;
-}
-
-.gouwuche-right>ol {
-    line-height: 7;
-    line
-}
-
-.gouwuche-right>ol>li {
-    border-bottom: 1px solid
-}
-
-.gouwuche-right input {
-    margin-left: 100px;
-    margin-top: 150px;
-    size: 9;
-    width: 100px;
-    height: 30px;
 }
 .carousel-inner img{
     width: 1100px;
