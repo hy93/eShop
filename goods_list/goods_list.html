@@ -4,15 +4,16 @@
 	<title></title>
 	<meta charset="utf-8">
   	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
-   <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
-   <link href="index.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+    <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+    <link href="index.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
    <div id="header">
-      <img src="images/top.jpg">
+   <img src="images/top.png"> 
+ 
  <!-- 按钮触发模态框 -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" >登录</button>
+<!-- <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" >登录</button> -->
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -77,7 +78,6 @@ $(function() {
 <!-- 带有下拉菜单的导航栏 &  搜索 -->
 <div class="guide" >
   <ul class="nav nav-pills">
-    <li class="active"><a href="#">Home</a></li>
     <li><a href="#">店铺首页</a></li>
     <li><a href="#">店铺详情</a></li>
     <li class="dropdown">
@@ -88,13 +88,14 @@ $(function() {
         <li><a href="#">种类1</a></li>
         <li><a href="#">种类2</a></li>
         <li><a href="#">种类3</a></li>
-        <li class="divider"></li>
-        <li><a href="#">分离的链接</a></li>
       </ul>
     </li>
-    <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+    <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
    <li><input type="text" class="searchcont" placeholder="请输入搜索内容"/>  </li>
    <li><button type="button" class="">搜索</button></li>
+   <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+   <li><button>注册</button></li>
+   <li><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" >登录</button></li>
   </ul>
  </div><!-- 导航栏结束部分 -->
 

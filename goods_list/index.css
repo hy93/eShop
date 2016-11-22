@@ -1,20 +1,6 @@
-#header {
-    text-align: center;
-    height: 200px;
-    font-family: 微软雅黑;
-    background-color: black;
-    color: white;
-}
 #header img{
-    margin-top: 40px;
-    height: 120px;
+    height: 300px;
 }
-#top{
-    height: 400px;
-    width: 100%;
-    background-color:#eeeeee;
-}
-
 body{
     width: 100%;
     margin: auto;
@@ -89,4 +75,7 @@ body{
 }
 .modal-dialog{
     width: 300px;
+}
+.guide{
+    font-size: 25px;
 }
