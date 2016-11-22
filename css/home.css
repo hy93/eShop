@@ -1,0 +1,10 @@
+#home #mycarousel{
+	width: 950px;
+	height: 600px;
+	margin: auto;
+	overflow-wrap: hidden;
+	overflow: hidden;
+}
+#mycarousel .item img{
+	width: 1100px;
+}

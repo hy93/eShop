@@ -1,0 +1,50 @@
+.card1 .img1{
+	width: 158px;
+	height: 105px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.card1 .img1 img{
+	width: 100%;
+}
+.card1 .img2{
+	width: 158px;
+	height: 105px;
+	position: absolute;
+	left: 0px;
+	top: 107px;
+}
+.card1 .img2 img{
+	height: 100%;
+}
+.card1 .img3{
+	width: 158px;
+	height: 104px;
+	position: absolute;
+	left: 0px;
+	top: 214px;
+}
+.card1 .img3 img{
+	width: 100%;
+}
+.card1 .img4{
+	width: 158px;
+	height: 158px;
+	position: absolute;
+	left: 160px;
+	top: 0px;
+}
+.card1 .img4 img{
+	height: 100%;
+}
+.card1 .img5{
+	width: 158px;
+	height: 158px;
+	position: absolute;
+	left: 160px;
+	top: 160px;
+}
+.card1 .img5 img{
+	height: 100%;
+}
