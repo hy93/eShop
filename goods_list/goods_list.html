@@ -8,7 +8,7 @@
    <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
  <script type="text/javascript" src="jquery-1.8.3.js"></script>
    <link href="index.css" rel="stylesheet" type="text/css"/>
-   </head>
+</head>
    <body>
   <!--  购物车 -->
    <script type="text/javascript">
@@ -34,7 +34,37 @@
 		</script>
    <div id="header">
       <img src="images/top.jpg">
-   </div>
+ <!-- 按钮触发模态框 -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" >登录</button>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"><font color="black">登录</font></h4>
+            </div>
+             <div class="modal-body">
+               <input type="text" class="form-control" placeholder="请输入用户名"/>
+              <div>&nbsp</div>
+               <input type="password" class="form-control" placeholder="请输入密码"/>
+            </div>
+          
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary">登录</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+<script>
+$(function() {
+    $('#myModal').modal({
+        keyboard: true
+    })
+});
+</script>
+</div><!-- header -->
 
 <div id="cont">
  <!--   滚动显示图片 -->
@@ -67,6 +97,33 @@
     </a>
 </div>
 
+<!-- 带有下拉菜单的导航栏 &  搜索 -->
+<div class="guide" >
+  <ul class="nav nav-pills">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">店铺首页</a></li>
+    <li><a href="#">店铺详情</a></li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        商品分类 <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#">种类1</a></li>
+        <li><a href="#">种类2</a></li>
+        <li><a href="#">种类3</a></li>
+        <li class="divider"></li>
+        <li><a href="#">分离的链接</a></li>
+      </ul>
+    </li>
+    <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
+   <li><input type="text" class="searchcont" placeholder="请输入搜索内容"/>  </li>
+   <li><button type="button" class="">搜索</button></li>
+  </ul>
+ </div><!-- 导航栏结束部分 -->
+
+
+
+<!-- 主体部分 -->
 <section id="down">
 <ul class="list-group">
 	<li class="list-group-item"><a href="#">产品类型1</a></li>
@@ -126,8 +183,6 @@
   </td>
 </tr>
 </table>
-
-
 </section>
 <div class="gouwuche">
 			<div class="gouwuche-left">
@@ -146,11 +201,6 @@
 			</div>
 		</div>
 </div>
-<footer>
-	<div id="footer">
-      <p class="lead">联系电话：85668788  &nbsp&nbsp&nbsp<br/>
-      邮箱：236547114@qq.com</p>
-    </div>
-</footer>
+
 </body>
 </html>
