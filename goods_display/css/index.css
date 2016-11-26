@@ -1,23 +1,23 @@
 div {
-	/**
-	 * border: 1px solid red;
-	 */
+	
+	border: 1px solid red;
+	 
 }
-
-.topDiv {
-	background-color: black;
+.topDiv img{
+	width: 1350px;
 }
 
 .menu>ul>li {
 	display: inline;
-	margin-right: 20px;
+	margin-left: 150px;
 	font-family: "微软雅黑";
-	font-size: 14px;
-	color: white;
+	font-size: 15px
+}
+.main-i img{
+	width: 600px;
 }
 
 .menu {
-	background-color: #E51837;
 	height: 50px;
 	margin-top: 0;
 	padding-top: 3px;
@@ -73,12 +73,12 @@ div {
 
 .right {
 	display: inline-block;
-	margin-left: 150px;
+	margin-left:50px;
+	margin-top: 0px;
 }
 
 .tag {
 	margin-top: 5px;
-	background-color: #F0EFEF;
 }
 
 .tag2 {
@@ -154,8 +154,11 @@ div {
 	display: inline-block;
 }
 
+.yansefenlei .jj{
+	margin-left: 56px;
+}
 .yansefenlei img:hover {
-	border: 1px solid blue
+	border: 1px solid red
 }
 
 .yansefenlei span {
@@ -166,6 +169,7 @@ div {
 
 .yansefenlei img {
 	border: 1px gray dashed;
+	margin-left: 10px;
 }
 
 .taocan {

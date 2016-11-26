@@ -3,42 +3,15 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>beats官方旗舰店</title>
+		<title>安妮花屋</title>
 		<link rel="stylesheet" href="css/index.css" />
-		<!--引入jquery-->
 		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/city.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/city_select.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/jquery.cityselect.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
 			$(function() {
-				//先动态设置购物车的宽度...
-				$(".gouwuche").css("width","30px");
-				//添加单击事件
-				//给右侧div添加toggle方法，使他能在隐藏和显示两者之间切换
-				$("#purchaseCar").toggle(
-					function() {
-						
-						$(".gouwuche-right").css("display", "block");
-						//给width属性设置为空！！！！！！！！！！！
-						$(".gouwuche").css("width","");
-						
-					},
-					function() {
-						
-						$(".gouwuche-right").css("display", "none");
-						//给width属性重新设置为30px，。。。。。。。。
-						$(".gouwuche").css("width","30px");
-						
-					});
-				//添加移入事件
-				$("#purchaseCar").mouseover(function() {
-						$(this).css("cursor", "pointer");
-					})
-					//添加移出事件
-				$("#purchaseCar").mouseleave(function() {
-					$(this).css("cursor", "default");
-				})
+			
 				//添加移入事件
 				$(".controller").mouseover(function() {
 						$(this).css("cursor", "pointer");
@@ -57,7 +30,7 @@
 				})
 				$(".yansefenlei a").click(function() {
 					var index = $(this).attr("name");
-					$("#leftImg").attr("src", "img/" + index + ".jpg");
+					$("#leftImg").attr("src", "img/left" + index + ".jpg");
 					$(this).find("img").css("border", "1px solid blue");
 					//点击时2加一个 bePurchase类，方便找到
 					$(this).find("img").addClass("bePurchased");
@@ -73,135 +46,47 @@
 				$(".yansefenlei a").mouseleave(function() {
 					$(this).css("cursor", "default");
 				})
-				$(".dianji2").click(function() {
-					//获得被选中的图片的src
-					var photoSrc = $(".bePurchased").attr("src");
-					//获得数量
-					if(photoSrc!=undefined){
-							var photoNumber = $(".shuliang input[type='number']").val();
-						//判断如果购物车里有这种商品，直接数量相加，如果没有则append
-						//					if($.contains($(".gouwuche-right ol")[0],$("img[src='"+photoSrc+"']")[0])){
-	//										if($.contains($(".gouwuche-right ol")[0],$("li")[0])){
-	//											alert(123);
-	//										}
-						var flag = false;
-						$(".gouwuche-right ol li").each(function() {
-							if (photoSrc == $(this).find("img").attr("src")) {
-								flag = true;
-							}
-						})
-						if (flag) {
-							//更改数量
-							var numberObj = $(".gouwuche-right ol li").find("img[src='"+photoSrc+"']").next("input");
-							var oldNumber = parseInt(numberObj.val());
-							numberObj.val(parseInt(photoNumber)+oldNumber);
-							
-						} else {
-							$(".gouwuche-right ol").append("<li><input type='checkbox'>耳机  <img src='" + photoSrc + "'>&nbsp;<input style='width: 60px;' value='"+photoNumber+"' type='number'>&nbsp;个</li>");
-						}
-					}
-					else{
-						alert("请选择颜色");
-					}
-					
-				})
+				
 			})
 		</script>
+        --><!--引入jquery-->
+		
 	</head>
-
 	<body>
 		<div class="topDiv" align="center">
-			<img src="img/top.jpg" /></div>
+			<img src="img/标题.PNG" /></div>
 		<div class="menu">
 			<ul>
 				<li>首页</li>
-				<li>全部商品</li>
-				<li>头戴式耳机</li>
-				<li>入耳式耳机</li>
-				<li>蓝牙音箱</li>
+				<li>所有商品</li>
+				<li>新品</li>
+				<li>进口鲜花</li>
+				<li>会员专区</li>
 			</ul>
 		</div>
 		<div>
-			<!--
-            	作者：offline
-            	时间：2016-11-17
-            	描述：
-            <div class="left">
-				<div><img src="img/erji11.jpg" alt="这是个商品" /></div>
-				<div class="erjishow">
-					<img src="img/erji0.jpg" />
-					<img src="img/erji.jpg" />
-					<img src="img/erji2.jpg" />
-					<img src="img/erji3.jpg" />
-					<img src="img/erji4.jpg" />
-				</div>
-			</div>
-            -->
 			<div class="left">
 				<div class="main">
 					<div class="main-i">
-						<img id="leftImg" src="img/erji11.jpg">
+						<img id="leftImg" src="img/11.jpg">
 					</div>
-
 				</div>
-				<div class="controller">
-					<div class="controller-i" name="1"><img src="img/erji.jpg" /></div>
-					<div class="controller-i" name="0"><img src="img/erji0.jpg" /></div>
-					<div class="controller-i" name="2"><img src="img/erji2.jpg" /></div>
-					<div class="controller-i" name="3"><img src="img/erji3.jpg" /></div>
-					<div class="controller-i" name="4"><img src="img/erji4.jpg" /></div>
-					<!--<a class="controller-i" href="javascript:;"><img src="img/erji4.jpg"/></a>-->
-				</div>
+			
 			</div>
 			<div class="right">
 				<div>
-					<h3>【新品发售】 Beats Beats Solo3 Wireless 头戴式无线蓝牙耳机</h3>
-					<font color="red" size="2">分期免息 免费保修一年 黑色有货
-					</font>
+					<h3>北京鲜花速递同城花店送花粉雪山玫瑰花生日鲜花送女友爱人</h3>
 				</div>
 				<div class="tag">
-					<div class="tag1">
-						<img height="16" src="img/mini.png">
-						<font size="1	">全天猫实物商品通用 </font>
-						<span><a target="_blank"><font size="2">去刮券</font></a></span>
-
-					</div>
 					<div class="tag2">
 						<span>价格</span>
-						<span><font>¥ 2288.00</font></span>
+						<span><font>¥ 398.00</font></span>
 					</div>
 				</div>
-
-				<!--
-                    	作者：offline
-                    	时间：2016-11-16
-                    	描述：
-                    	<div class="yunfei">
-                    <font>运费</font>
-					<span>广东东莞 至</span>
-					<span>北京<i>^</i></span>
-					<span>海淀区<i>^</i></span>
-					<span>北下关街道<i>^</i></span>
-					<span>快递: 0.00</span>
-							</div>
-                    -->
-				<!--
-                    	作者：offline
-                    	时间：2016-11-16
-                    	描述：
-                    	<div id="city_5" class="yunfei">
-            		<font>运费</font>
-            		<span>广东东莞 至</span>
-					<select class="prov"><slect>
-					<select class="city" disabled="disabled"><slect>
-					<select class="dist" disabled="disabled"><slect>
-					<span>快递: 0.00</span>
-				</div>
-                    -->
 				<div id="city_5" class="yunfei">
 					<font>运费</font>
-					<span>广东东莞 至</span>
-					<select class="prov"></select>
+					<span>上海  至</span>
+					<select class="prov" value="北京"></select>
 					<select class="city" disabled="disabled"></select>
 					<select class="dist" disabled="disabled"></select>
 					<span>快递: 0.00</span>
@@ -227,89 +112,30 @@
 				</div>
 				<div class="yansefenlei">
 					<span>颜色分类</span>
-					<a name="erji11"><img src="img/heise.jpg"></a>
-					<a name="玫瑰金1"><img src="img/meiguijin.jpg"></a>
-					<a name="银色1"><img src="img/yinse.jpg"></a>
-					<a name="金色1"><img src="img/jinse.jpg"></a>
-				</div>
-				<div class="taocan">
-					<font>套餐类型</font>
-					<span>官方标配</span>
+					<a name="aa"><img src="img/aa.jpg"></a>
+					<a name="bb"><img src="img/bb.jpg"></a>
+					<a name="cc"><img src="img/cc.jpg"></a>
+					<a name="dd"><img src="img/dd.jpg"></a>
+					<a name="ee"><img src="img/ee.jpg"></a>
+					<a name="ff"><img src="img/ff.jpg"></a>
+					<a name="gg"><img src="img/gg.jpg"></a>
+					<a name="hh"><img src="img/hh.jpg"></a>
+					<a name="ii"><img src="img/ii.jpg"></a><br/>
+					<a class="jj" name="jj"><img src="img/jj.jpg"></a>
+					<a name="kk"><img src="img/kk.jpg"></a>
+					<a name="ll"><img src="img/ll.jpg"></a>
 				</div>
 				<div class="shuliang">
 					<font>数量</font>
 					<input value="1" placeholder="1" min="1" style="width: 60px;margin-left: 25px;" type="number" />
 					<font>件 库存7件</font>
 				</div>
-				<div>
-					<div class="fenqi">
-						<font>分期付款</font>
-						<img src="img/fenqi.PNG" />
-					</div>
-					<div class="fenqifukuan">
-						<ul>
-							<li>
-								<a href="#">
-									<span>
-										<span>
-											￥<strong>762.66</strong>×3期
-										</span>
-									<span>
-											（<strong>0</strong>手续费）
-										</span>
-									</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span>
-										<span>
-											￥<strong>381.33</strong>×6期
-										</span>
-									<span>
-											（<strong>0</strong>手续费）
-										</span>
-									</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span>
-										<span>
-											￥<strong>269.47</strong>×9期
-										</span>
-									<span>&nbsp;
-											含手续费
-										</span>
-									</span>
-								</a>
-							</li>
-							<li>
-								<a href="#">
-									<span>
-										<span>
-											￥<strong>269.47</strong>×9期
-										</span>
-									<span>&nbsp;
-											含手续费
-										</span>
-									</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<div class="dianji">
-					<input class="dianji1" type="button" value="立即购买" />
-					<input class="dianji2" type="button" />
-
-				</div>
 			</div>
 		</div>
 		<div class="middle">
 			<div class="zuoce">
 				<div>
-					<a>beats官方旗舰店</a>
+					<a>安妮花屋</a>
 					<a href="https://amos.alicdn.com/getcid.aw?v=3&amp;groupid=0&amp;s=1&amp;charset=utf-8&amp;uid=beats官方旗舰店&amp;site=cntaobao&amp;groupid=0&amp;s=1&amp;fromid=cntaobao太阳花1520" target="_blank" class="ww-inline ww-online" title="点此可以直接和卖家交流选好的宝贝，或相互交流网购体验，还支持语音视频噢。">
 						<span>旺旺在线</span>
 					</a>
@@ -317,7 +143,7 @@
 				<div align="center">
 					<font>天猫4年店</font>
 				</div>
-				<img src="img/zuoce.jpg">
+				<img src="img/公告.jpg">
 
 			</div>
 			<!--
@@ -333,55 +159,36 @@
 					<ul>
 						<li>商品详情</li>
 						<li>累计评价</li>
-						<li>电器城服务详情</li>
+						<li>服务详情</li>
 					</ul>
 				</div>
-				<!-- 三个菜单结束 -->
-
-				<!-- 三个菜单 结束-->
-
-				<!-- 介绍商品信息 -->
-				<div class="info">
-					<div class="pinpai">品牌名称：
-						<a href="//brand.tmall.com/brandInfo.htm?brandId=21466766&type=0&scm=1048.1.1.4">
-						Beats
-					</a>
-						<img src="img/关注.PNG" />
-					</div>
-				</div>
-				<div>
-					<p class="canshu">产品参数：</p>
-				</div>
-				<div class="detail">
-					<ul>
-						<li>产品名称：Beats Beats Solo3 Wirele&nbsp;&nbsp;</li>
-						<li>兼容平台: iOS&nbsp;&nbsp;</li>
-						<li>套餐类型: 官方标配</li><br>
-						<li>颜色分类: 黑色 &nbsp;金色 &nbsp; 玫瑰金 &nbsp;银色 </li>
-						<li>佩戴方式: 头戴护耳式</li>
-						<li>耳机类型: 无线</li><br>
-						<li>有无麦克风: 带麦&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-						<li>插头直径: 3.5mm&nbsp;</li>
-						<li>耳机插头类型: 蓝牙</li><br>
-						<li>耳机类别: 蓝牙耳机&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-						<li>品牌: Beats&nbsp;&nbsp;&nbsp;</li>
-						<li>型号: Beats Solo3 Wireless</li>
-					</ul>
-				</div>
-				<!-- 介绍商品信息结束 -->
-
+				
 				<!-- 开始陈列图片 -->
-				<div class="imgs"><img src="img/0.jpg"></div>
-				<div class="imgs"><img src="img/1.jpg"></div>
-				<div class="imgs"><img src="img/2.jpg"></div>
-				<div class="imgs"><img src="img/3.jpg"></div>
-				<div class="imgs"><img src="img/4.jpg"></div>
-				<div class="imgs"><img src="img/5.jpg"></div>
-				<div class="imgs"><img src="img/6.jpg"></div>
-				<div class="imgs"><img src="img/7.gif"></div>
-				<div class="imgs"><img src="img/8.jpg"></div>
-				<div class="imgs"><img src="img/9.jpg"></div>
-
+				<div class="imgs"><img src="img/a.jpg"></div>
+				<div class="imgs"><img src="img/b.jpg"></div>
+				<div class="imgs"><img src="img/c.jpg"></div>
+				<div class="imgs"><img src="img/d.jpg"></div>
+				<div class="imgs"><img src="img/e.jpg"></div>
+				<div class="imgs"><img src="img/f.jpg"></div>
+				<div class="imgs"><img src="img/g.jpg"></div>
+				<div class="imgs"><img src="img/h.jpg"></div>
+				<div class="imgs"><img src="img/i.jpg"></div>
+				<div class="imgs"><img src="img/j.jpg"></div>
+				<div class="imgs"><img src="img/k.jpg"></div>
+				<div class="imgs"><img src="img/l.jpg"></div>
+				<div class="imgs"><img src="img/m.jpg"></div>
+				<div class="imgs"><img src="img/n.jpg"></div>
+				<div class="imgs"><img src="img/o.jpg"></div>
+				<div class="imgs"><img src="img/p.jpg"></div>
+				<div class="imgs"><img src="img/q.jpg"></div>
+				<div class="imgs"><img src="img/r.jpg"></div>
+				<div class="imgs"><img src="img/s.jpg"></div>
+				<div class="imgs"><img src="img/u.jpg"></div>
+				<div class="imgs"><img src="img/v.jpg"></div>
+				<div class="imgs"><img src="img/w.jpg"></div>
+				<div class="imgs"><img src="img/x.jpg"></div>
+				<div class="imgs"><img src="img/y.jpg"></div>
+				<div class="imgs"><img src="img/z.jpg"></div>
 				<!-- 开始陈列图片结束 -->
 			</div>
 			<!-- 右侧结束 -->
