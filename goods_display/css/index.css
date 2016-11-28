@@ -73,8 +73,9 @@ div {
 
 .right {
 	display: inline-block;
+	position: relative;
 	margin-left:50px;
-	margin-top: 0px;
+    top: -80px;
 }
 
 .tag {
@@ -82,7 +83,7 @@ div {
 }
 
 .tag2 {
-	margin-top: 15px;
+	margin-top: 25px;
 }
 
 .tag .tag1 span {
@@ -95,32 +96,32 @@ div {
 
 .tag .tag2 span {
 	color: #9E9E9E;
-	font-size: 10px;
+	font-size: 15px;
 }
 
 .tag .tag2 span font {
 	color: red;
-	font-size: 20px;
+	font-size: 25px;
 	font-family: "微软雅黑";
 	font-weight: 600;
 }
 
 .yunfei {
-	margin-top: 15px;
+	margin-top: 25px;
 }
 
 .yunfei font {
 	color: #9E9E9E;
-	font-size: 10px;
+	font-size: 15px;
 }
 
 .yunfei span {
 	color: #463939;
-	font-size: 10px;
+	font-size: 15px;
 }
 
 .yuexiaoliang {
-	margin-top: 15px;
+	margin-top: 25px;
 }
 
 .yuexiaoliang table {
@@ -133,11 +134,11 @@ div {
 
 .yuexiaoliang table tr td font {
 	color: #9E9E9E;
-	font-size: 10px;
+	font-size: 15px;
 }
 
 .yuexiaoliang table tr td span {
-	font-size: 15px;
+	font-size: 20px;
 	color: red;
 	font-weight: bold;
 }
@@ -147,7 +148,7 @@ div {
 }
 
 .yansefenlei {
-	margin-top: 15px;
+	margin-top: 25px;
 }
 
 .yansefenlei a {
@@ -163,7 +164,7 @@ div {
 
 .yansefenlei span {
 	color: #9E9E9E;
-	font-size: 10px;
+	font-size: 15px;
 	a margin-right: 10px;
 }
 
@@ -173,19 +174,19 @@ div {
 }
 
 .taocan {
-	margin-top: 15px;
+	margin-top: 25px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
 .taocan font {
 	color: #9E9E9E;
-	font-size: 10px;
+	font-size: 15px;
 	margin-right: 10px;
 }
 
 .taocan span {
-	font-size: 10px;
+	font-size: 1px;
 	color: black;
 	border: 2px red solid;
 	padding-top: 5px;
@@ -196,52 +197,14 @@ div {
 
 .shuliang font {
 	color: #9E9E9E;
-	font-size: 10px;
+	font-size: 15px;
 	margin-right: 10px;
 }
 
 .shuliang {
-	margin-top: 15px;
+	margin-top: 25px;
 }
 
-.fenqi font {
-	color: #9E9E9E;
-	font-size: 10px;
-	margin-right: 10px;
-}
-
-.fenqi {
-	margin-top: 15px;
-}
-
-.fenqifukuan {
-	padding-left: 27px;
-}
-
-.fenqifukuan ul {
-	list-style: none;
-}
-
-.fenqifukuan ul li {
-	border: 1px solid #8A8A8A;
-	margin-right: 7px;
-	margin-left: 1px;
-	display: inline-block;
-}
-
-.fenqifukuan ul li a span {
-	font-size: 13px;
-	padding-top: 5px;
-	padding-bottom: 1px;
-}
-
-.fenqifukuan ul li a {
-	text-decoration: none;
-}
-
-.fenqifukuan ul li a span span {
-	display: block;
-}
 
 .erjishow img {
 	margin-left: 15px;
@@ -250,6 +213,9 @@ div {
 
 .imgs {
 	text-align: center;
+}
+.dianji{
+	margin-top: 22px;
 }
 
 .dianji button {
@@ -329,57 +295,6 @@ div {
 	margin-right: 30px;
 	margin-top: 20px;
 }
-
-
-/*购物车的div*/
-
-.gouwuche {
-	position: fixed;
-	top: 0;
-	right: 0;
-	height: 960px;
-	background: black;
-}
-
-#purchaseCar {
-	text-align: center;
-}
-
-#purchaseCar font {
-	color: white;
-}
-
-#purchaseCar:hover {
-	background-color: red;
-}
-
-.gouwuche-left {
-	position: fixed;
-    top: 10px;
-    width: 30px;
-	padding-top: 60px;
-}
-
-.gouwuche-right {
-	width: 280px;
-	background-color: gainsboro;
-	display: none;
-	height: 960px;
-	margin-left: 30px;
-}
-
-.gouwuche-right>ol {
-	line-height: 4;
-}
-
-.gouwuche-right>ol>li {
-	border-bottom: 1px solid
-}
-
-.gouwuche-right input[type="button"] {
-	width: 100px;
-	height: 30px;
-	position: absolute;
-	top: 600px;
-	left: 130px;
+.jj{
+	padding-left:12px;
 }

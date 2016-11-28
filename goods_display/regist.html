@@ -16,7 +16,7 @@
 				background-color: white;
 				height: 400px;
 				width: 800px;
-				padding-top: 50px;
+				padding-top: 30px;
 			}
 			
 			.form-control {
@@ -76,7 +76,13 @@
 								<input type="text" name="name"  size="30px" class="form-control" />
 							</td>
 						</tr>
-
+						<tr>
+							<td align="right">身份证号</td>
+							<td colspan="2">
+								<input type="text" name="idnumber" size="30px" class="form-control" />
+							</td>
+						</tr>
+						
 						<tr>
 							<td align="right">性别</td>
 							<td colspan="2">
@@ -84,11 +90,18 @@
 								<input type="radio" name="sex" size="40px" value="0" checked="checked" />女
 							</td>
 						</tr>
-
+						
 						<tr>
 							<td align="right">出生日期</td>
 							<td colspan="2">
 								<input type="date" name="birthday"  size="30px" class="form-control"  />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">用户</td>
+							<td colspan="2">
+								<input type="radio" name="buyer" size="40px" value="1" />买家
+								<input type="radio" name="seller" size="40px" value="0" checked="checked" />卖家
 							</td>
 						</tr>
 						<tr>
