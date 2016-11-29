@@ -2,6 +2,12 @@ body{
 	width:100%;
 	margin: auto;
 	transition: height 1s;
+	margin-bottom: 50px;
+	float: left;
+}
+
+li{
+	list-style: none;
 }
 *{
 	font-family: 微软雅黑;
