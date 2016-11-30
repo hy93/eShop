@@ -2,9 +2,8 @@ body{
 	margin-top: 55px;
 }
 div {
-	/*
-	 * border: 1px solid red;
-	 */
+	
+	border: 1px solid red;
 	 
 }
 .topDiv img{
@@ -210,10 +209,7 @@ div {
 	margin-top: 25px;
 }
 
-.zuoce font{
-	font-family: "微软雅黑";
-	font-size: 20px;
-}
+
 .erjishow img {
 	margin-left: 15px;
 	border: 1px black solid;
@@ -250,10 +246,7 @@ div {
 	position: relative;
 	top: 10px;
 	left: 10px;
-	border: none;
-	border-radius: 7px;
-	background-color: #F2727D;
-	margin-left: 190px;
+	background: url(../img/gouwuche.PNG);
 }
 
 .middle {

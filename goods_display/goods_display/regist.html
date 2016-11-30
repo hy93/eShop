@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+		<style type="text/css">
+			#outer {
+				background-image: url(img/regist_bg.jpg);
+				height: 650px;
+				padding-top: 80px;
+			}
+			
+			#inner {
+				border: 4px solid gray;
+				background-color: white;
+				height: 400px;
+				width: 800px;
+				padding-top: 30px;
+			}
+			
+			.form-control {
+				padding: 6px 12px;
+				font-size: 14px;
+				line-height: 1.42857143;
+				/*行高,可用于跳转垂直对齐方式*/
+				color: #555;
+				background-color: #fff;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="outer" align="center">
+			<div id="inner">
+				<form action="#" method="get">
+					<table width="80%" align="center">
+						<tr>
+							<td colspan="3">注册</td>
+						</tr>
+						<tr>
+							<td align="right">用户名</td>
+							<td colspan="2">
+								<input type="text" name="username" size="30px" class="form-control" placeholder="请输入用户名" />
+								
+							</td>
+						</tr>
+						<tr>
+							<td align="right">密码</td>
+							<td colspan="2">
+								<input type="password" name="password" size="30px" class="form-control" />
+							</td>
+						</tr>
+
+						<tr>
+							<td align="right">确认密码</td>
+							<td colspan="2">
+								<input type="password" name="repassword"  size="30px" class="form-control" />
+							</td>
+						</tr>
+
+						<tr>
+							<td align="right">Email</td>
+							<td colspan="2">
+								<input type="text" name="email"  size="30px" class="form-control"/>
+								
+							</td>
+						</tr>
+
+						<tr>
+							<td align="right">姓名</td>
+							<td colspan="2">
+								<input type="text" name="name"  size="30px" class="form-control" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">身份证号</td>
+							<td colspan="2">
+								<input type="text" name="idnumber" size="30px" class="form-control" />
+							</td>
+						</tr>
+						
+						<tr>
+							<td align="right">性别</td>
+							<td colspan="2">
+								<input type="radio" name="sex" size="40px" value="1" />男
+								<input type="radio" name="sex" size="40px" value="0" checked="checked" />女
+							</td>
+						</tr>
+						
+						<tr>
+							<td align="right">出生日期</td>
+							<td colspan="2">
+								<input type="date" name="birthday"  size="30px" class="form-control"  />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">用户</td>
+							<td colspan="2">
+								<input type="radio" name="buyer" size="40px" value="1" />买家
+								<input type="radio" name="seller" size="40px" value="0" checked="checked" />卖家
+							</td>
+						</tr>
+						<tr>
+							<td align="right">验证码</td>
+							<td>
+								<input type="text" name="code" size="15px" class="form-control"  />
+							</td>
+							<td>
+								
+							</td>
+						</tr>
+						<tr align="center">
+							<td colspan="3">
+								<input type="submit" value="注册" style="background: url('img/register.gif') no-repeat scroll 0 0 rgba(0, 0, 0, 0); height:35px;width:100px;color:white;" />
+								<input type="reset" value="重置" style="height:35px;width:100px;color:white;" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>
