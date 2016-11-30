@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+	    <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+        <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
+		<title>修改密码</title>
+		<style type="text/css">
+		    #outer {			
+				height: 650px;
+				padding-top: 80px;
+			}
+			#inner {
+				border: 4px solid gray;
+				background-color: white;
+				height: 400px;
+				width: 500px;
+				padding-top: 30px;
+			}
+			
+			/*.form-control {
+				padding: 6px 12px;
+				font-size: 14px;
+				line-height: 1.42857143;
+				color: #555;
+				background-color: #fff;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+			}*/
+			
+		</style>
+	</head>
+
+	<body>
+		<div id="outer" align="center">
+			<div id="inner">
+				<form action="#" method="get">
+					<table width="80%" align="center">
+						<tr>
+							<td colspan="3">修改密码</td>
+						</tr>
+						<tr>
+							<td align="right">Email</td>
+							<td colspan="2">
+								<input type="text" name="email" size="30px" class="form-control" placeholder="请输入邮箱账号" />
+								
+							</td>
+						</tr>
+						<tr>
+							<td align="right">旧密码</td>
+							<td colspan="2">
+								<input type="password" name="password" size="30px" class="form-control" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">新密码</td>
+							<td colspan="2">
+								<input type="password" name="password" size="30px" class="form-control" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">确认密码</td>
+							<td colspan="2">
+								<input type="password" name="repassword"  size="30px" class="form-control" />
+							</td>
+						</tr>
+						
+						<tr align="center">
+							<td colspan="3">
+								<input type="submit" value="修改"  style="height:35px;width:100px;color:black;"  />
+								<input type="reset" value="取消" style="height:35px;width:100px;color:black;" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>
