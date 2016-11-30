@@ -3,6 +3,10 @@
 <head>
 	<title>eShop</title>
 
+	<script type="text/javascript">
+		var isLogin = true;
+	</script>
+
 	<meta charset="utf-8">
 	<!-- 引入bootstrap -->
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
@@ -18,6 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="css/good-card.css">
 
 	<script type="text/javascript" src="js/scroll-jquery.js"></script>
+	<script type="text/javascript" src="js/panel.js"></script>
 </head>
 <body id="top">
 <header>
@@ -34,6 +39,28 @@
 	</div>
 </header>
 
+	<!-- 登录模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel"><font color="black">登录</font></h4>
+		            </div>
+		             <div class="modal-body">
+		               <input type="text" class="form-control" placeholder="请输入用户名"/>
+		               <div>&nbsp</div>
+		               <input type="password" class="form-control" placeholder="请输入密码"/>
+		            </div>  
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		                <button type="button" class="btn btn-primary">登录</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+
+
 	<div id="fixedbar">
 		<nav>
 			<a href="javascript:scroll('top');" id="bar-title"><span class="glyphicon glyphicon-leaf normal-logo"></span> 鲜花优选站</a>
@@ -42,10 +69,19 @@
 			<a href="javascript:scroll('goods');">热销商品</a>
 			<a href="javascript:scroll('servies');">服务细则</a>
 			<a href="javascript:scroll('contact');">联系我们</a>
-			<a href="cart/cart.html" id="bar-cart"><span class="glyphicon glyphicon-shopping-cart normal-logo"></span> 购物车</a>
+			<a id="bar-login" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user" ></span> 您好，请登录</a>
+			<a id="bar-user" onclick="showpanel();" ><img src="img/user.jpg" class="img-circle"> 红星照我去战斗</a>
 		</nav>	
 	</div>
 	
+		<div id="user-panel">
+			<a href="#" id="user-info"><span class="glyphicon glyphicon-user"></span> 个人信息/修改密码</a>
+			<div id="line1"></div>
+			<a href="#" id="orders-link"><span class="glyphicon glyphicon-list-alt"></span> 我的订单 </a>
+			<div id="line2"></div>
+			<a href="cart/cart.html" id="cart-link"><span class="glyphicon glyphicon-shopping-cart normal-logo"></span> 购物车</a>
+			<button id="logout-btn" class="btn btn-primary" onclick="logout()">退出登录</button>
+		</div>
 
 <section id="home">
 	<div id="mycarousel" class="carousel slide" data-ride="carousel">
@@ -284,11 +320,13 @@
 <script type="text/javascript">
 	$(window).scroll(function(){
 　　　　var y = window.scrollY;
-		console.log(y);
 　　　　if(y > 310){
 			document.getElementById("fixedbar").style.display="block";
+			document.getElementById("user-panel").style.display="block";
+
 　　　　}else{
 			$("#fixedbar").css({display:"none"});
+			$("#user-panel").css({display:"none"});
 　　　　}
 	});
 	function scroll(id) {  
