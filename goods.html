@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品列表</title>
+		
+		<script type="text/javascript">
+			function selectAll(inputObj){
+				var flag = inputObj.checked;
+				var checkBoxs = document.getElementsByTagName("input");
+				for(var i=0;i<checkBoxs.length;i++){
+					if(checkBoxs[i].type=="checkbox"){
+						checkBoxs[i].checked = flag;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form >
+			<table class="order" border=1 width="80%" cellspacing="0px" cellpadding="5px" align="center" con>
+			<tr>
+				<td colspan="11">
+				<input type="text" name="code" size="15px" class="form-control"/>
+				<input type="submit" value="搜索"  />
+				</td>
+			</tr>
+			<tr>
+				<td colspan="11" align="center"><font style="font-size: 25px;font-weight: 700;font-family: '微软雅黑';">商品列表</font></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" onclick="selectAll(this)"/>
+				</td>
+				<td>商品编号</td>
+				<td>商品名称</td>
+				<td>商品详情</td>
+				<td>商品类别</td>
+				<td>价格</td>
+				<td>库存</td>
+				<td>图片</td>
+				<td>标签</td>	
+				<td>属性</td>	
+				<td>运费</td>	
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>13114332347</td>
+				<td>康乃馨</td>
+				<td>粉色康乃馨，可送亲人</td>
+				<td>花朵，花束</td>
+				<td>238.00</td>
+				<td>200</td>	
+				<td><img src="goods_display/img/4.jpg"></td>
+				<td>粉色、花束、送亲人</td>
+				<td>鲜花</td>
+				<td>12元</td>
+			</tr>
+			<tr bgcolor="#DCF7A1">
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>13114332347</td>
+				<td>康乃馨</td>
+				<td>粉色康乃馨，可送亲人</td>
+				<td>花朵，花束</td>
+				<td>238.00</td>
+				<td>200</td>	
+				<td><img src="goods_display/img/4.jpg"></td>
+				<td>粉色、花束、送亲人</td>
+				<td>鲜花</td>
+				<td>12元</td>
+			</tr>
+			<tr>
+					<td>
+						<input type="checkbox"/>
+					</td>
+					<td>13114332347</td>
+					<td>康乃馨</td>
+					<td>粉色康乃馨，可送亲人</td>
+					<td>花朵，花束</td>
+					<td>238.00</td>
+					<td>200</td>	
+					<td><img src="goods_display/img/4.jpg"></td>
+					<td>粉色、花束、送亲人</td>
+					<td>鲜花</td>
+					<td>12元</td>
+			</tr>
+			<tr align="center">
+				<td colspan="11"><input type="reset" class="dianji2" value="删除" style="height:35px;width:100px;" /></td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>
