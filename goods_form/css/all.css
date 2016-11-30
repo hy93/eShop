@@ -1,8 +1,17 @@
-body{
-	margin: auto;
+#wrap{
+	margin-left: 30%;
 	padding: 30px;
-	width: 1100px;
+	width: 800px;
 	margin-top: 0px; 
+}
+
+#sidebar{
+	width: 300px;
+	height: 100%;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background-color: #2d2c41;
 }
 
 *{
@@ -44,9 +53,11 @@ section{
 	width: 100%;
 	display: none;
 	margin-bottom: 150px;
+	-webkit-transition:width 1s;
+	overflow: hidden;
 }
 
-#step1,#step4{
+#step1,#step5{
 	display: block;
 }
 
@@ -71,4 +82,22 @@ section{
 	margin-left: 90px;
 	text-align: center;
 	align-content: center;
+}
+
+.btn-primary{
+	background-color: #444359;
+	border-color: #444359;
+}
+.btn-primary:hover{
+	background-color: #555359;
+	border-color: #555359;
+}
+
+.btn-success{
+	background-color: #599a59;
+	border-color: #599a59;
+}
+.btn-success:hover{
+	background-color: #669a66;
+	border-color: #669a66;
 }
