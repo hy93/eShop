@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>订单列表</title>
+		
+		<script type="text/javascript">
+			function selectAll(inputObj){
+				var flag = inputObj.checked;
+				var checkBoxs = document.getElementsByTagName("input");
+				for(var i=0;i<checkBoxs.length;i++){
+					if(checkBoxs[i].type=="checkbox"){
+						checkBoxs[i].checked = flag;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body style="background: url(goods_display/img/regist_bg.jpg);">
+		<form >
+			<table class="order" border=1 width="80%" cellspacing="0px" cellpadding="5px" align="center" con>
+			<tr>
+				<td colspan="8"><input type="text" name="code" size="15px" class="form-control"  /></td>
+			</tr>
+			<tr>
+				<td colspan="8" align="center"><font style="font-size: 25px;font-weight: 700;font-family: '微软雅黑';">订单列表</font></td>
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox" onclick="selectAll(this)"/>
+				</td>
+				<td>订单号：</td>
+				<td>时间：</td>
+				<td>收货人：</td>
+				<td>地址：</td>
+				<td>电话：</td>
+				<td>金额：</td>
+				<td>备注：</td>		
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>13114332347</td>
+				<td>2016年11月30日   13:00</td>
+				<td>tony</td>
+				<td>北京海淀区</td>
+				<td>15614227678</td>
+				<td>238.00</td>
+				<td>无</td>		
+			</tr>
+			<tr bgcolor="#DCF7A1">
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>13114332347</td>
+				<td>2016年11月30日   13:00</td>
+				<td>tony</td>
+				<td>北京海淀区</td>
+				<td>15614227678</td>
+				<td>238.00</td>
+				<td>无</td>		
+			</tr>
+			<tr>
+				<td>
+					<input type="checkbox"/>
+				</td>
+				<td>13114332347</td>
+				<td>2016年11月30日   13:00</td>
+				<td>tony</td>
+				<td>北京海淀区</td>
+				<td>15614227678</td>
+				<td>238.00</td>
+				<td>无</td>		
+			</tr>
+			<tr align="center">
+				<td colspan="8"><input type="reset" class="dianji2" value="删除" style="height:35px;width:100px;" /></td>
+			</tr>
+		</table>
+		</form>
+	</body>
+</html>
