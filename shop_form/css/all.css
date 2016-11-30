@@ -1,5 +1,5 @@
 body{
-	width: 750px;
+	width: 920px;
 	margin: auto;
 }
 
@@ -38,6 +38,9 @@ section{
 	margin: auto;
 	margin-top: 50px;
 }
+#step2{
+	width: 920px;
+}
 
 #start{
 	display: block;
@@ -60,7 +63,7 @@ section{
 	display: none;
 	margin-top: 50px;
 }
-#preview_1{
+#preview_7{
 	width: 200px;
 	height: 60px;
 	margin-top: 20px;

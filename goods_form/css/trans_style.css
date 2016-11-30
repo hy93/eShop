@@ -1,14 +1,7 @@
-#trans_cost_div{
-	display: none;
-	width: 250px;
-	height: 85px;
-	float: left;
-	padding-top: 12px;
-}
 
 #choosecost{
-	width: 200px;
-	height: 85px;
+	width: 500px;
+	height: 220px;
 	padding: 5px;
 	float: left;
 }
@@ -16,8 +9,12 @@
 #costdiv{
 	display: block;
 	width: 460px;
-	height: 110px;
 	margin: auto;
+}
+
+#costdiv input{
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #transdiv{
@@ -29,4 +26,9 @@
 	width: 120px;
 	float: left;
 	margin: 0px 10px; 
+}
+#trans_cost_div{
+	display: none;
+	width: 250px;
+	position: relative;
 }

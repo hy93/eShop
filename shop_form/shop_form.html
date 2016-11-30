@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/all.css">
+  <link rel="stylesheet" type="text/css" href="css/pic_style.css">
 
   	<script type="text/javascript" src="js/switch.js"></script>
 	<script type="text/javascript" src="js/img_show.js"></script>
@@ -19,8 +20,8 @@
 <body>
 <ul class="nav nav-tabs nav-justified" id="nav">
   <li id="nav0" class="active" onclick="turnback()"><a href="#">回到开始</a></li>
-  <li id="nav1" class="active"><a href="#" onclick="step1()">店主信息</a></li>
-  <li id="nav2" ><a href="#" onclick="step2()">店铺基本信息</a></li>
+  <li id="nav1" ><a href="#" onclick="step1()">店铺基本信息</a></li>
+  <li id="nav2" ><a href="#" onclick="step2()">店铺海报</a></li>
   <li id="nav3" ><a href="#" onclick="step3()">店铺详细信息</a></li>
 </ul>
 
@@ -35,56 +36,7 @@
     </div>
 </section>
 
-
 <section id="step1">
-
-  <form >
-    <fieldset>    
-    <div class="control-group">
-
-          <label class="control-label" for="input01">真实姓名</label>
-          <!-- Text input-->
-          <div class="controls">
-            <input type="text" placeholder="" class="input-xlarge">
-            <p class="help-block"></p>
-          </div>
-    </div>
-
-    <div class="control-group">
-
-          <label class="control-label" for="input01">身份证号</label>
-          <!-- Text input-->
-          <div class="controls">
-            <input type="text" placeholder="" class="input-xlarge">
-            <p class="help-block"></p>
-          </div>
-        </div>
-    <div class="control-group">
-
-          <label class="control-label" for="input01">手机号码</label>
-          <!-- Text input-->
-          <div class="controls">
-            <input type="text" placeholder="" class="input-xlarge">
-            <p class="help-block"></p>
-          </div>
-        </div>
- 
-    <div class="control-group">
-
-          <label class="control-label" for="input01">联系地址</label>
-          <!-- Text input-->
-          <div class="controls">
-            <input type="text" placeholder="" class="input-xlarge">
-            <p class="help-block"></p>
-          </div>
-
-    </fieldset>
-  </form>
-    <div class="btnf"><button class="btn btn-primary" onclick="step2()">保存并下一步</button></div>
-
-</section>
-
-<section id="step2">
 		  <form class="form-horizontal">
 		    <fieldset>
 		    <div class="control-group">
@@ -106,6 +58,15 @@
 		            <p class="help-block"></p>
 		          </div>
 		        </div>
+        <div class="control-group">
+
+              <!-- Text input-->
+              <label class="control-label" for="input01">配送范围</label>
+              <div class="controls">
+                <input type="text" placeholder="" class="input-xlarge">
+                <p class="help-block"></p>
+              </div>
+            </div>
 		    <div class="control-group">
 
 		          <!-- Text input-->
@@ -121,14 +82,31 @@
 		          <!-- File Upload -->
               <label class="control-label">店铺Banner</label>
 		          <div class="controls">
-		            <img id="preview_1" src="img/banner.gif" class="img-thumbnail" /> <br/>
-    				<input type="file" name="file" onchange="imgPreview(this,1)" /> <br />
+		            <img id="preview_7" src="img/banner.gif" class="img-thumbnail" /> <br/>
+    				<input type="file" name="file" onchange="imgPreview(this,7)" /> <br />
 		          </div>
 		        </div>
 		    </fieldset>
 		  </form>
       
-    <div class="btnf"><button class="btn btn-primary" onclick="step3()">保存并下一步</button></div>
+    <div class="btnf"><button class="btn btn-primary" onclick="step2()">保存并下一步</button></div>
+</section>
+
+<section id="step2">
+  <div class="alert alert-info">请尽量上传1100*400的图片；最多可以上传五张图片。</div>
+  <form id="pic">
+    <div><img id="preview_1" src="img/default.png" class="img-thumbnail" /> <br/>
+      <input type="file" name="file" onchange="imgPreview(this,1)" /> <br /></div>
+    <div><img id="preview_2" src="img/default.png" class="img-thumbnail" /> <br />
+      <input type="file" name="file" onchange="imgPreview(this,2)" /> <br /></div>
+    <div><img id="preview_3" src="img/default.png" class="img-thumbnail" /> <br/>
+      <input type="file" name="file" onchange="imgPreview(this,3)" /> <br /></div>
+    <div><img id="preview_4" src="img/default.png" class="img-thumbnail" /> <br/>
+      <input type="file" name="file" onchange="imgPreview(this,4)" /> <br /></div>
+    <div><img id="preview_5" src="img/default.png" class="img-thumbnail" /> <br/>
+      <input type="file" name="file" onchange="imgPreview(this,5)" /> <br /></div>
+  </form>
+  <div class="btnf"><button class="btn btn-primary" onclick="step3()">保存并下一步</button></div>
 </section>
 
 <section id="step3">
@@ -151,16 +129,12 @@
                 <div class="controls">
                       <!-- Inline Radios -->
                       <label class="radio inline">
-                        <input type="radio" value="个人全职" name="business_type" checked="checked">
-                        个人全职
+                        <input type="radio" value="0" name="business_type" checked="checked">
+                        个体经营
                       </label>
                       <label class="radio inline">
-                        <input type="radio" value="个人兼职" name="business_type">
-                        个人兼职
-                      </label>
-                      <label class="radio inline">
-                        <input type="radio" value="公司店铺" name="business_type">
-                        公司店铺
+                        <input type="radio" value="1" name="business_type">
+                        企业经营
                       </label>
                 </div>
         </div>
@@ -168,6 +142,15 @@
 
           <!-- Text input-->
           <label class="control-label" for="input01">经营执照</label>
+          <div class="controls">
+            <input type="text" placeholder="" class="input-xlarge">
+            <p class="help-block"></p>
+          </div>
+        </div>
+        <div class="control-group">
+
+          <!-- Text input-->
+          <label class="control-label" for="input01">店铺热线</label>
           <div class="controls">
             <input type="text" placeholder="" class="input-xlarge">
             <p class="help-block"></p>

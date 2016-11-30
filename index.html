@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<link rel="stylesheet" type="text/css" href="css/top-bar.css">
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 	<link rel="stylesheet" type="text/css" href="css/shop-card.css">
 	<link rel="stylesheet" type="text/css" href="css/card1.css">
@@ -22,7 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="css/good-card.css">
 
 	<script type="text/javascript" src="js/scroll-jquery.js"></script>
-	<script type="text/javascript" src="js/panel.js"></script>
+	<script type="text/javascript" src="js/top-bar.js"></script>
 </head>
 <body id="top">
 <header>
@@ -42,7 +43,7 @@
 	<!-- 登录模态框（Modal） -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		    <div class="modal-dialog">
-		        <div class="modal-content">
+		        <div class="modal-content" style="width: 450px;">
 		            <div class="modal-header">
 		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 		                <h4 class="modal-title" id="myModalLabel"><font color="black">登录</font></h4>
@@ -51,6 +52,8 @@
 		               <input type="text" class="form-control" placeholder="请输入用户名"/>
 		               <div>&nbsp</div>
 		               <input type="password" class="form-control" placeholder="请输入密码"/>
+		               <div>&nbsp</div>
+		               <a href="regist.html" target="_blank" style="margin-left: 250px;">还没有账号？立即注册！</a>
 		            </div>  
 		            <div class="modal-footer">
 		                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -70,7 +73,7 @@
 			<a href="javascript:scroll('servies');">服务细则</a>
 			<a href="javascript:scroll('contact');">联系我们</a>
 			<a id="bar-login" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user" ></span> 您好，请登录</a>
-			<a id="bar-user" onclick="showpanel();" ><img src="img/user.jpg" class="img-circle"> 红星照我去战斗</a>
+			<a id="bar-user" onclick="showpanel();" ><img src="img/user.jpg" class="img-circle"> 红星照我去战斗 <span class="glyphicon glyphicon-chevron-down"></span></a>
 		</nav>	
 	</div>
 	
@@ -79,7 +82,7 @@
 			<div id="line1"></div>
 			<a href="#" id="orders-link"><span class="glyphicon glyphicon-list-alt"></span> 我的订单 </a>
 			<div id="line2"></div>
-			<a href="cart/cart.html" id="cart-link"><span class="glyphicon glyphicon-shopping-cart normal-logo"></span> 购物车</a>
+			<a href="cart/cart.html" target="_blank" id="cart-link"><span class="glyphicon glyphicon-shopping-cart normal-logo"></span> 购物车</a>
 			<button id="logout-btn" class="btn btn-primary" onclick="logout()">退出登录</button>
 		</div>
 

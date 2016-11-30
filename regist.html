@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>用户注册</title>
+
+
+		<!-- 引入bootstrap -->
+		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/top-bar.css">
+		<style type="text/css">
+			*{
+				font-family: 微软雅黑;
+			}
+			#outer {
+				background-image: url(img/regist_bg.jpg);
+				height: 900px;
+				padding-top: 80px;
+			}
+			
+			#inner {
+				border: 4px solid gray;
+				background-color: white;
+				height: 700px;
+				width: 600px;
+				padding-top: 30px;
+			}
+
+			td{
+				padding: 10px;
+			}
+			.page-header{
+				font-size: 16pt;
+				text-align: center;
+				font-weight: bold;
+			}
+			.btn{
+				font-size: 12pt;
+			}
+			#bar-login{
+				display: block;
+			}
+			
+		</style>
+
+	</head>
+	<body>
+
+	<!-- 登录模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content" style="width: 450px;">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel"><font color="black">登录</font></h4>
+		            </div>
+		             <div class="modal-body">
+		               <input type="text" class="form-control" placeholder="请输入用户名"/>
+		               <div>&nbsp</div>
+		               <input type="password" class="form-control" placeholder="请输入密码"/>
+		               <div>&nbsp</div>
+		               <a href="regist.html" target="_blank" style="margin-left: 250px;">还没有账号？立即注册！</a>
+		            </div>  
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		                <button type="button" class="btn btn-primary">登录</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
+
+
+	<div id="fixedbar">
+		<nav>
+			<a href="index.html#top" id="bar-title"><span class="glyphicon glyphicon-leaf normal-logo"></span> 鲜花优选站</a>
+			<a href="index.html#home">首页</a>
+			<a href="index.html#shops">优店精选</a>
+			<a href="index.html#goods">热销商品</a>
+			<a href="index.html#servies">服务细则</a>
+			<a href="index.html#contact">联系我们</a>
+			<a id="bar-login" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user" ></span> 您好，请登录</a>
+		</nav>	
+	</div>
+
+		<div id="outer" align="center">
+			<div id="inner">
+				<form action="#" method="get">
+					<table width="70%" align="center">
+						<tr>
+							<td colspan="3" class="page-header">用户注册</td>
+						</tr>
+						<tr>
+							<td align="right">用户名</td>
+							<td colspan="2">
+								<input type="text" name="username" size="30px" class="form-control" placeholder="请输入用户名" />
+								
+							</td>
+						</tr>
+						<tr>
+							<td align="right">密码</td>
+							<td colspan="2">
+								<input type="password" name="password" size="30px" class="form-control" />
+							</td>
+						</tr>
+
+						<tr>
+							<td align="right">确认密码</td>
+							<td colspan="2">
+								<input type="password" name="repassword"  size="30px" class="form-control" />
+							</td>
+						</tr>
+
+						<tr>
+							<td align="right">Email</td>
+							<td colspan="2">
+								<input type="text" name="email"  size="30px" class="form-control"/>
+								
+							</td>
+						</tr>
+
+						<tr>
+							<td align="right">姓名</td>
+							<td colspan="2">
+								<input type="text" name="name"  size="30px" class="form-control" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">身份证号</td>
+							<td colspan="2">
+								<input type="text" name="idnumber" size="30px" class="form-control" />
+							</td>
+						</tr>
+						
+						<tr>
+							<td align="right">性别</td>
+							<td colspan="2">
+								<input type="radio" name="sex" size="40px" value="1" />男
+								<input type="radio" name="sex" size="40px" value="0" checked="checked" />女
+							</td>
+						</tr>
+						
+						<tr>
+							<td align="right">出生日期</td>
+							<td colspan="2">
+								<input type="date" name="birthday"  size="30px" class="form-control"  />
+							</td>
+						</tr>
+						<tr>
+							<td align="right">用户</td>
+							<td colspan="2">
+								<input type="radio" name="buyer" size="40px" value="1" />买家
+								<input type="radio" name="seller" size="40px" value="0" checked="checked" />卖家
+							</td>
+						</tr>
+						<tr>
+							<td align="right">验证码</td>
+							<td>
+								<input type="text" name="code" size="15px" class="form-control"  />
+							</td>
+							<td>
+								
+							</td>
+						</tr>
+						<tr align="center">
+							<td colspan="3">
+								<input type="submit" value="注册" class="btn btn-primary">
+								<input type="reset" value="重置" class="btn btn-default" />
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+		</div>
+	</body>
+
+</html>

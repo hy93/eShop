@@ -46,7 +46,7 @@ section{
 	margin-bottom: 150px;
 }
 
-#step1{
+#step1,#step4{
 	display: block;
 }
 

@@ -231,10 +231,6 @@
 					<td><input type="text" placeholder="请从左侧列表中选择" name="type" class="form-control" id="choosed_type" disabled="disabled"></td>
 				</tr>
 				<tr>
-					<td>品牌：</td>
-					<td><input type="text" class="form-control" name="branch"></td>
-				</tr>
-				<tr>
 					<td>商品标题：</td>
 					<td><input type="text" class="form-control" name="good_name"></td>
 				</tr>
@@ -245,10 +241,6 @@
 				<tr>
 					<td>原价：</td>
 					<td><input type="number" class="form-control" name="price"></td>
-				</tr>
-				<tr>
-					<td>货号：</td>
-					<td><input type="text" class="form-control" name="good_id"></td>
 				</tr>
 				<tr>
 					<td>库存：</td>
@@ -300,20 +292,25 @@
 
 <section id="step4">
 	<h3 class="page-header">STEP4:填写物流信息</h3>
-	<div id="transdiv">
+	<!-- <div id="transdiv">
 		发货地：
 		<div id="city_5" class="dropdown ">
 			<select class="prov form-control"></select>
 			<select class="city form-control" disabled="disabled"></select>
 			<select class="dist form-control" disabled="disabled"></select>
 		</div>
-	</div>
+	</div> -->
 	<div id="costdiv">
-		<div id="choosecost">运费：<br/> 
-		<label><input type="radio" name="trans" value="1" checked onclick="hide_trans_div()">卖家承担运费</label><br/>
-		<label><input type="radio" name="trans" value="2" onclick="show_trans_div()">买家承担运费</label><br/></div>
-		<div id="trans_cost_div" class="well">
-			运费：<input type="number" placeholder="请输入运费" class="form-control" name="trans_cost">
+		<div id="choosecost">
+			运费说明:<br/> 
+			<input class="form-control" type="textarea" name="">
+			运费：<br/> 
+			<label><input type="radio" name="trans" value="1" checked onclick="hide_trans_div()">卖家承担运费</label><br/>
+			<label><input type="radio" name="trans" value="2" onclick="show_trans_div()">买家承担运费</label>
+			<input id="trans_cost_div" type="number" placeholder="请输入运费" class="form-control" name="trans_cost">
+			
+		</div>
+		<div>
 		</div>
 	</div>
 	<div class="btnf"><button class="btn btn-primary" onclick="step5()">保存并下一步</button></div>

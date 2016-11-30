@@ -1,0 +1,22 @@
+#pic{
+	display: block;
+	float: left;
+	width: 100%;
+	padding-left: 10px;
+}
+
+#pic div{
+	width: 180px;
+	height: 210px;
+	float: left;
+	margin-right: 0px;
+	margin-top: 15px;
+	font-size: 10pt;
+}
+
+#pic img{
+	width: 140px;
+	height: 140px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+}
