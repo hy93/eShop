@@ -4,7 +4,7 @@
 	<title>eShop</title>
 
 	<script type="text/javascript">
-		var isLogin = true;
+
 	</script>
 
 	<meta charset="utf-8">
@@ -24,6 +24,7 @@
 
 	<script type="text/javascript" src="js/scroll-jquery.js"></script>
 	<script type="text/javascript" src="js/top-bar.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
 </head>
 <body id="top">
 <header>
@@ -41,7 +42,7 @@
 </header>
 
 	<!-- 登录模态框（Modal） -->
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		    <div class="modal-dialog">
 		        <div class="modal-content" style="width: 450px;">
 		            <div class="modal-header">
@@ -57,7 +58,7 @@
 		            </div>  
 		            <div class="modal-footer">
 		                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-		                <button type="button" class="btn btn-primary">登录</button>
+		                <button type="button" class="btn btn-primary" onclick="login()">登录</button>
 		            </div>
 		        </div><!-- /.modal-content -->
 		    </div><!-- /.modal -->
@@ -72,7 +73,7 @@
 			<a href="javascript:scroll('goods');">热销商品</a>
 			<a href="javascript:scroll('servies');">服务细则</a>
 			<a href="javascript:scroll('contact');">联系我们</a>
-			<a id="bar-login" class="btn btn-link btn-lg" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-user" ></span> 您好，请登录</a>
+			<a id="bar-login" class="btn btn-link btn-lg" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user" ></span> 您好，请登录</a>
 			<a id="bar-user" onclick="showpanel();" ><img src="img/user.jpg" class="img-circle"> 红星照我去战斗 <span class="glyphicon glyphicon-chevron-down"></span></a>
 		</nav>	
 	</div>
@@ -325,11 +326,11 @@
 　　　　var y = window.scrollY;
 　　　　if(y > 310){
 			document.getElementById("fixedbar").style.display="block";
-			document.getElementById("user-panel").style.display="block";
-
+			// if(isLogin==true)
+			// 	document.getElementById("user-panel").style.display="block";
 　　　　}else{
 			$("#fixedbar").css({display:"none"});
-			$("#user-panel").css({display:"none"});
+			$("#user-panel").css({height:"0px"});
 　　　　}
 	});
 	function scroll(id) {  

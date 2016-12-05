@@ -11,30 +11,34 @@
 		<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
 		
 		<link rel="stylesheet" href="css/index.css" />
-		<script src="js/jquery-1.8.3.js" type="text/javascript" charset="utf-8"></script>
+		<!-- top bar 配置文件 -->
+		<script type="text/javascript" src="../js/login.js"></script>
+		<script type="text/javascript" src="../js/top-bar.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/top-bar.css">
+
 		<script type="text/javascript">
 			$(function() {
 			
-				//添加移入事件
-				$(".controller").mouseover(function() {
-						$(this).css("cursor", "pointer");
-					})
-					//添加移出事件
-				$(".controller").mouseleave(function() {
-					$(this).css("cursor", "default");
-				})
-				$(".controller-i").mousemove(function() {
-					var index = $(this).attr("name");
-					$("#leftImg").attr("src", "img/erji" + index + "1.jpg");
-					$(this).css("border", "1px solid black");
-				})
-				$(".controller-i").mouseleave(function() {
-					$(this).css("border", "");
-				})
+				// //添加移入事件
+				// $(".controller").mouseover(function() {
+				// 		$(this).css("cursor", "pointer");
+				// 	})
+				// 	//添加移出事件
+				// $(".controller").mouseleave(function() {
+				// 	$(this).css("cursor", "default");
+				// })
+				// $(".controller-i").mousemove(function() {
+				// 	var index = $(this).attr("name");
+				// 	$("#leftImg").attr("src", "img/erji" + index + "1.jpg");
+				// 	$(this).css("border", "1px solid black");
+				// })
+				// $(".controller-i").mouseleave(function() {
+				// 	$(this).css("border", "");
+				// })
 				$(".yansefenlei a").click(function() {
 					var index = $(this).attr("name");
 					$("#leftImg").attr("src", "img/left" + index + ".jpg");
-					$(this).find("img").css("border", "1px solid blue");
+					$(this).find("img").css("border", "2px solid #F2727D");
 					//点击时2加一个 bePurchase类，方便找到
 					$(this).find("img").addClass("bePurchased");
 					$(this).siblings().find("img").css("border", "");
@@ -52,7 +56,6 @@
 				
 			})
 		</script>
-        <!--引入jquery-->
 		
 	</head>
 	<body>
@@ -65,10 +68,44 @@
 				<a href="../index.html#goods">热销商品</a>
 				<a href="../index.html#servies">服务细则</a>
 				<a href="../index.html#contact">联系我们</a>
-				<a href="../cart/cart.html" id="bar-cart"><span class="glyphicon glyphicon-shopping-cart normal-logo"></span> 购物车</a>
+				<a id="bar-login" class="btn btn-link btn-lg" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user" ></span> 您好，请登录</a>
+				<a id="bar-user" onclick="showpanel();" ><img src="../img/user.jpg" class="img-circle"> 红星照我去战斗 <span class="glyphicon glyphicon-chevron-down"></span></a>
+				
 			</nav>	
 		</div>
 		<!--nav-->
+
+		<div id="user-panel">
+			<a href="#" id="user-info"><span class="glyphicon glyphicon-user"></span> 个人信息/修改密码</a>
+			<div id="line1"></div>
+			<a href="#" id="orders-link"><span class="glyphicon glyphicon-list-alt"></span> 我的订单 </a>
+			<div id="line2"></div>
+			<a href="../cart/cart.html" target="_blank" id="cart-link"><span class="glyphicon glyphicon-shopping-cart normal-logo"></span> 购物车</a>
+			<button id="logout-btn" class="btn btn-primary" onclick="logout()">退出登录</button>
+		</div>
+
+		<!-- 登录模态框（Modal） -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content" style="width: 450px;">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel"><font color="black">登录</font></h4>
+		            </div>
+		             <div class="modal-body">
+		               <input type="text" class="form-control" placeholder="请输入用户名"/>
+		               <div>&nbsp</div>
+		               <input type="password" class="form-control" placeholder="请输入密码"/>
+		               <div>&nbsp</div>
+		               <a href="../regist.html" target="_blank" style="margin-left: 250px;">还没有账号？立即注册！</a>
+		            </div>  
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		                <button type="button" class="btn btn-primary" onclick="login()">登录</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
 
 		<div class="topDiv" align="center">
 			<img src="img/标题.PNG" /></div>
@@ -96,57 +133,40 @@
 					<h1></h1>
 				</div>
 				<div class="tag">
-					<div class="tag2">
-						<span>价格</span>
-						<span><font>¥ 398.00</font></span>
-					</div>
+					<span class="h4">价格</span>
+					<span class="cont" id="price">¥ 398.00</span>
 				</div>
-				<div id="city_5" class="yunfei">
-					<font>运费</font>
-					<span>快递: 0.00</span>
+				<div class="yunfei">
+					<span class="h4">运费</span>
+					<span class="cont">快递: ￥0.00</span>
 				</div>
 
 				<div class="yuexiaoliang">
-					<table>
-						<tr>
-							<td>
-								<font>月销量</font>
-								<span>4459</span>
-							</td>
-							<td>
-								<font>累计评价</font>
-								<span>1989</span>
-							</td>
-							<td>
-								<font>送天猫积分</font>
-								<span>288</span>
-							</td>
-						</tr>
-					</table>
+					<span class="h4">月销量</span>
+					<span class="cont">4459</span>
 				</div>
+
 				<div class="yansefenlei">
-					<span>颜色分类</span>
-					<a name="aa"><img src="img/aa.jpg"></a>
-					<a name="bb"><img src="img/bb.jpg"></a>
-					<a name="cc"><img src="img/cc.jpg"></a>
-					<a name="dd"><img src="img/dd.jpg"></a>
-					<a name="ee"><img src="img/ee.jpg"></a>
-					<a name="ff"><img src="img/ff.jpg"></a>
-					<a name="gg"><img src="img/gg.jpg"></a>
-					<a name="hh"><img src="img/hh.jpg"></a>
-					<a name="ii"><img src="img/ii.jpg"></a><br/>
-					<a class="jj" name="jj"><img src="img/jj.jpg"></a>
-					<a name="kk"><img src="img/kk.jpg"></a>
-					<a name="ll"><img src="img/ll.jpg"></a>
+					<span class="h4">颜色分类</span>
+					<ul  class="cont">
+						<li><a name="aa"><img src="img/aa.jpg"></a></li>
+						<li><a name="bb"><img src="img/bb.jpg"></a></li>
+						<li><a name="cc"><img src="img/cc.jpg"></a></li>
+						<li><a name="dd"><img src="img/dd.jpg"></a></li>
+						<li><a name="ee"><img src="img/ee.jpg"></a></li>
+						<li><a name="ff"><img src="img/ff.jpg"></a></li>
+						<li><a name="gg"><img src="img/gg.jpg"></a></li>
+						<li><a name="hh"><img src="img/hh.jpg"></a></li>
+						<li><a name="ii"><img src="img/ii.jpg"></a></li>
+						<li><a name="jj"><img src="img/jj.jpg"></a></li>
+						<li><a name="kk"><img src="img/kk.jpg"></a></li>
+						<li><a name="ll"><img src="img/ll.jpg"></a></li>
+					</ul>
 				</div>
 				<div class="shuliang">
-					<font>数量</font>
+					<span class="h4">数量</span>
 					<input value="1" placeholder="1" min="1" style="width: 60px;margin-left: 25px;" type="number" />
 					<font>件 库存7件</font>
-				</div>
-				<div class="taocan">
-					<font>是否含花瓶</font>
-					<span>不含花瓶</span>
 				</div>
 				<div class="dianji">
 					<input class="dianji2" type="button" value="加入购物车"/>
@@ -177,10 +197,10 @@
             	描述：中间
             -->
 
-			<div class="xiangqing">
+			<div class="xiangqing" style="margin-top: 20px;">
 
 				<!-- 三个菜单 -->
-				<div class="menu1" style="background-color: #F2727D;">
+				<div class="menu1" style="background-color: #F2727D; color: white;border: 2px solid #F2727D;">
 					<ul>
 						<li style="font-size: 30px;">商品详情</li>
 					</ul>
@@ -217,20 +237,7 @@
 
 		</div>
 
-		<div class="gouwuche">
-			<div class="gouwuche-left">
-				<div id="purchaseCar">
-					<font>购物车</font>
-				</div>
-				<div></div>
-			</div>
-			<div class="gouwuche-right">
-				<ol>
-
-				</ol>
-				<input type="button" value="去结算" />
-			</div>
-		</div>
+		<footer style="height: 100px;"></footer>
 	</body>
 
 </html>

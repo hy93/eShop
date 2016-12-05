@@ -7,24 +7,29 @@ div {
 	 */
 	 
 }
+*{
+	font-family: "微软雅黑";
+}
 .topDiv img{
 	width: 1350px;
 }
 
-.menu>ul>li {
+.menu ul li {
 	display: inline;
 	margin-left: 150px;
-	font-family: "微软雅黑";
-	font-size: 15px
+	font-size: 15px;
 }
 .main-i img{
 	width: 600px;
 }
 
 .menu {
-	height: 50px;
+	height: 60px;
+	line-height: 60px;
 	margin-top: 0;
-	padding-top: 3px;
+	padding-top: 0px;
+	width: 100%;
+	background-color: #BED984;
 }
 
 .left {
@@ -82,6 +87,11 @@ div {
 	margin-left:50px;
     width: 50%;
 }
+.right h2{
+	margin-right: 50px;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
 
 .tag {
 	margin-top: 5px;
@@ -95,35 +105,13 @@ div {
 	margin-left: 300px;
 }
 
-.tag .tag1 font {
-	color: #726195;
-}
 
-.tag .tag2 span {
-	color: #9E9E9E;
-	font-size: 15px;
-}
-
-.tag .tag2 span font {
-	color: red;
-	font-size: 25px;
-	font-family: "微软雅黑";
-	font-weight: 600;
-}
 
 .yunfei {
 	margin-top: 25px;
 }
 
-.yunfei font {
-	color: #9E9E9E;
-	font-size: 15px;
-}
 
-.yunfei span {
-	color: #463939;
-	font-size: 15px;
-}
 
 .yuexiaoliang {
 	margin-top: 25px;
@@ -137,44 +125,32 @@ div {
 	padding-left: 40px;
 }
 
-.yuexiaoliang table tr td font {
-	color: #9E9E9E;
-	font-size: 15px;
-}
 
-.yuexiaoliang table tr td span {
-	font-size: 20px;
-	color: red;
-	font-weight: bold;
-}
 
-.yuexiaoliang table tr td:last-child span {
-	color: green;
-}
 
-.yansefenlei {
+
+/*.yansefenlei {
 	margin-top: 25px;
 }
 
 .yansefenlei a {
 	display: inline-block;
+	margin: 10px;
 }
 
 .yansefenlei .jj{
-	margin-left: 56px;
-}
+	margin-left: 62px;
+}*/
 .yansefenlei img:hover {
-	border: 1px solid red
+	border: 2px solid #F2C36B;
 }
 
 .yansefenlei span {
-	color: #9E9E9E;
-	font-size: 15px;
-	a margin-right: 10px;
+	margin-right: 10px;
 }
 
 .yansefenlei img {
-	border: 1px gray dashed;
+	border: 2px gray solid;
 	margin-left: 10px;
 }
 
@@ -184,40 +160,10 @@ div {
 	padding-bottom: 5px;
 }
 
-.taocan font {
-	color: #9E9E9E;
-	font-size: 15px;
-	margin-right: 10px;
-}
-
-.taocan span {
-	font-size: 1px;
-	color: black;
-	border: 2px red solid;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-.shuliang font {
-	color: #9E9E9E;
-	font-size: 15px;
-	margin-right: 10px;
-}
-
 .shuliang {
 	margin-top: 25px;
 }
 
-.zuoce font{
-	font-family: "微软雅黑";
-	font-size: 20px;
-}
-.erjishow img {
-	margin-left: 15px;
-	border: 1px black solid;
-}
 
 .imgs {
 	text-align: center;
@@ -235,18 +181,9 @@ div {
 	position: absolute;
 }
 
-.dianji1 {
-	background-color: #FFEDED;
-	width: 181px;
-	height: 38px;
-	font-size: 18px;
-	color: red;
-	margin-left: 80px;
-}
-
 .dianji2 {
 	width: 181px;
-	height: 38px;
+	height: 50px;
 	position: relative;
 	top: 10px;
 	left: 10px;
@@ -254,6 +191,8 @@ div {
 	border-radius: 7px;
 	background-color: #F2727D;
 	margin-left: 190px;
+	color: white;
+	font-size: 15pt;
 }
 
 .middle {
@@ -273,8 +212,6 @@ div {
 .menu1>ul>li {
 	display: inline;
 	margin-right: 20px;
-	font-family: "微软雅黑";
-	font-size: 14px;
 }
 
 .info >a:visited {
@@ -284,7 +221,6 @@ div {
 
 .pinpai {
 	color: #9E9E9E;
-	font-size: 10px;
 	margin-right: 10px;
 }
 
@@ -294,15 +230,14 @@ div {
 
 .canshu {
 	color: #9E9E9E;
-	font-size: 10px;
 	margin-right: 10px;
+
 	font-weight: 600;
 }
 
 .detail ul li {
 	display: inline;
 	color: #9E9E9E;
-	font-size: 10px;
 	margin-right: 30px;
 	margin-top: 20px;
 }
@@ -311,33 +246,37 @@ div {
 }
 
 
+.h4{
+	color: gray;
+	font-size: 16pt;
+}
+.cont{
+	color: black;
+	font-size: 12pt;
+	position: absolute;
+	left: 120px;
+}
 
-#fixedbar{
-	position: fixed;
-	top: 0;
-	width: 100%;
-	height: 55px;
-	background-color: #F2727D;
-	z-index: 50;
-	display: block;
-	box-shadow: 0px 2px 5px #bbbbbb;
-}
-#fixedbar nav{
-	margin: auto;
-	text-align: center;
-	padding-top: 15px;
-}
-#fixedbar nav a{
-	text-decoration: none;
-	color: white;
-	font-family: 微软雅黑;
-	font-size: 14pt;
-	margin-right:30px;
-	margin-left:30px;
-}
-#bar-title{
+.yansefenlei li{
 	float: left;
+	list-style: none;	
+	margin: 10px;
 }
-#bar-cart{
-	float: right;
+
+.yansefenlei{
+	height: 130px;
+	width: 70%;
+}
+.yansefenlei .h4{
+	position: absolute;
+	top: 310px;
+}
+.yansefenlei .cont{
+	margin-top: 20px;
+	left: 60px;
+	width: 70%;
+}
+#price{
+	font-size: 20pt;
+	color: #F2727D;
 }

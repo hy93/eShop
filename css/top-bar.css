@@ -1,4 +1,3 @@
-
 #fixedbar{
 	position: fixed;
 	top: 0;
@@ -30,14 +29,14 @@ nav{
 }
 #bar-login{
 	float: right;
-	display: none;
+	display: block;
 	position: relative;
 	left: 5px;
 	top: -10px;
 }
 #bar-user{
 	float: right;
-	display: block;
+	display: none;
 	z-index: 150;
 	cursor: pointer;
 	font-size: 11pt;
@@ -99,6 +98,7 @@ nav{
 	top: 55px;
 	z-index: 30;
 	transition: height 1s;
+	animation-timing-function: ease-in;
 	overflow: hidden;
 	box-shadow: 0px 2px 5px gray;
 	color: gray;
