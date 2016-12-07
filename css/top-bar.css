@@ -19,10 +19,10 @@
 	font-family: 微软雅黑;
 	margin-right:30px;
 	margin-left:30px;
+	font-size: 14pt;
 }
 
 nav{
-	font-size: 14pt;
 }
 #bar-title{
 	float: left;
@@ -39,7 +39,7 @@ nav{
 	display: none;
 	z-index: 150;
 	cursor: pointer;
-	font-size: 11pt;
+	font-size: 11pt !important;
 }
 #bar-user img{
 	width: 60px;

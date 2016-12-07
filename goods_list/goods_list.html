@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>安妮花屋</title>
+	<title>鲜花优选站--安妮花屋--店铺主页</title>
 	<meta charset="utf-8">
   	<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
     <link href="index.css" rel="stylesheet" type="text/css"/>
+
+		<!-- top bar 配置文件 -->
+		<script type="text/javascript" src="../js/login.js"></script>
+		<script type="text/javascript" src="../js/top-bar.js"></script>
+		<link rel="stylesheet" type="text/css" href="../css/top-bar.css">
 </head>
 
 <body>
@@ -15,18 +20,52 @@
    </div><!-- header -->
 
     <!--nav-->
-    <div id="fixedbar">
-      <nav>
-        <a href="../index.html#top" id="bar-title"><span class="glyphicon glyphicon-leaf normal-logo"></span> 鲜花优选站</a>
-        <a href="../index.html#home">首页</a>
-        <a href="../index.html#shops">优店精选</a>
-        <a href="../index.html#goods">热销商品</a>
-        <a href="../index.html#servies">服务细则</a>
-        <a href="../index.html#contact">联系我们</a>
-        <a href="../cart/cart.html" id="bar-cart"><span class="glyphicon glyphicon-shopping-cart normal-logo"></span> 购物车</a>
-      </nav>  
-    </div>
-    <!--nav-->
+		<div id="fixedbar">
+			<nav>
+				<a href="../index.html#top" id="bar-title"><span class="glyphicon glyphicon-leaf normal-logo"></span> 鲜花优选站</a>
+				<a href="../index.html#home">首页</a>
+				<a href="../index.html#shops">优店精选</a>
+				<a href="../index.html#goods">热销商品</a>
+				<a href="../index.html#servies">服务细则</a>
+				<a href="../index.html#contact">联系我们</a>
+				<a id="bar-login" class="btn btn-link btn-lg" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user" ></span> 您好，请登录</a>
+				<a id="bar-user" onclick="showpanel();"><img src="../img/user.jpg" class="img-circle"> 红星照我去战斗 <span class="glyphicon glyphicon-chevron-down"></span></a>
+				
+			</nav>	
+		</div>
+		<!--nav-->
+
+		<div id="user-panel">
+			<a href="#" id="user-info"><span class="glyphicon glyphicon-user"></span> 个人信息/修改密码</a>
+			<div id="line1"></div>
+			<a href="#" id="orders-link"><span class="glyphicon glyphicon-list-alt"></span> 我的订单 </a>
+			<div id="line2"></div>
+			<a href="../cart/cart.html" target="_blank" id="cart-link"><span class="glyphicon glyphicon-shopping-cart normal-logo"></span> 购物车</a>
+			<button id="logout-btn" class="btn btn-primary" onclick="logout()">退出登录</button>
+		</div>
+
+		<!-- 登录模态框（Modal） -->
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog">
+		        <div class="modal-content" style="width: 450px;">
+		            <div class="modal-header">
+		                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		                <h4 class="modal-title" id="myModalLabel"><font color="black">登录</font></h4>
+		            </div>
+		             <div class="modal-body">
+		               <input type="text" class="form-control" placeholder="请输入用户名"/>
+		               <div>&nbsp</div>
+		               <input type="password" class="form-control" placeholder="请输入密码"/>
+		               <div>&nbsp</div>
+		               <a href="../regist.html" target="_blank" style="margin-left: 250px;">还没有账号？立即注册！</a>
+		            </div>  
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+		                <button type="button" class="btn btn-primary" onclick="login()">登录</button>
+		            </div>
+		        </div><!-- /.modal-content -->
+		    </div><!-- /.modal -->
+		</div>
 
 
 	<div id="cont">
@@ -61,29 +100,29 @@
 
 		<!-- 带有下拉菜单的导航栏 &  搜索 -->
 		<div class="guide" >
-		  <ul class="nav nav-pills">
-		    <li><a href="#">花秧</a></li>
-		    <li><a href="#">多肉植物</a></li>
-		    <li class="dropdown">
-		      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-		        花束 <span class="caret"></span>
-		      </a>
-		      <ul class="dropdown-menu">
-		        <li><a href="#">送亲人</a></li>
-		        <li><a href="#">送朋友</a></li>
-		        <li><a href="#">送爱人</a></li>
-		      </ul>
-		    </li>
-            <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
-		    <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
-		    <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
-		    <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
-		    <li><input type="text" class="searchcont" placeholder="请输入搜索内容"/>  </li>
-		    <li><button type="button" class="">搜索</button></li>
-		  <!--   <li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</li>
-		    <li><button>注册</button></li>
-		    <li><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal" >登录</button></li> -->
-		  </ul>
+		  	<ul class="nav nav-pills">
+			    <li><a href="#">天然干花</a></li>
+			    <li><a href="#">鲜花花束</a></li>
+			    <li><a href="#">盆栽绿植</a></li>
+			    <li class="dropdown">
+			      	<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+			        按用途分类 <span class="caret"></span>
+			      	</a>
+			      	<ul class="dropdown-menu">
+			        	<li><a href="#">送亲人</a></li>
+			        	<li><a href="#">送朋友</a></li>
+			        	<li><a href="#">送爱人</a></li>
+			        	
+			      	</ul>
+			    </li>
+			    <li>
+			    	<div class="search">
+				    	<input type="text" class="searchcont form-control" placeholder="请输入搜索内容"/>
+					   	<button type="button" class="btn btn-default btn-search">搜索</button>
+		    		</div>
+		    	</li>
+		  	</ul>
+          	
     	</div><!-- 导航栏结束部分 -->
 
         <!-- 登录模态框（Modal） -->
@@ -106,8 +145,8 @@
 		        </div><!-- /.modal-content -->
 		    </div><!-- /.modal -->
 		</div>
-       <div id="shop-introduce">
-       	<h4 align="center">欢迎光临安妮花屋</h4>
+       <div id="shop-introduce" style="color: gray;">
+       	<h4 align="center"><a href="#" style="text-decoration: none; color: gray; font-size: 15pt; font-weight: bold;">欢迎光临安妮花屋</a></h4>
        	<p>热线电话：4006-525-212</p>
         <p>地址:北京市海淀区</p>
        	<p>送花范围：</p>
@@ -119,23 +158,23 @@
 		<tr>
 		  <td>
 		  	<div>
-			    <img src="images/白玫瑰.png" >
-			   	<p> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank"> 白玫瑰</a></p>
+			    <img src="images/白玫瑰.jpg" >
+			   	<p class="good-title"> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">【白玫瑰】鲜花速递，白玫瑰，礼物，告白神器，摄影道具</a></p>
 			    <p class="price"><a class="btn btn-link" href="../goods_display/goods_display.html" target="=_blank">￥288</a></p> 
 		  	</div>
 		  </td>		 
 		  <td>
 		    <div>
-			    <img src="images/杜鹃.png" >
-			   	<p> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">杜鹃</a></p>
+			    <img src="images/p4.jpg" >
+			   	<p class="good-title"> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">【满天星】天然满天星，干花，家居装饰，摄影道具，小清新植物</a></p>
 			    <p class="price"><a class="btn btn-link" href="../goods_display/goods_display.html" target="=_blank">￥288</a></p>
 
 			</div>
 		  </td>
 		  <td>
 		    <div>
-			    <img src="images/粉玫瑰.png ">
-			   	<p> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank"> 粉玫瑰</a></p>
+			    <img src="images/p1.jpg ">
+			   	<p class="good-title"> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">【勿忘我】干花，装饰花，家居摆设</a></p>
 			    <p class="price"><a class="btn btn-link" href="../goods_display/goods_display.html" target="=_blank">￥288</a></p> 
 		  	</div>
 		  </td>
@@ -143,22 +182,22 @@
 		<tr>
 		  <td>
 		    <div>
-			    <img src="images/羽衣甘蓝.png" >
-			   	<p> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank"> 羽衣甘蓝</a></p>
+			    <img src="images/p2.jpg" >
+			   	<p class="good-title"> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">【小雏菊】迷你小雏菊，艺术干花，清新家居装饰，拍摄道具，插花原料</a></p>
 			    <p class="price"><a class="btn btn-link" href="../goods_display/goods_display.html" target="=_blank">￥288</a></p> 
 		  	</div>
 		  </td>
 		 <td>
 		    <div>
-			    <img src="images/百合.png" >
-			   	<p> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">百合</a></p>
+			    <img src="images/p3.jpg" >
+			   	<p class="good-title"> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">混搭大花束，鲜花速递，告白利器</a></p>
 			    <p class="price"><a class="btn btn-link" href="../goods_display/goods_display.html" target="=_blank">￥288</a></p> 
 		  	</div>
 		  </td>
 		  <td>
 		    <div>
 			    <img src="images/康乃馨.png" >
-			   	<p> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank"> 康乃馨</a></p>
+			   	<p class="good-title"> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">【康乃馨】康乃馨，送母亲，鲜花速递，母亲节礼物</a></p>
 			    <p class="price"><a class="btn btn-link" href="../goods_display/goods_display.html" target="=_blank">￥288</a></p> 
 		  	</div>
 		  </td>

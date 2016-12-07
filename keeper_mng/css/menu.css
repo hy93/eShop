@@ -1,6 +1,8 @@
 
 #menu{
-	width: 300px;
+	background: #2d2c41;
+	width: 320px;
+	height: 100%;
 	position:fixed;
 	top: 100px;
 	left: 10px;
