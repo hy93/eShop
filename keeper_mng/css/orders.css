@@ -1,12 +1,25 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+section{
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 30px;
+	z-index: 20;
+}
+
 .order_div{
 	padding: 0;
 	position: relative;
 }
-
+#orders_all{
+	position: relative;
+}
 
 .order_title{
 	height: 40px;
-	width: 1000px;
+	width: 990px;
 	line-height: 40px;
 	padding-left: 20px;
 	border-radius: 10px 10px 0px 0px;
@@ -97,7 +110,7 @@
 	position: absolute;
 	left: 400px;
 	top: 0px;
-	width: 150px;
+	width: 140px;
 	height: 100%;
 	border-bottom: 1px solid lightgray;
 	border-right: 1px solid lightgray;
@@ -109,7 +122,7 @@
 }
 .trans_status{
 	position: absolute;
-	left: 900px;
+	left: 890px;
 	top: 0px;
 	width: 100px;
 	height: 100%;
@@ -133,7 +146,7 @@
 }
 .reciever_div{
 	position: absolute;
-	left: 550px;
+	left: 540px;
 	top: 0px;
 	width: 350px;
 	height: 100%;
@@ -151,4 +164,26 @@
 .reciever_div a{
 	text-decoration: none;
 	padding: 0;
+}
+
+.search{
+	position: absolute;
+	top: 0px;
+	right: 20px;
+}
+.search input{
+	position: absolute;
+	right: 90px;
+	width: 150px;
+
+}
+.search button{
+	position: absolute;
+	right: 20px;
+}
+.delete_div{
+	margin-left: 20px;
+}
+.delete_div button{
+	margin-left: 10px;
 }
