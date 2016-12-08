@@ -1,0 +1,154 @@
+.order_div{
+	padding: 0;
+	position: relative;
+}
+
+
+.order_title{
+	height: 40px;
+	width: 1000px;
+	line-height: 40px;
+	padding-left: 20px;
+	border-radius: 10px 10px 0px 0px;
+	margin-top: 20px;
+}
+.order_title .remove{
+	text-decoration: none;
+	color: white;
+	float: right;
+	font-size: 18pt;
+	margin-right: 30px;
+	padding: 0px;
+	line-height: 40px;
+}
+
+.order_title .orderid{
+	margin-left: 40px;
+}
+
+.order_title .ordertime{
+	margin-left: 40px;
+}
+.unsend{
+	background-color: #b63b4d;
+}
+.sending{
+	background-color: #FFCC66;
+}
+.finished{
+	background-color: #669966;
+}
+.canceled{
+	background-color: lightgray;
+}
+.good_div{
+	height: 100px;
+	width: 400px;
+	border-bottom: 1px solid lightgray;
+	border-left: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+	padding: 10px;
+	position: relative;
+	color: #555555;
+}
+.good_div img{
+	height: 80px;
+	width: 80px;
+	float: left;
+}
+.good_div .text{
+	float: left;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+.good_div h4{
+	font-size: 10pt;
+	width: 190px;
+	height: 25px;
+	white-space:nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+.good_div input{
+	margin-left: 20px;
+}
+.good_div h4 a{
+	color: #555555;
+}
+.good_div h4 a:hover{
+	color: #b63b4d;
+} 
+.good_div ul li{
+	float: left;
+	color: #555555;
+	padding-left: 10px;
+}
+.price{
+	position: absolute;
+	left: 315px;
+	top: 20px;
+}
+.num{
+	position: absolute;
+	left: 315px;
+	top: 60px;
+}
+.amount_div{
+	position: absolute;
+	left: 400px;
+	top: 0px;
+	width: 150px;
+	height: 100%;
+	border-bottom: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+}
+.amount_div p{
+	text-align: center;
+	position: relative;
+	top: 30px;
+}
+.trans_status{
+	position: absolute;
+	left: 900px;
+	top: 0px;
+	width: 100px;
+	height: 100%;
+	border-bottom: 1px solid lightgray;
+	border-right: 1px solid lightgray;
+}
+.trans_status p{
+	text-align: center;
+	position: relative;
+	top: 10px;
+}
+.trans_status button{
+	padding: 0;
+	text-align: center;
+	font-size: 10pt;
+	margin-left: 10px;
+	width: 80px;
+	height: 25px;
+	text-align: center;
+	margin-top: 5px;
+}
+.reciever_div{
+	position: absolute;
+	left: 550px;
+	top: 0px;
+	width: 350px;
+	height: 100%;
+	border-bottom: 1px solid lightgray;
+	border-right: 1px solid lightgray;	
+	padding: 10px;
+}
+.reciever_div p{
+	width: 330px;
+	height: 18px;
+	white-space:nowrap;
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
+.reciever_div a{
+	text-decoration: none;
+	padding: 0;
+}
