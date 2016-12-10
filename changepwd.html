@@ -120,10 +120,9 @@ $(document).ready(function() {
         }
     });
   // Validate the form manually
-  change()
-  {
-    alert("修改成功");
-  }
+   $('#validateBtn').click(function() {
+        $('#changepwd').bootstrapValidator('validate');
+    });
 
     $('#resetBtn').click(function() {
         $('#changepwd').data('bootstrapValidator').resetForm(true);

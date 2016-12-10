@@ -5,10 +5,12 @@
 	<meta charset="utf-8">
 
 	<!-- 引入bootstrap -->
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
+     <script type="text/javascript" src="../dist/js/bootstrapValidator.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/all.css">
   <link rel="stylesheet" type="text/css" href="css/pic_style.css">
 
@@ -37,14 +39,17 @@
 </section>
 
 <section id="step1">
-		  <form class="form-horizontal">
+		  <form id="yanzheng" class="form-horizontal"  data-bv-message="This value is not valid"
+                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
 		    <fieldset>
 		    <div class="control-group">
 
-              <label class="control-label" for="input01">店铺名称</label>
+              <label name="shop_name" class="control-label" for="input01">店铺名称</label>
 		          <!-- Text input-->
 		          <div class="controls">
-		            <input type="text" placeholder="" class="input-xlarge">
+		            <input type="text"  placeholder="" class="input-xlarge"   required data-bv-notempty-message="The shop name is required and cannot be empty">
 		            <p class="help-block"></p>
 		          </div>
 		        </div>
@@ -52,9 +57,9 @@
 		    <div class="control-group">
 
 		          <!-- Text input-->
-              <label class="control-label" for="input01">所在地</label>
+              <label name="shop_location" class="control-label" for="input01">所在地</label>
 		          <div class="controls">
-		            <input type="text" placeholder="" class="input-xlarge">
+		            <input type="text" placeholder="" class="input-xlarge"   required data-bv-notempty-message="The shop location is required and cannot be empty">
 		            <p class="help-block"></p>
 		          </div>
 		        </div>
@@ -80,16 +85,17 @@
 		    <div class="control-group">
 
 		          <!-- File Upload -->
-              <label class="control-label">店铺Banner</label>
+              <label name="shop_banner" class="control-label">店铺Banner</label>
 		          <div class="controls">
 		            <img id="preview_7" src="img/banner.gif" class="img-thumbnail" /> <br/>
-    				<input type="file" name="file" onchange="imgPreview(this,7)" /> <br />
+    				<input type="file" name="file"   required data-bv-notempty-message="The shop banner is required and cannot be empty" onchange="imgPreview(this,7)" /> <br />
 		          </div>
 		        </div>
 		    </fieldset>
 		  </form>
       
-    <div class="btnf"><button class="btn btn-primary" onclick="step2()">保存并下一步</button></div>
+    <div class="btnf">  <button type="submit" class="btn btn-info" id="validateBtn" >修改</button>
+    <button class="btn btn-primary"  onclick="step2()">保存并下一步</button></div>
 </section>
 
 <section id="step2">
@@ -168,5 +174,49 @@
     <button class="center btn btn-large btn-success" onclick="window.open('../goods_list/goods_list.html');">查看我的店铺</button>
     <button class="center btn btn-default" onclick="window.open('../goods_form/goods_form.html')">为店铺添加商品</button>
 </section>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() { 
+    $('#yanzheng').bootstrapValidator({
+//        live: 'disabled',
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            shop_name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The shop_name is required and cannot be empty'
+                }
+            }
+        },
+            shop_location: {
+                validators: {
+                    notEmpty: {
+                        message: 'The shop_location is required and cannot be empty'
+                    }
+                 
+                }
+            },
+          shop_banner: {
+                validators: {
+                    notEmpty: {
+                        message: 'The shop_banner is required and cannot be empty'
+                    }
+                 
+                }
+            },
+        }
+    });
+	  $('#validateBtn').click(function() {
+        $('#yanzheng').bootstrapValidator('validate');
+    });
+	});
+</script>
 </body>
 </html>
