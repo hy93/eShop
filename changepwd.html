@@ -20,7 +20,7 @@
 				padding-top: 30px;
 			}
 			
-			/*.form-control {
+			.form-control {
 				padding: 6px 12px;
 				font-size: 14px;
 				line-height: 1.42857143;
@@ -28,15 +28,59 @@
 				background-color: #fff;
 				border: 1px solid #ccc;
 				border-radius: 4px;
-			}*/
+			}
 			
 		</style>
+		<script type="text/javascript">
+
+		function isEmail(strEmail)
+		{
+
+			if(strEmail.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/)!=-1)
+				return true;
+			else{
+				alert("邮箱格式不正确");
+			   changepwd.email.focus();
+			    }
+			}
+
+		}
+		function isPassword(strPassword)
+		{
+			if(6<strPassword.length<12)
+				alert("密码长度应该在6-12之间");
+		}
+		function check()
+		{
+			with(document.all){
+				if(re_password.value!=confirm_password.value)
+				{
+					alert("两次密码输入不一致")
+					re_password.value="";
+					confirm_password.value="";
+				}
+				else 
+					alert("修改以提交");
+			}
+		}
+	    // function validate_form(thisform)
+	    // {
+	    // 	if(document.form.email.value.length==0||document.form.password.value.length==0||document.form.re_password.value.length==0||document.form.confirm_password.value.length==0)
+	    // 	{
+	    // 		alert("内容不能为空")；
+	    // 		return false;
+	    // 	}
+	    // 	return true;
+    
+	    // }
+
+	  </script>
 	</head>
 
 	<body>
-		<div id="outer" align="center">
+		<div id="outer" align="center" >
 			<div id="inner">
-				<form action="#" method="get">
+				<form action="#" method="post" name="changepwd">
 					<table width="80%" align="center">
 						<tr>
 							<td colspan="3">修改密码</td>
@@ -44,33 +88,33 @@
 						<tr>
 							<td align="right">Email</td>
 							<td colspan="2">
-								<input type="text" name="email" size="30px" class="form-control" placeholder="请输入邮箱账号" />
+								<input type="text" name="email"  size="30px" class="form-control" placeholder="请输入邮箱账号" onblur="isEmail(this.value)"  required>
 								
 							</td>
 						</tr>
 						<tr>
 							<td align="right">旧密码</td>
 							<td colspan="2">
-								<input type="password" name="password" size="30px" class="form-control" />
+								<input type="password" name="password" size="30px" class="form-control" required >
 							</td>
 						</tr>
 						<tr>
 							<td align="right">新密码</td>
 							<td colspan="2">
-								<input type="password" name="password" size="30px" class="form-control" />
+								<input type="password" name="re_password" onblur="isPassword(this.value)"  size="30px" class="form-control" required >
 							</td>
 						</tr>
 						<tr>
 							<td align="right">确认密码</td>
 							<td colspan="2">
-								<input type="password" name="repassword"  size="30px" class="form-control" />
+								<input type="password" name="confirm_password"  size="30px" class="form-control" required>
 							</td>
 						</tr>
 						
 						<tr align="center">
 							<td colspan="3">
-								<input type="submit" value="修改"  style="height:35px;width:100px;color:black;"  />
-								<input type="reset" value="取消" style="height:35px;width:100px;color:black;" />
+								<input type="submit" value="修改" onclick="check()"  style="height:35px;width:100px;color:black;"  >
+								<input type="reset" value="取消" style="height:35px;width:100px;color:black;" >
 							</td>
 						</tr>
 					</table>
