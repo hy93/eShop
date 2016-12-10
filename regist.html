@@ -4,17 +4,84 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>用户注册</title>
-
-
 		<!-- 引入bootstrap -->
-		<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="goods-dispaly/js/jquery-1.11.3.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<script type="text/javascript" src="goods-dispaly/js/bootstrap.min.js"></script>
+		<!--<script type="text/javascript" src="js/top-bar.js"></script>-->
+		<!--<script type="text/javascript" src="js/login.js"></script>-->
+		<script type="text/javascript" src="goods-dispaly/js/jquery.validate.js"></script>
+		<script type="text/javascript" src="goods-dispaly/js/messages_zh.js"></script>
+		
+		<script type="text/javascript">
+			$().ready(function () {
+				$("#formId").validate({
+					//这是校验规则
+					rules:{
+						username:{
+							required: true
+						},
+						password:{
+							required:true
+						},
+						repassword:{
+							required:true,
+							 equalTo: "#pwd"
+						},
+						email:{
+							required: true,
+    						email: true
+						},
+						idnumber:{
+								required:function(){
+								var user = $("#buyer").prop("checked");
+								if(user=='checked'){
+									return false;
+								}
+								else{
+									return true;
+								}
+							}
+						}	
+					},
+					
+					//这是错误信息的内容
+					messages: {
+					   	firstname: "请输入姓名",
+					   email: {
+					    required: "请输入Email地址",
+					    email: "请输入正确的email地址"
+					   },
+					   password: {
+					    required: "请输入密码",
+					   },
+					   repassword: {
+					    required: "请输入确认密码",
+					    minlength: "确认密码不能小于5个字符",
+					    equalTo: "两次输入密码不同"
+					   },
+					   idnumber: {
+					   	required: "请输入身份证号",
+					   }
+				 },
+				 
+				 //这个是错误信息的提示位置
+				 errorPlacement: function(error, element) {
+				    if ( element.is(":radio") )
+				        error.appendTo( element.parent().next().next() );
+				    else if ( element.is(":checkbox") )
+				        error.appendTo ( element.next() );
+				    else
+				        error.appendTo( element.parent().next() );
+				},
+				
 
-		<script type="text/javascript" src="js/top-bar.js"></script>
-		<script type="text/javascript" src="js/login.js"></script>
+							
+				});
+			});
+		</script>
 
-		<link rel="stylesheet" type="text/css" href="css/top-bar.css">
+		<!--<link rel="stylesheet" type="text/css" href="css/top-bar.css">-->
 		<style type="text/css">
 			*{
 				font-family: 微软雅黑;
@@ -53,6 +120,7 @@
 	</head>
 	<body>
 
+		
 	<!-- 登录模态框（Modal） -->
 		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		    <div class="modal-dialog">
@@ -95,26 +163,28 @@
 		<button id="logout-btn" class="btn btn-primary" onclick="logout()">退出登录</button>
 	</div>
 
-
 		<div id="outer" align="center">
 			<div id="inner">
-				<form action="#" method="get">
+				<form action="#" method="get" id="formId">
 					<table width="70%" align="center">
 						<tr>
-							<td colspan="3" class="page-header">用户注册</td>
+							<td colspan="4" class="page-header">用户注册</td>
 						</tr>
 						<tr>
-							<td align="right">用户名</td>
-							<td colspan="2">
+							<td width="20%" align="right">用户名</td>
+							<td colspan="2" width="50%">
 								<input type="text" name="username" size="30px" class="form-control" placeholder="请输入用户名" />
 								
 							</td>
+							<td class="status"></td>
+							
 						</tr>
 						<tr>
 							<td align="right">密码</td>
 							<td colspan="2">
-								<input type="password" name="password" size="30px" class="form-control" />
+								<input id="pwd" type="password" name="password" size="30px" class="form-control" />
 							</td>
+							<td class="status"></td>
 						</tr>
 
 						<tr>
@@ -122,14 +192,16 @@
 							<td colspan="2">
 								<input type="password" name="repassword"  size="30px" class="form-control" />
 							</td>
+							<td class="status"></td>
 						</tr>
 
 						<tr>
 							<td align="right">Email</td>
 							<td colspan="2">
-								<input type="text" name="email"  size="30px" class="form-control"/>
+								<input type="text" name="email"  size="30px" class="form-control email"/>
 								
 							</td>
+							<td class="status"></td>
 						</tr>
 
 						<tr>
@@ -137,20 +209,23 @@
 							<td colspan="2">
 								<input type="text" name="name"  size="30px" class="form-control" />
 							</td>
+							<td class="status"></td>
 						</tr>
 						<tr>
 							<td align="right">身份证号</td>
 							<td colspan="2">
 								<input type="text" name="idnumber" size="30px" class="form-control" />
 							</td>
+							<td class="status"></td>
 						</tr>
 						
 						<tr>
 							<td align="right">性别</td>
-							<td colspan="2">
+							<td colspan="3">
 								<input type="radio" name="sex" size="40px" value="1" />男
 								<input type="radio" name="sex" size="40px" value="0" checked="checked" />女
 							</td>
+							
 						</tr>
 						
 						<tr>
@@ -158,12 +233,13 @@
 							<td colspan="2">
 								<input type="date" name="birthday"  size="30px" class="form-control"  />
 							</td>
+							<td class="status"></td>
 						</tr>
 						<tr>
 							<td align="right">用户</td>
-							<td colspan="2">
-								<input type="radio" name="buyer" size="40px" value="1" />买家
-								<input type="radio" name="seller" size="40px" value="0" checked="checked" />卖家
+							<td colspan="3">
+								<input type="radio" name="user" size="40px" id="buyer" value="1" />买家
+								<input type="radio" name="user" size="40px" value="0" checked="checked" />卖家
 							</td>
 						</tr>
 						<tr>
@@ -172,8 +248,9 @@
 								<input type="text" name="code" size="15px" class="form-control"  />
 							</td>
 							<td>
-								
+								这里是验证码
 							</td>
+							<td class="status"></td>
 						</tr>
 						<tr align="center">
 							<td colspan="3">
@@ -186,5 +263,4 @@
 			</div>
 		</div>
 	</body>
-
 </html>
