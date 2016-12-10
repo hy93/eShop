@@ -12,6 +12,8 @@
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<!-- font-awsome -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 	<link rel="stylesheet" type="text/css" href="css/top-bar.css">
@@ -21,6 +23,7 @@
 	<link rel="stylesheet" type="text/css" href="css/card2.css">
 	<link rel="stylesheet" type="text/css" href="css/card3.css">
 	<link rel="stylesheet" type="text/css" href="css/good-card.css">
+	<link rel="stylesheet" type="text/css" href="css/tutorial.css">
 
 	<script type="text/javascript" src="js/scroll-jquery.js"></script>
 	<script type="text/javascript" src="js/top-bar.js"></script>
@@ -35,7 +38,7 @@
 			<a href="javascript:scroll('home');">首页</a>
 			<a href="javascript:scroll('shops');">优店精选</a>
 			<a href="javascript:scroll('goods');">热销商品</a>
-			<a href="javascript:scroll('servies');">服务细则</a>
+			<a href="javascript:scroll('tutorial');">我要开店</a>
 			<a href="javascript:scroll('contact');">联系我们</a>
 		</nav>	
 	</div>
@@ -71,7 +74,7 @@
 			<a href="javascript:scroll('home');">首页</a>
 			<a href="javascript:scroll('shops');">优店精选</a>
 			<a href="javascript:scroll('goods');">热销商品</a>
-			<a href="javascript:scroll('servies');">服务细则</a>
+			<a href="javascript:scroll('tutorial');">我要开店</a>
 			<a href="javascript:scroll('contact');">联系我们</a>
 			<a id="bar-login" class="btn btn-link btn-lg" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user" ></span> 您好，请登录</a>
 			<a id="bar-user" onclick="showpanel();" ><img src="img/user.jpg" class="img-circle"> 红星照我去战斗 <span class="glyphicon glyphicon-chevron-down"></span></a>
@@ -318,9 +321,17 @@
 		<div style="clear:both;"></div>
 	</ul>
 </section>
+<section id="tutorial">
+	<h2 class="page-title">开店指南</h2>
+	<p><i class="fa fa-check-square-o" aria-hidden="true"></i> STEP1：<a class="btn btn-default" href="regist.html" target="_blank">注册</a>，选择角色为“卖家”；</p>
+	<p><i class="fa fa-check-square-o" aria-hidden="true"></i> STEP2：点击这里登录账号 <i class="fa fa-hand-o-right" aria-hidden="true"></i> <button class="btn btn-default" data-toggle="modal" data-target="#loginModal" >登录</button></p>
+	<p><i class="fa fa-check-square-o" aria-hidden="true"></i> STEP3：点击这里创建店铺 <i class="fa fa-hand-o-right" aria-hidden="true"></i> <a class="btn btn-default" target="_blank" href="shop_form/shop_form.html">创建店铺</a></p>
+	<p><i class="fa fa-check-square-o" aria-hidden="true"></i> STEP4：进入 <a class="btn btn-default" href="goods_list/goods_list.html">我的店铺</a></p>
+</section>
 
-
-
+<div id="returnhome">
+	<a href="javascript:scroll('top');"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+</div>
 <script type="text/javascript">
 	$(window).scroll(function(){
 　　　　var y = window.scrollY;

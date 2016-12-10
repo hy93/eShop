@@ -133,3 +133,14 @@ body{
     float: left;
     margin-left: 20px;
 }
+#add{
+    color: #DDDDDD;
+    line-height: 350px;
+    text-align: center;
+    font-size: 70pt;
+    cursor: pointer;
+}
+#add:hover{
+    background-color: #EEEEEE;
+    color: white;
+}

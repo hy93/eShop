@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
     <script type="text/javascript" src="dist/js/bootstrap.min.js"></script>
     <link href="index.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css">
 
 		<!-- top bar 配置文件 -->
 		<script type="text/javascript" src="../js/login.js"></script>
@@ -26,7 +27,7 @@
 				<a href="../index.html#home">首页</a>
 				<a href="../index.html#shops">优店精选</a>
 				<a href="../index.html#goods">热销商品</a>
-				<a href="../index.html#servies">服务细则</a>
+				<a href="../index.html#tutorial">我要开店</a>
 				<a href="../index.html#contact">联系我们</a>
 				<a id="bar-login" class="btn btn-link btn-lg" data-toggle="modal" data-target="#loginModal"><span class="glyphicon glyphicon-user" ></span> 您好，请登录</a>
 				<a id="bar-user" onclick="showpanel();"><img src="../img/user.jpg" class="img-circle"> 红星照我去战斗 <span class="glyphicon glyphicon-chevron-down"></span></a>
@@ -158,8 +159,8 @@
 		<tr>
 		  <td>
 		  	<div>
-			    <img src="images/白玫瑰.jpg" >
-			   	<p class="good-title"> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">【白玫瑰】鲜花速递，白玫瑰，礼物，告白神器，摄影道具</a></p>
+			    <img src="images/康乃馨.png" >
+			   	<p class="good-title"> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">【康乃馨】康乃馨，送母亲，鲜花速递，母亲节礼物</a></p>
 			    <p class="price"><a class="btn btn-link" href="../goods_display/goods_display.html" target="=_blank">￥288</a></p> 
 		  	</div>
 		  </td>		 
@@ -195,11 +196,9 @@
 		  	</div>
 		  </td>
 		  <td>
-		    <div>
-			    <img src="images/康乃馨.png" >
-			   	<p class="good-title"> <a class="name btn btn-link" href="../goods_display/goods_display.html" target="=_blank">【康乃馨】康乃馨，送母亲，鲜花速递，母亲节礼物</a></p>
-			    <p class="price"><a class="btn btn-link" href="../goods_display/goods_display.html" target="=_blank">￥288</a></p> 
-		  	</div>
+		    <div id="add" onclick="window.open('../goods_form/goods_form.html')">
+		    	<i class="fa fa-plus" aria-hidden="true"></i>
+		    </div>
 		  </td>
 		</tr>
 		</table>
