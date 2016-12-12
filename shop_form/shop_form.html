@@ -39,63 +39,63 @@
 </section>
 
 <section id="step1">
-		  <form id="yanzheng" class="form-horizontal"  data-bv-message="This value is not valid"
+		  <form id="yanzheng" class="form-horizontal"  method="post" action="#" 
+		              data-bv-message="This value is not valid"
                       data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
                       data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
                       data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
 		    <fieldset>
-		    <div class="control-group">
+		      <div class="form-group">
+                        <label class="col-lg-3 control-label">店铺名称</label>
+                        <div class="col-lg-5">
+                            <input class="form-control" name="shop_name" type="text" data-bv-emailaddress-message="The shop name is required and cannot be empty" />
+                        </div>
+              </div>
+		   <!--    <div class="control-group">
 
               <label name="shop_name" class="control-label" for="input01">店铺名称</label>
-		          <!-- Text input-->
+		          
 		          <div class="controls">
-		            <input type="text"  placeholder="" class="input-xlarge"   required data-bv-notempty-message="The shop name is required and cannot be empty">
-		            <p class="help-block"></p>
+		            <input type="text"  placeholder="" class="form-control"   required data-bv-notempty-message="The shop name is required and cannot be empty"/>
+		         <p class="help-block"></p> 
 		          </div>
-		        </div>
-
-		    <div class="control-group">
-
-		          <!-- Text input-->
-              <label name="shop_location" class="control-label" for="input01">所在地</label>
-		          <div class="controls">
-		            <input type="text" placeholder="" class="input-xlarge"   required data-bv-notempty-message="The shop location is required and cannot be empty">
-		            <p class="help-block"></p>
+		        </div> -->
+          
+		    <div class="form-group">
+              <label class="col-lg-3 control-label">所在地</label>
+		          <div class="col-lg-5">
+		            <input type="text" class="form-control" name="shop_location"  required data-bv-notempty-message="The shop location is required and cannot be empty"/>		 
 		          </div>
-		        </div>
-        <div class="control-group">
-
-              <!-- Text input-->
-              <label class="control-label" for="input01">配送范围</label>
-              <div class="controls">
-                <input type="text" placeholder="" class="input-xlarge">
-                <p class="help-block"></p>
+		   </div>
+           <div class="form-group">
+              <label class="col-lg-3 control-label">配送范围</label>
+              <div class="col-lg-5">
+                <input type="text" class="form-control" name=""/>
+               <!--  <p class="help-block"></p> -->
               </div>
             </div>
-		    <div class="control-group">
-
-		          <!-- Text input-->
-              <label class="control-label" for="input01">主营类别</label>
-		          <div class="controls">
-		            <input type="text" placeholder="" class="input-xlarge">
+		    <div class="form-group">
+              <label class="col-lg-3 control-label">主营类别</label>
+		          <div class="col-lg-5">
+		            <input type="text" class="form-control" />
 		            <p class="help-block"></p>
 		          </div>
 		        </div>
 
-		    <div class="control-group">
-
+		    <div class="form-group">
 		          <!-- File Upload -->
-              <label name="shop_banner" class="control-label">店铺Banner</label>
+              <label class="col-lg-3 control-label">店铺Banner</label>
 		          <div class="controls">
 		            <img id="preview_7" src="img/banner.gif" class="img-thumbnail" /> <br/>
-    				<input type="file" name="file"   required data-bv-notempty-message="The shop banner is required and cannot be empty" onchange="imgPreview(this,7)" /> <br />
+    				<input type="file" name="file" class="form-control"  required data-bv-notempty-message="The shop banner is required and cannot be empty" onchange="imgPreview(this,7)" /> <br />
 		          </div>
 		        </div>
 		    </fieldset>
 		  </form>
       
-    <div class="btnf">  <button type="submit" class="btn btn-info" id="validateBtn" >修改</button>
-    <button class="btn btn-primary"  onclick="step2()">保存并下一步</button></div>
+    <div class="btnf">  <button type="submit" class="btn btn-info" id="save" >保存</button>
+   <button class="btn btn-primary"  onclick="step2()">下一步</button></div>
+   <!-- 	<div class="btnf"><button class="btn btn-primary"  id="save">保存并下一步</button></div> -->
 </section>
 
 <section id="step2">
@@ -188,6 +188,7 @@ $(document).ready(function() {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
+        	
             shop_name: {
                 validators: {
                     notEmpty: {
@@ -213,8 +214,9 @@ $(document).ready(function() {
             },
         }
     });
-	  $('#validateBtn').click(function() {
+	   $('#save').click(function() {
         $('#yanzheng').bootstrapValidator('validate');
+     
     });
 	});
 </script>
