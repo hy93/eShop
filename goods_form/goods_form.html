@@ -9,7 +9,11 @@
 	<!-- 引入bootstrap -->
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../dist/js/bootstrapValidator.js"></script>
+	
+	
 	<!-- 引入font-awesome-->
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -238,15 +242,70 @@
 				<li> <a href="#">影视动漫周边</a> </li>
 			</ul>
 		</div> -->
-		<form id="basic_info">
-			<table>
+		<form id="basic_info" method="post" class="form-horizontal" action="#"
+			data-bv-message="This value is not valid"
+            data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+            data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+            data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+            
+            
+                    <div class="form-group">
+                        <label class="col-lg-6 control-label">商品类别：</label>
+                        <div class="col-lg-6">
+                            <input class="form-control" name="email" type="email" data-bv-emailaddress-message="The input is not a valid email address" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-6 control-label">商品标题：</label>
+                        <div class="col-lg-6">
+                            <input type="password" class="form-control" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-lg-6 control-label">商品描述：</label>
+                        <div class="col-lg-6">
+                            <input type="password" class="form-control" name="password"
+                                   required data-bv-notempty-message="The password is required and cannot be empty"
+                               
+                                    data-bv-identical-field="password" data-bv-identical-message="Password length between 6-12"
+                                 />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-6 control-label">原价：</label>
+                        <div class="col-lg-6">
+                            <input type="number" class="form-control" name="price"
+                                   required data-bv-notempty-message="The confirm password is required and cannot be empty"
+                                   data-bv-identical="true" data-bv-identical-field="password" data-bv-identical-message="The password and its confirm are not the same"
+                                  />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-6 control-label">库存：</label>
+                        <div class="col-lg-6">
+                            <input type="number" class="form-control" name="stock"
+                                   required data-bv-notempty-message="The confirm password is required and cannot be empty"
+                                   data-bv-identical="true" data-bv-identical-field="password" data-bv-identical-message="The password and its confirm are not the same"
+                                  />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    	<div class="col-lg-6"><input type="radio" name="time" value="1" checked onclick="stime_show(this)" />立刻开卖</div>
+                    	<div class="col-lg-6"><input type="radio" name="time" value="2" onclick="stime_show(this)" />稍后开卖</div>
+                    </div>
+
+                
+            
+			<!--<table class="form-group">
 					<tr>
 						<td>商品类别：</td>
 						<td><input type="text" name="type" class="form-control" id="choosed_type"></td>
 					</tr>
 					<tr>
 						<td>商品标题：</td>
-						<td><input type="text" class="form-control" name="good_name"></td>
+						<td><input type="text" class="form-control" name="good_name"  data-bv-notempty-message="The title is required and cannot be empty"></td>
 					</tr>
 					<tr>
 						<td>商品描述：</td>
@@ -254,24 +313,71 @@
 					</tr>
 					<tr>
 						<td>原价：</td>
-						<td><input type="number" class="form-control" name="price"></td>
+						<td><input type="number" class="form-control" name="price"  data-bv-notempty-message="The price is required and cannot be empty"></td>
 					</tr>
 					<tr>
 						<td>库存：</td>
-						<td><input type="number" class="form-control" name="stock"></td>
+						<td><input type="number" class="form-control" name="stock"  data-bv-notempty-message="The quantity is required and cannot be empty"></td>
 					</tr>
 					<tr>
 						<td><div><input type="radio" name="time" value="1" checked onclick="stime_show(this)" />立刻开卖</div></td>
 						<td><div><input type="radio" name="time" value="2" onclick="stime_show(this)" />稍后开卖</div></td>
 					</tr>
-			</table>	
-
+			</table>-->
+			
 			<div id="stimediv" class="well" >
 				请选择起售时间：
 				<input class="form-control" type="date" name="stime"/>
 			</div>
 		</form>
-		<div class="btnf"><button class="btn btn-primary" onclick="step2()">保存并下一步</button></div>
+		<div class="btnf"><button class="btn btn-primary"  id="save">保存并下一步</button></div>
+
+<script type="text/javascript">		
+$(document).ready(function() {
+    $('#basic_info').bootstrapValidator({
+//        live: 'disabled',
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            good_name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The title is required and cannot be empty'
+                    }
+                }
+            },
+            price: {
+                validators: {
+                    notEmpty: {
+                        message: 'The price is required and cannot be empty'
+                    }
+                }
+            },
+            stock: {
+                validators: {
+                    notEmpty: {
+                        message: 'The quantity is required and cannot be empty'
+                    }
+                }
+            },
+         
+        }
+    });
+  // Validate the form manually
+   $('#save').click(function() {
+        var result = $('#basic_info').bootstrapValidator('validate');
+       if(result==true){
+       	 return step2();
+       }
+    });
+});
+</script>
+
+			
 	</section>
 
 	<section id="step2">
