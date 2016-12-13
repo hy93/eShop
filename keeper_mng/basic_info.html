@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 引入bootstrap -->
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+
+	 <!-- bootstrap validator -->
+	<link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
+	<script type="text/javascript" src="../dist/js/bootstrapValidator.js"></script>
+	<script type="text/javascript" src="../dist/js/language/zh_CN.js"></script>
+
+	<script type="text/javascript" src="../shop_form/js/pic_select.js"></script>
+
+	<style type="text/css">
+		*{
+			font-family: 微软雅黑;
+		}
+		h3{
+			text-align: center;
+		}
+		
+
+	</style>
+</head>
+<body>
+<section id="step1">
+      <h3 class="page-header">店铺基本信息</h3>
+		  <form id="basic_info" class="form-horizontal"  method="post" action="#" 
+		              data-bv-message="This value is not valid"
+                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+		    <fieldset>
+		      <div class="form-group">
+              <label class="col-lg-4 control-label">店铺名称</label>
+              <div class="col-lg-5">
+                <input class="form-control" name="shop_name" type="text" data-bv-emailaddress-message="The shop name is required and cannot be empty" />
+              </div>
+          </div>
+
+		      <div class="form-group">
+              <label class="col-lg-4 control-label">所在地</label>
+		          <div class="col-lg-5">
+		            <input type="text" class="form-control" name="shop_location"  required/>		 
+		          </div>
+		      </div>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">配送范围</label>
+              <div class="col-lg-5">
+                <input type="text" class="form-control" name=""/>
+              </div>
+          </div>
+		      <div class="form-group">
+              <label class="col-lg-4 control-label">主营类别</label>
+		          <div class="col-lg-5">
+		              <input type="text" class="form-control" />
+		              <p class="help-block"></p>
+		          </div>
+		      </div>
+
+		      <div class="form-group">
+              <label class="col-lg-4 control-label">店铺横幅</label>
+		          <div class="controls col-lg-5">
+                  <input type="file" name="file" class="form-control col-lg-5"  required  onchange="imgPreview(this,7)" />
+		              <img id="preview_7" src="../shop_form/img/banner.gif" class="img-thumbnail" /> <br/>
+		          </div>
+		      </div>
+          <div class="form-group">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-4">
+                  <button type="submit" class="btn btn-primary btn-block" id="save1"  >下一步</button>
+              </div>
+          </div>
+		    </fieldset>
+		  </form>
+    
+</section>
+
+<script type="text/javascript">
+
+$(document).ready(function() { 
+    $('#basic_info').bootstrapValidator({
+//        live: 'disabled',
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+        	
+            shop_name: {
+                validators: {
+                    notEmpty: {
+                        message: '请填写该字段'
+                }
+            }
+        },
+            shop_location: {
+                validators: {
+                    notEmpty: {
+                        message: '请填写该字段'
+                    }
+                 
+                }
+            },
+          shop_banner: {
+                validators: {
+                    notEmpty: {
+                        message: '请填写该字段'
+                    }
+                 
+                }
+            },
+        }
+    });
+	   $('#save1').click(function() {
+        $('#basic_info').bootstrapValidator('validate');
+        if($('#basic_info').data('bootstrapValidator').isValid())
+          scroll('step2');
+     
+    });
+});
+</script>
+</body>
+</html>

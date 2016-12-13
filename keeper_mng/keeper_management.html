@@ -38,17 +38,17 @@
 			<li>
 				<div class="link"><i class="fa fa-user-o" aria-hidden="true"></i>个人信息管理<i class="fa fa-chevron-down"></i></div>
 				<ul class="submenu">
-					<li><a href="#">修改注册信息</a></li>
-					<li><a href="#">修改密码</a></li>
+					<li><a href="#" onclick="change_userinfo();">修改注册信息</a></li>
+					<li><a href="#" onclick="change_pwd()">修改密码</a></li>
 				</ul>
 			</li>
 			<li>
 				<div class="link"><i class="fa fa-home" aria-hidden="true"></i>店铺信息<i class="fa fa-chevron-down"></i></div>
 				<ul class="submenu">
-					<li><a href="#">更换横幅</a></li>
-					<li><a href="#">更换海报</a></li>
-					<li><a href="#">编辑店铺基本信息</a></li>
-					<li><a href="#">编辑店铺详细信息</a></li>
+					<li><a href="#" onclick="change_banner()">更换横幅</a></li>
+					<li><a href="#" onclick="change_posters()">更换海报</a></li>
+					<li><a href="#" onclick="change_basic_info()">编辑店铺基本信息</a></li>
+					<li><a href="#" onclick="change_detail_info()">编辑店铺详细信息</a></li>
 				</ul>
 			</li>
 			<li><div class="link"><i class="fa fa-tags"></i>商品信息<i class="fa fa-chevron-down"></i></div>
@@ -64,21 +64,20 @@
 	<div id="crumb">
 		<ol class="breadcrumb">
 		    <li><a href="#">Home</a></li>
-		    <li><a href="#" onclick="change_orders('all');">订单信息管理</a></li>
+		    <li><a id="section" href="#" onclick="change_orders('all');">订单信息管理</a></li>
 		    <li class="active" id="location">所有订单</li>
 		</ol>
 	</div>
 
 
  	<div id="right">
-		<iframe id="myframe" src="../changepwd.html"></iframe>
+		<iframe id="myframe" src="all_orders.html"></iframe>
  	</div>
 	<script type="text/javascript">
 		var width = document.body.clientWidth;
 		var height = document.documentElement.clientHeight;
 		document.getElementById('right').style.width = (width-350)+'px';
 		document.getElementById('right').style.height = height-90+'px';
-		console.log(height);
 	</script>
 </body>
 </html>

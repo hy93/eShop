@@ -27,3 +27,14 @@
 	text-decoration: none;
 	color: white;
 }
+
+#sidebar .home{
+	position: absolute;
+	left: 20px;
+	bottom: 20px;
+}
+#sidebar .shop{
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+}

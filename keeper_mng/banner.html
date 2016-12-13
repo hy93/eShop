@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="../shop_form/js/pic_select.js"></script>
+	<!-- 引入bootstrap -->
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		*{
+			font-family: 微软雅黑;
+		}
+		body{
+			width: 600px;
+			margin: auto;
+		}
+		#preview_7{
+			width: 400px;
+			height: 80px;
+			margin-bottom:  20px;
+			margin-left: 20px;
+		}
+		input{
+			width: 200px;
+			margin: 20px;
+		}
+		.btn-primary{
+			margin-left: 200px;
+		}
+		h3{
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+
+<section id="banner">
+    <h3 class="page-header">店铺横幅</h3>
+	<div class="controls ">
+        <input type="file" name="file" class="form-control"  required  onchange="imgPreview(this,7)" />
+		<img id="preview_7" src="../shop_form/img/banner.gif" class="img-thumbnail" /> <br/>
+	</div>
+	<button class="btn btn-primary">保存横幅</button>
+</section>
+</body>
+</html>

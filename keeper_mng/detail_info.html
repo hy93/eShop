@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- 引入bootstrap -->
+	<script type="text/javascript" src="../js/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+
+	 <!-- bootstrap validator -->
+	<link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
+	<script type="text/javascript" src="../dist/js/bootstrapValidator.js"></script>
+	<script type="text/javascript" src="../dist/js/language/zh_CN.js"></script>
+
+	<script type="text/javascript" src="../shop_form/js/pic_select.js"></script>
+
+	<style type="text/css">
+		*{
+			font-family: 微软雅黑;
+		}
+		h3{
+			text-align: center;
+		}
+		
+
+	</style>
+</head>
+<body>
+
+<section id="step3">
+    <h3 class="page-header">店铺详细信息</h3>
+      <form id="detail_info" class="form-horizontal"  method="post" action="../goods_list/goods_list.html"
+                  data-bv-message="This value is not valid"
+                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+        <fieldset>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">店铺简介</label>
+              <div class="col-lg-5">
+                  <input class="form-control" name="intro" type="text" placeholder="请输入不多于50个字符"/>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">营业执照</label>
+              <div class="col-lg-5">
+                <input type="text" class="form-control" name="certification"  required/>     
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">店铺热线</label>
+              <div class="col-lg-5">
+                <input type="text" class="form-control" name="phone"/>
+              </div>
+          </div>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">经营类型</label>
+              <div class="col-lg-2"><input type="radio" name="run_type" value="1" checked/>个体经营</div>
+              <div class="col-lg-2"><input type="radio" name="run_type" value="2"/>企业经营</div>
+          </div>
+
+          <div class="form-group">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-4">
+                  <button class="btn btn-primary btn-block" id="save3">下一步</button>
+              </div>
+          </div>
+        </fieldset>
+      </form>  
+</section>
+
+<script type="text/javascript">
+
+$(document).ready(function() { 
+
+    $('#detail_info').bootstrapValidator({
+//        live: 'disabled',
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {          
+            intro: {
+                validators: {
+                    stringLength:{
+                      max:50
+                    }
+                }
+            }
+        },
+            shop_location: {
+                validators: {
+                    notEmpty: {
+                        message: '请填写该字段'
+                    }
+                 
+                }
+            },
+          shop_banner: {
+                validators: {
+                    notEmpty: {
+                        message: '请填写该字段'
+                    }
+                 
+                }
+            }
+    });
+     $('#save3').click(function() {
+        $('#detail_info').bootstrapValidator('validate');
+        if($('#detail_info').data('bootstrapValidator').isValid())
+          $(myModal).modal('show');
+     
+    });
+  });
+</script>
+</body>
+</html>

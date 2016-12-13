@@ -51,7 +51,7 @@ section{
 	z-index: 100;
 	float: left;
 	width: 100%;
-	display: none;
+	/*display: none;*/
 	margin-bottom: 150px;
 	-webkit-transition:width 1s;
 	overflow: hidden;

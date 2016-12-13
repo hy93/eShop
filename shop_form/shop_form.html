@@ -5,100 +5,99 @@
 	<meta charset="utf-8">
 
 	<!-- 引入bootstrap -->
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
-     <script type="text/javascript" src="../dist/js/bootstrapValidator.js"></script>
+
+  <!-- bootstrap validator -->
+  <link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
+  <script type="text/javascript" src="../dist/js/bootstrapValidator.js"></script>
+  <script type="text/javascript" src="../dist/js/language/zh_CN.js"></script>
+
+  <!-- font-awesome -->
+  <link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css">
+
 	<link rel="stylesheet" type="text/css" href="css/all.css">
   <link rel="stylesheet" type="text/css" href="css/pic_style.css">
 
-  	<script type="text/javascript" src="js/switch.js"></script>
+  <script type="text/javascript" src="js/switch.js"></script>
 	<script type="text/javascript" src="js/img_show.js"></script>
 	<script type="text/javascript" src="js/pic_select.js"></script>
+  <script type="text/javascript" src="../js/scroll-jquery.js"></script>
+
+    <script type="text/javascript">
+      
+      function scroll(id) {  
+      $("#" + id).HoverTreeScroll(500);  
+    }  
+    </script>
 
 </head>
 <body>
-<ul class="nav nav-tabs nav-justified" id="nav">
-  <li id="nav0" class="active" onclick="turnback()"><a href="#">回到开始</a></li>
-  <li id="nav1" ><a href="#" onclick="step1()">店铺基本信息</a></li>
-  <li id="nav2" ><a href="#" onclick="step2()">店铺海报</a></li>
-  <li id="nav3" ><a href="#" onclick="step3()">店铺详细信息</a></li>
-</ul>
-
-<section id="start">
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">欢迎来到eShop，你可以创建自己的商店</h3>
-        </div>
-        <div class="panel-body">
-          <button class="btn btn-large btn-info" onclick="step1();">马上创建商店</button>
-        </div>
-    </div>
-</section>
-
+<div id="sidebar">
+  <h2 class="page-header"><i class="fa fa-truck" aria-hidden="true"></i> 创建店铺</h2>
+  <ul id="menu">
+    <li onclick="scroll('step1')"><a href="javascript:scroll('step1');"> Step1：店铺基本信息</a></li>
+    <li onclick="scroll('step2')"><a href="javascript:scroll('step2');"> Step2：上传店铺海报</a></li>
+    <li onclick="scroll('step3')"><a href="javascript:scroll('step3');"> Step3：店铺详细信息</a></li>
+    <li style="height: 0px"></li>
+  </ul>
+</div>
 <section id="step1">
-		  <form id="yanzheng" class="form-horizontal"  method="post" action="#" 
+      <h3 class="page-header">STEP1：店铺基本信息</h3>
+		  <form id="basic_info" class="form-horizontal"  method="post" action="#" 
 		              data-bv-message="This value is not valid"
                       data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
                       data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
                       data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
 		    <fieldset>
 		      <div class="form-group">
-                        <label class="col-lg-3 control-label">店铺名称</label>
-                        <div class="col-lg-5">
-                            <input class="form-control" name="shop_name" type="text" data-bv-emailaddress-message="The shop name is required and cannot be empty" />
-                        </div>
+              <label class="col-lg-4 control-label">店铺名称</label>
+              <div class="col-lg-5">
+                <input class="form-control" name="shop_name" type="text" data-bv-emailaddress-message="The shop name is required and cannot be empty" />
               </div>
-		   <!--    <div class="control-group">
+          </div>
 
-              <label name="shop_name" class="control-label" for="input01">店铺名称</label>
-		          
-		          <div class="controls">
-		            <input type="text"  placeholder="" class="form-control"   required data-bv-notempty-message="The shop name is required and cannot be empty"/>
-		         <p class="help-block"></p> 
-		          </div>
-		        </div> -->
-          
-		    <div class="form-group">
-              <label class="col-lg-3 control-label">所在地</label>
+		      <div class="form-group">
+              <label class="col-lg-4 control-label">所在地</label>
 		          <div class="col-lg-5">
-		            <input type="text" class="form-control" name="shop_location"  required data-bv-notempty-message="The shop location is required and cannot be empty"/>		 
+		            <input type="text" class="form-control" name="shop_location"  required/>		 
 		          </div>
-		   </div>
-           <div class="form-group">
-              <label class="col-lg-3 control-label">配送范围</label>
+		      </div>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">配送范围</label>
               <div class="col-lg-5">
                 <input type="text" class="form-control" name=""/>
-               <!--  <p class="help-block"></p> -->
               </div>
-            </div>
-		    <div class="form-group">
-              <label class="col-lg-3 control-label">主营类别</label>
+          </div>
+		      <div class="form-group">
+              <label class="col-lg-4 control-label">主营类别</label>
 		          <div class="col-lg-5">
-		            <input type="text" class="form-control" />
-		            <p class="help-block"></p>
+		              <input type="text" class="form-control" />
+		              <p class="help-block"></p>
 		          </div>
-		        </div>
+		      </div>
 
-		    <div class="form-group">
-		          <!-- File Upload -->
-              <label class="col-lg-3 control-label">店铺Banner</label>
-		          <div class="controls">
-		            <img id="preview_7" src="img/banner.gif" class="img-thumbnail" /> <br/>
-    				<input type="file" name="file" class="form-control"  required data-bv-notempty-message="The shop banner is required and cannot be empty" onchange="imgPreview(this,7)" /> <br />
+		      <div class="form-group">
+              <label class="col-lg-4 control-label">店铺Banner</label>
+		          <div class="controls col-lg-5">
+                  <input type="file" name="file" class="form-control col-lg-5"  required  onchange="imgPreview(this,7)" />
+		              <img id="preview_7" src="img/banner.gif" class="img-thumbnail" /> <br/>
 		          </div>
-		        </div>
+		      </div>
+          <div class="form-group">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-4">
+                  <button type="submit" class="btn btn-primary btn-block" id="save1"  >下一步</button>
+              </div>
+          </div>
 		    </fieldset>
 		  </form>
-      
-    <div class="btnf">  <button type="submit" class="btn btn-info" id="save" >保存</button>
-   <button class="btn btn-primary"  onclick="step2()">下一步</button></div>
-   <!-- 	<div class="btnf"><button class="btn btn-primary"  id="save">保存并下一步</button></div> -->
+    
 </section>
 
 <section id="step2">
+  <h3 class="page-header">STEP2：店铺海报</h3>
   <div class="alert alert-info">请尽量上传1100*400的图片；最多可以上传五张图片。</div>
   <form id="pic">
     <div><img id="preview_1" src="img/default.png" class="img-thumbnail" /> <br/>
@@ -111,75 +110,59 @@
       <input type="file" name="file" onchange="imgPreview(this,4)" /> <br /></div>
     <div><img id="preview_5" src="img/default.png" class="img-thumbnail" /> <br/>
       <input type="file" name="file" onchange="imgPreview(this,5)" /> <br /></div>
+      <button type="submit" class="btn btn-primary btn-block" id="save2" onclick="scroll('step3')" >下一步</button>
+      <div style="clear: both;"></div>
   </form>
-  <div class="btnf"><button class="btn btn-primary" onclick="step3()">保存并下一步</button></div>
 </section>
 
 <section id="step3">
-	  <form class="form-horizontal">
-    <fieldset>
-    <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">店铺简介</label>
-          <div class="controls">
-            <input type="text" placeholder="" class="input-xlarge">
-            <p class="help-block">不要超过50个字</p>
+    <h3 class="page-header">STEP3：店铺详细信息</h3>
+      <form id="detail_info" class="form-horizontal"  method="post" action="../goods_list/goods_list.html"
+                  data-bv-message="This value is not valid"
+                      data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+                      data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+                      data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+        <fieldset>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">店铺简介</label>
+              <div class="col-lg-5">
+                  <input class="form-control" name="intro" type="text" placeholder="请输入不多于50个字符"/>
+              </div>
           </div>
-        </div>
-
-   
-    
-        <div class="control-group">
-            <label class="control-label">经营类型</label>
-                <div class="controls">
-                      <!-- Inline Radios -->
-                      <label class="radio inline">
-                        <input type="radio" value="0" name="business_type" checked="checked">
-                        个体经营
-                      </label>
-                      <label class="radio inline">
-                        <input type="radio" value="1" name="business_type">
-                        企业经营
-                      </label>
-                </div>
-        </div>
-        <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">经营执照</label>
-          <div class="controls">
-            <input type="text" placeholder="" class="input-xlarge">
-            <p class="help-block"></p>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">营业执照</label>
+              <div class="col-lg-5">
+                <input type="text" class="form-control" name="certification"  required/>     
+              </div>
           </div>
-        </div>
-        <div class="control-group">
-
-          <!-- Text input-->
-          <label class="control-label" for="input01">店铺热线</label>
-          <div class="controls">
-            <input type="text" placeholder="" class="input-xlarge">
-            <p class="help-block"></p>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">店铺热线</label>
+              <div class="col-lg-5">
+                <input type="text" class="form-control" name="phone"/>
+               <!--  <p class="help-block"></p> -->
+              </div>
           </div>
-        </div>
+          <div class="form-group">
+              <label class="col-lg-4 control-label">经营类型</label>
+              <div class="col-lg-2"><input type="radio" name="run_type" value="1" checked/>个体经营</div>
+              <div class="col-lg-2"><input type="radio" name="run_type" value="2"/>企业经营</div>
+          </div>
 
-    </fieldset>
-  </form>
-  
-    <div class="btnf"><button class="btn btn-primary" onclick="over()">保存</button></div>
+          <div class="form-group">
+              <div class="col-lg-4"></div>
+              <div class="col-lg-4">
+                  <button class="btn btn-primary btn-block" id="save3">下一步</button>
+              </div>
+          </div>
+        </fieldset>
+      </form>  
 </section>
 
-<section id="over" class="panel panel-default">
-    <div class="well well-lg">恭喜你，已经成功创建属于你的店铺，你可以进行以下操作：</div>
-    <button class="center btn btn-large btn-success" onclick="window.open('../goods_list/goods_list.html');">查看我的店铺</button>
-    <button class="center btn btn-default" onclick="window.open('../goods_form/goods_form.html')">为店铺添加商品</button>
-</section>
-
-
+<footer style="height: 300px;"></footer>
 <script type="text/javascript">
 
 $(document).ready(function() { 
-    $('#yanzheng').bootstrapValidator({
+    $('#basic_info').bootstrapValidator({
 //        live: 'disabled',
         message: 'This value is not valid',
         feedbackIcons: {
@@ -192,14 +175,14 @@ $(document).ready(function() {
             shop_name: {
                 validators: {
                     notEmpty: {
-                        message: 'The shop_name is required and cannot be empty'
+                        message: '请填写该字段'
                 }
             }
         },
             shop_location: {
                 validators: {
                     notEmpty: {
-                        message: 'The shop_location is required and cannot be empty'
+                        message: '请填写该字段'
                     }
                  
                 }
@@ -207,18 +190,77 @@ $(document).ready(function() {
           shop_banner: {
                 validators: {
                     notEmpty: {
-                        message: 'The shop_banner is required and cannot be empty'
+                        message: '请填写该字段'
                     }
                  
                 }
             },
         }
     });
-	   $('#save').click(function() {
-        $('#yanzheng').bootstrapValidator('validate');
+	   $('#save1').click(function() {
+        $('#basic_info').bootstrapValidator('validate');
+        if($('#basic_info').data('bootstrapValidator').isValid())
+          scroll('step2');
+     
+    });
+
+    $('#detail_info').bootstrapValidator({
+//        live: 'disabled',
+        message: 'This value is not valid',
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {          
+            intro: {
+                validators: {
+                    stringLength:{
+                      max:50
+                    }
+                }
+            }
+        },
+            shop_location: {
+                validators: {
+                    notEmpty: {
+                        message: '请填写该字段'
+                    }
+                 
+                }
+            },
+          shop_banner: {
+                validators: {
+                    notEmpty: {
+                        message: '请填写该字段'
+                    }
+                 
+                }
+            }
+    });
+     $('#save3').click(function() {
+        $('#detail_info').bootstrapValidator('validate');
+        if($('#detail_info').data('bootstrapValidator').isValid())
+          $(myModal).modal('show');
      
     });
 	});
 </script>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">恭喜你，已经成功创建属于你的店铺，你可以进行以下操作：</h4>
+                </div>
+                <div class="modal-footer">
+                    <button id="closemodal" type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="window.open('../goods_form/goods_form.html')">为店铺添加商品</button>
+                    <button type="button" class="btn btn-primary" onclick="window.open('../goods_list/goods_list.html');">查看我的店铺</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>

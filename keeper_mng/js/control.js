@@ -10,6 +10,8 @@ function changeps(a){
 function change_orders(name){
 	document.getElementById('myframe').setAttribute('src',name+'_orders.html');
 	var location = document.getElementById('location');
+	section.innerHTML='订单信息管理';
+	section.setAttribute('onclick',"change_orders('all')");
 	if (name=='unsend') 
 		location.innerHTML='未发货订单';
 	else if(name=='sending')
@@ -22,4 +24,49 @@ function change_orders(name){
 		location.innerHTML='所有订单';
 		document.getElementById('myframe').setAttribute('src','all_orders.html');
 	}
+}
+
+function change_userinfo(){
+	document.getElementById('myframe').setAttribute('src','user_info.html');
+	var location = document.getElementById('location');
+	section.innerHTML='个人信息管理';
+	section.setAttribute('onclick','change_userinfo()');
+	location.innerHTML='修改注册信息';
+}
+function change_pwd(){
+	document.getElementById('myframe').setAttribute('src','../changepwd.html');
+	var location = document.getElementById('location');
+	section.innerHTML='个人信息管理';
+	section.setAttribute('onclick','change_userinfo()');
+	location.innerHTML='修改密码';	
+}
+
+function change_banner(){
+	document.getElementById('myframe').setAttribute('src','banner.html');
+	var location = document.getElementById('location');
+	section.innerHTML='店铺信息管理';
+	section.setAttribute('onclick','change_banner()');
+	location.innerHTML='更换横幅';
+}
+
+function change_posters(){
+	document.getElementById('myframe').setAttribute('src','posters.html');
+	var location = document.getElementById('location');
+	section.innerHTML='店铺信息管理';
+	section.setAttribute('onclick','change_banner()');
+	location.innerHTML='更换海报';
+}
+function change_basic_info(){
+	document.getElementById('myframe').setAttribute('src','basic_info.html');
+	var location = document.getElementById('location');
+	section.innerHTML='店铺信息管理';
+	section.setAttribute('onclick','change_banner()');
+	location.innerHTML='店铺基本信息';
+}
+function change_detail_info(){
+	document.getElementById('myframe').setAttribute('src','detail_info.html');
+	var location = document.getElementById('location');
+	section.innerHTML='店铺信息管理';
+	section.setAttribute('onclick','change_banner()');
+	location.innerHTML='店铺详细信息';	
 }

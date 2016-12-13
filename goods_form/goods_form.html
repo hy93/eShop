@@ -9,13 +9,14 @@
 	<!-- 引入bootstrap -->
 	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
+	<link rel="stylesheet" href="../dist/css/bootstrapValidator.css"/>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../dist/js/bootstrapValidator.js"></script>
+	<script type="text/javascript" src="../dist/js/language/zh_CN.js"></script>
 	
 	
 	<!-- 引入font-awesome-->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link type="text/css" href="../font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/all.css">
 	<link rel="stylesheet" type="text/css" href="css/type_choose_style.css">
@@ -36,6 +37,7 @@
 	<script type="text/javascript" src="js/attr_attach.js"></script>
 	<script type="text/javascript" src="js/basic_info.js"></script>
 	<script type="text/javascript" src="js/switch.js"></script>
+	<script type="text/javascript" src="../js/scroll-jquery.js"></script>
 
 	<!--kind editor配置-->
 		<link rel="stylesheet" href="kindeditor/themes/default/default.css" />
@@ -76,172 +78,35 @@
 				});
 			});
 		</script>
+		<script type="text/javascript">
+			
+			function scroll(id) {  
+			$("#" + id).HoverTreeScroll(500);  
+		}  
+		</script>
+
 
 </head>
 <body>
 <div id="sidebar">
 	<h2 class="page-header"><i class="fa fa-wpforms" aria-hidden="true"></i> 创建新商品</h2>
 	<ul id="menu">
-		<li onclick="step1()"><a href="#"> Step1：商品基本信息</a></li>
-		<li onclick="step2()"><a href="#"> Step2：上传商品图片</a></li>
-		<li onclick="step3()"><a href="#"> Step3：添加商品标签</a></li>
-		<li onclick="step4()"><a href="#"> Step4：填写物流信息</a></li>
-		<li onclick="step5()"><a href="#"> Step5：设置商品属性</a></li>
-		<li onclick="step6()"><a href="#"> Step6：编辑商品详情</a></li>
+		<li onclick="scroll('step1')"><a href="javascript:scroll('step1');"> Step1：商品基本信息</a></li>
+		<li onclick="scroll('step2')"><a href="javascript:scroll('step2');"> Step2：上传商品图片</a></li>
+		<li onclick="scroll('step3')"><a href="javascript:scroll('step3');"> Step3：添加商品标签</a></li>
+		<li onclick="scroll('step4')"><a href="javascript:scroll('step4');"> Step4：填写物流信息</a></li>
+		<li onclick="scroll('step5')"><a href="javascript:scroll('step5');"> Step5：设置商品属性</a></li>
+		<li onclick="scroll('step6')"><a href="javascript:scroll('step6');"> Step6：编辑商品详情</a></li>
 		<li style="height: 0px"></li>
 	</ul>
+  <a class="home" href="../index.html"><i class="fa fa-home" aria-hidden="true"></i> 返回首页</a>
+  <a class="shop" href="../goods_list/goods_list.html"><i class="fa fa-sign-out" aria-hidden="true"></i> 返回店铺</a>
+
 </div>
 <div id="wrap">
 	<section id="step1">
 		<h3 class="page-header">STEP1:填写商品基本信息</h3>
-		<!-- <div id="type_choose">
-			<div id="menu_title">请选择您的商品类型：</div>
-			<ul>		
-				<li> <a href="#">鲜花</a> 
-				<div class="submenu">
-					<dl>
-						<dt><a href="#">女装</a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">外套</a>
-							<a class="btn btn-link" onclick="choose(this)">毛衣T恤</a>
-							<a class="btn btn-link" onclick="choose(this)">套装</a>
-							<a class="btn btn-link" onclick="choose(this)">连衣裙</a>
-							<a class="btn btn-link" onclick="choose(this)">裤子</a>
-							<a class="btn btn-link" onclick="choose(this)">半身裙</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="#"></a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">外套</a>
-							<a class="btn btn-link" onclick="choose(this)">毛衣T恤</a>
-							<a class="btn btn-link" onclick="choose(this)">西服正装</a>
-							<a class="btn btn-link" onclick="choose(this)">裤子</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="#">内衣</a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">睡衣套装/家居服</a>
-							<a class="btn btn-link" onclick="choose(this)">保暖内衣</a>
-							<a class="btn btn-link" onclick="choose(this)">文胸</a>
-							<a class="btn btn-link" onclick="choose(this)">内裤</a>
-							<a class="btn btn-link" onclick="choose(this)">秋衣裤</a>
-							<a class="btn btn-link" onclick="choose(this)">袜子</a>
-							<a class="btn btn-link" onclick="choose(this)">打底裤</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>					
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="#">配件配饰</a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">帽子</a>
-							<a class="btn btn-link" onclick="choose(this)">围巾</a>
-							<a class="btn btn-link" onclick="choose(this)">手套</a>
-							<a class="btn btn-link" onclick="choose(this)">皮带</a>
-							<a class="btn btn-link" onclick="choose(this)">领带</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-				</div>
-				</li>
-				<li> <a href="#">鞋靴箱包</a>
-				<div class="submenu">
-					<dl>
-						<dt><a href="#">男鞋</a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">商务鞋</a>
-							<a class="btn btn-link" onclick="choose(this)">休闲鞋</a>
-							<a class="btn btn-link" onclick="choose(this)">帆布鞋</a>
-							<a class="btn btn-link" onclick="choose(this)">拖鞋</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="#">女鞋</a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">休闲鞋</a>
-							<a class="btn btn-link" onclick="choose(this)">高跟鞋</a>
-							<a class="btn btn-link" onclick="choose(this)">靴子</a>
-							<a class="btn btn-link" onclick="choose(this)">帆布鞋</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="#">行李箱"></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">软质行李箱</a>
-							<a class="btn btn-link" onclick="choose(this)">硬质行李箱</a>
-							<a class="btn btn-link" onclick="choose(this)">拉杆行李包</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="#">女包</a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">双肩包</a>
-							<a class="btn btn-link" onclick="choose(this)">单肩包</a>
-							<a class="btn btn-link" onclick="choose(this)">斜挎包</a>
-							<a class="btn btn-link" onclick="choose(this)">手拿包</a>
-							<a class="btn btn-link" onclick="choose(this)">钱包</a>
-							<a class="btn btn-link" onclick="choose(this)">卡包</a>
-							<a class="btn btn-link" onclick="choose(this)">电脑包</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="#">男包</a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">双肩包</a>
-							<a class="btn btn-link" onclick="choose(this)">单肩包</a>
-							<a class="btn btn-link" onclick="choose(this)">公文包</a>
-							<a class="btn btn-link" onclick="choose(this)">电脑报</a>
-							<a class="btn btn-link" onclick="choose(this)">钱包</a>
-							<a class="btn btn-link" onclick="choose(this)">卡包</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-				</div>
-				</li>
-				<li> <a href="#">配件首饰</a> 
-		 		<div class="submenu">
-		 			<dl>
-						<dt><a href="#">珠宝</a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">翡翠玉石</a>
-							<a class="btn btn-link" onclick="choose(this)">琥珀玛瑙</a>
-							<a class="btn btn-link" onclick="choose(this)">钻石</a>
-							<a class="btn btn-link" onclick="choose(this)">金器</a>
-							<a class="btn btn-link" onclick="choose(this)">银器</a>
-							<a class="btn btn-link" onclick="choose(this)">珍珠</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-					<dl>
-						<dt><a href="#">首饰</a></dt>
-						<dd>
-							<a class="btn btn-link" onclick="choose(this)">头饰</a>
-							<a class="btn btn-link" onclick="choose(this)">项链</a>
-							<a class="btn btn-link" onclick="choose(this)">戒指</a>
-							<a class="btn btn-link" onclick="choose(this)">耳饰</a>
-							<a class="btn btn-link" onclick="choose(this)">手镯手链</a>
-							<a class="btn btn-link" onclick="choose(this)">其他</a>
-						</dd>
-					</dl>
-		 		</div>
-				</li>
-				<li> <a href="#">美妆洗护</a> </li>
-				<li> <a href="#">家具家纺</a> </li>
-				<li> <a href="#">鲜花宠物</a> </li>
-				<li> <a href="#">美食生鲜</a> </li>
-				<li> <a href="#">图书办公</a> </li>
-				<li> <a href="#">家电数码</a> </li>
-				<li> <a href="#">运动户外</a> </li>
-				<li> <a href="#">影视动漫周边</a> </li>
-			</ul>
-		</div> -->
+
 		<form id="basic_info" method="post" class="form-horizontal" action="#"
 			data-bv-message="This value is not valid"
             data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
@@ -252,90 +117,50 @@
                     <div class="form-group">
                         <label class="col-lg-6 control-label">商品类别：</label>
                         <div class="col-lg-6">
-                            <input class="form-control" name="email" type="email" data-bv-emailaddress-message="The input is not a valid email address" />
+                            <input class="form-control" name="type" type="text"/>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-6 control-label">商品标题：</label>
                         <div class="col-lg-6">
-                            <input type="password" class="form-control" required />
+                            <input type="text" class="form-control" name="title" required />
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-lg-6 control-label">商品描述：</label>
                         <div class="col-lg-6">
-                            <input type="password" class="form-control" name="password"
-                                   required data-bv-notempty-message="The password is required and cannot be empty"
-                               
-                                    data-bv-identical-field="password" data-bv-identical-message="Password length between 6-12"
-                                 />
+                            <input type="text" class="form-control" name="password"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-6 control-label">原价：</label>
                         <div class="col-lg-6">
-                            <input type="number" class="form-control" name="price"
-                                   required data-bv-notempty-message="The confirm password is required and cannot be empty"
-                                   data-bv-identical="true" data-bv-identical-field="password" data-bv-identical-message="The password and its confirm are not the same"
-                                  />
+                            <input type="number" step="0.01" class="form-control" name="price" required />
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-lg-6 control-label">库存：</label>
                         <div class="col-lg-6">
-                            <input type="number" class="form-control" name="stock"
-                                   required data-bv-notempty-message="The confirm password is required and cannot be empty"
-                                   data-bv-identical="true" data-bv-identical-field="password" data-bv-identical-message="The password and its confirm are not the same"
-                                  />
+                            <input type="number" class="form-control" name="stock" required/>
                         </div>
                     </div>
                     <div class="form-group">
-                    	<div class="col-lg-6"><input type="radio" name="time" value="1" checked onclick="stime_show(this)" />立刻开卖</div>
-                    	<div class="col-lg-6"><input type="radio" name="time" value="2" onclick="stime_show(this)" />稍后开卖</div>
+                    	<div class="col-lg-4"></div>
+                    	<div class="col-lg-4"><input type="radio" name="time" value="1" checked onclick="stime_show(this)" />立刻开卖</div>
+                    	<div class="col-lg-4"><input type="radio" name="time" value="2" onclick="stime_show(this)" />稍后开卖</div>
                     </div>
-
-                
-            
-			<!--<table class="form-group">
-					<tr>
-						<td>商品类别：</td>
-						<td><input type="text" name="type" class="form-control" id="choosed_type"></td>
-					</tr>
-					<tr>
-						<td>商品标题：</td>
-						<td><input type="text" class="form-control" name="good_name"  data-bv-notempty-message="The title is required and cannot be empty"></td>
-					</tr>
-					<tr>
-						<td>商品描述：</td>
-						<td><input type="text" class="form-control" name="describe"></td>
-					</tr>
-					<tr>
-						<td>原价：</td>
-						<td><input type="number" class="form-control" name="price"  data-bv-notempty-message="The price is required and cannot be empty"></td>
-					</tr>
-					<tr>
-						<td>库存：</td>
-						<td><input type="number" class="form-control" name="stock"  data-bv-notempty-message="The quantity is required and cannot be empty"></td>
-					</tr>
-					<tr>
-						<td><div><input type="radio" name="time" value="1" checked onclick="stime_show(this)" />立刻开卖</div></td>
-						<td><div><input type="radio" name="time" value="2" onclick="stime_show(this)" />稍后开卖</div></td>
-					</tr>
-			</table>-->
-			
 			<div id="stimediv" class="well" >
 				请选择起售时间：
 				<input class="form-control" type="date" name="stime"/>
 			</div>
 		</form>
-		<div class="btnf"><button class="btn btn-primary"  id="save">保存并下一步</button></div>
+		<div class="btnf"><button class="btn btn-primary" id="save" >下一步</button></div>
 
 <script type="text/javascript">		
 $(document).ready(function() {
     $('#basic_info').bootstrapValidator({
-//        live: 'disabled',
         message: 'This value is not valid',
         feedbackIcons: {
             valid: 'glyphicon glyphicon-ok',
@@ -343,24 +168,24 @@ $(document).ready(function() {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            good_name: {
+            title: {
                 validators: {
                     notEmpty: {
-                        message: 'The title is required and cannot be empty'
+                        message: '请输入内容'
                     }
                 }
             },
             price: {
                 validators: {
                     notEmpty: {
-                        message: 'The price is required and cannot be empty'
+                        message: '请输入内容'
                     }
                 }
             },
             stock: {
                 validators: {
                     notEmpty: {
-                        message: 'The quantity is required and cannot be empty'
+                        message: '请输入内容'
                     }
                 }
             },
@@ -369,10 +194,12 @@ $(document).ready(function() {
     });
   // Validate the form manually
    $('#save').click(function() {
-        var result = $('#basic_info').bootstrapValidator('validate');
-       if(result==true){
-       	 return step2();
-       }
+   		$('#basic_info').bootstrapValidator('validate')
+        // var result = $('#basic_info').bootstrapValidator('validate');
+       	 // console.log(result);
+        if($('#basic_info').data('bootstrapValidator').isValid()){
+        	scroll('step2');
+        }
     });
 });
 </script>
@@ -395,7 +222,7 @@ $(document).ready(function() {
 			<div><img id="preview_5" src="img/default.png" class="img-thumbnail" /> <br/>
 	    	<input type="file" name="file" onchange="imgPreview(this,5)" /> <br /></div>
 		</form>
-		<div class="btnf"><button class="btn btn-primary" onclick="step3()">保存并下一步</button></div>
+		<div class="btnf"><button class="btn btn-primary" onclick="scroll('step3')">下一步</button></div>
 	</section>
 
 	<section id="step3">
@@ -407,19 +234,11 @@ $(document).ready(function() {
 			<input id="tag_input" type="text" placeholder="请输入标签内容" class="form-control" name="tag_string" maxlength="10" />
 			<button id="tag_btn" class="btn btn-success" onclick="attach_tag()">添加标签！</button>
 		</div>
-		<div class="btnf"><button class="btn btn-primary" onclick="step4()">保存并下一步</button></div>
+		<div class="btnf"><button class="btn btn-primary" onclick="scroll('step4')">下一步</button></div>
 	</section>
 
 	<section id="step4">
 		<h3 class="page-header">STEP4:填写物流信息</h3>
-		<!-- <div id="transdiv">
-			发货地：
-			<div id="city_5" class="dropdown ">
-				<select class="prov form-control"></select>
-				<select class="city form-control" disabled="disabled"></select>
-				<select class="dist form-control" disabled="disabled"></select>
-			</div>
-		</div> -->
 		<div id="costdiv">
 			<div id="choosecost">
 				运费说明:<br/> 
@@ -433,7 +252,7 @@ $(document).ready(function() {
 			<div>
 			</div>
 		</div>
-		<div class="btnf"><button class="btn btn-primary" onclick="step5()">保存并下一步</button></div>
+		<div class="btnf"><button class="btn btn-primary" onclick="scroll('step5')">下一步</button></div>
 	</section>
 
 	<section id="step5">
@@ -496,7 +315,7 @@ $(document).ready(function() {
 		    </div>
 		</div>
 
-		<div class="btnf"><button class="btn btn-primary" onclick="step6()">保存并下一步</button></div>
+		<div class="btnf"><button class="btn btn-primary" onclick="scroll('step6')">下一步</button></div>
 	</section>
 
 	<section id="step6">
@@ -504,16 +323,25 @@ $(document).ready(function() {
 		<div id="editor">
 			<textarea name="content" style="width:740px;height:400px;">KindEditor</textarea>
 		</div>
-		<div class="btnf"><button class="btn btn-primary" onclick="over();">保存内容</button></div>
+		<div class="btnf"><button class="btn btn-primary" data-toggle="modal" data-target="#overModal">保存内容</button></div>
 	</section>
 
-	<section id="over">
-		<div id="overdiv" class="panel panel-default">
-		    <div class="well well-lg">恭喜你，已经成功创建属于你的店铺，你可以进行以下操作：</div>
-		    <button class="center btn btn-large btn-success" onclick="window.open('../goods_display/goods_display.html');">查看我添加的商品</button>
-		    <button class="center btn btn-default" onclick="window.open('../goods_list/goods_list.html')">查看商品列表</button>
-	    </div>
-	</section>
+	    <div class="modal fade" id="overModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">恭喜你，已经成功创建新商品，你可以进行以下操作：</h4>
+                </div>
+                <div class="modal-footer">
+                    <button id="closemodal" type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" onclick="window.open('../goods_display/goods_display.html')">查看我添加的商品</button>
+                    <button type="button" class="btn btn-primary" onclick="window.open('../goods_list/goods_list.html');">返回我的店铺</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 </body>
 </html>
