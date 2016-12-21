@@ -70,3 +70,19 @@ function change_detail_info(){
 	section.setAttribute('onclick','change_banner()');
 	location.innerHTML='店铺详细信息';	
 }
+function change_goods(name){
+	document.getElementById('myframe').setAttribute('src',name+'_goods.html');
+	var location = document.getElementById('location');
+	section.innerHTML='商品信息管理';
+	section.setAttribute('onclick',"change_goods('all')");
+	if (name=='all') 
+		location.innerHTML='所有商品';
+	else if(name=='abort')
+		location.innerHTML='已下架商品';
+	else if(name=='unstart')
+		location.innerHTML='未开卖商品';
+	else{
+		location.innerHTML='所有商品';
+		document.getElementById('myframe').setAttribute('src','all_goods.html');
+	}
+}
